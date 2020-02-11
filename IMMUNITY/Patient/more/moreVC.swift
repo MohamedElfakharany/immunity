@@ -28,7 +28,11 @@ class moreVC: UIViewController {
         imageBG.alpha = 0.2
         
         gradBTNS()
-        
+        views()
+ 
+    }
+    
+    func views() {
         SettingView.layer.cornerRadius = 10
         SettingView.layer.shadowColor = UIColor.black.cgColor
         SettingView.layer.shadowOffset = CGSize(width: 0.5, height: 0.4) //Here your control your spread
@@ -53,9 +57,9 @@ class moreVC: UIViewController {
         AboutUsView.layer.shadowOpacity = 0.5
         AboutUsView.layer.shadowRadius = 5.0
         
-        
-        
     }
+    
+    
     func gradBTNS() {
         
         let RightGradientColor = #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)

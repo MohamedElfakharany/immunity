@@ -106,6 +106,16 @@ class UpdateDataVC: UIViewController {
             self.showAlert(title: title, message: messages)
             return
         }
+        
+        API_UpdatePatientData.UpdatePatientData(first_name: FirstName, last_name: LastName, email: Email, phone: Phone, city: City) { (error:Error?, success: Bool) in
+            if success {
+                print ("Update Patient Data Done ")
+            }else
+            {
+                print ("Update Patient Data failed ")
+            }
+        }
+        
     }
     // keybord disappair
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

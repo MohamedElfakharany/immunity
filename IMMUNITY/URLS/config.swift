@@ -16,6 +16,10 @@ struct URLs {
     
     static let register = main + "register"
     
+    static let UpdatePatientData = main + "UpdatePatientData"
+    
+    static let UpdatePatientPassword = main + "UpdatePatientPassword"
+    
     
     
     

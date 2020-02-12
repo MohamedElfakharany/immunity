@@ -13,7 +13,6 @@
 		966D37F123929B63009E6A43 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D37F023929B63009E6A43 /* FirstVC.swift */; };
 		966D37F423929B63009E6A43 /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966D37F223929B63009E6A43 /* Patient.storyboard */; };
 		966D37F723929B63009E6A43 /* IMMUNITY.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 966D37F523929B63009E6A43 /* IMMUNITY.xcdatamodeld */; };
-		966D37F923929B65009E6A43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966D37F823929B65009E6A43 /* Assets.xcassets */; };
 		966D37FC23929B65009E6A43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966D37FA23929B65009E6A43 /* LaunchScreen.storyboard */; };
 		966D380523929F76009E6A43 /* RoundedEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D380423929F76009E6A43 /* RoundedEdges.swift */; };
 		966D380723929FBF009E6A43 /* RoundedTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D380623929FBF009E6A43 /* RoundedTF.swift */; };
@@ -32,10 +31,15 @@
 		966D382A23999DB4009E6A43 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D382923999DB4009E6A43 /* ResetPasswordVC.swift */; };
 		966D382C2399AA56009E6A43 /* Text Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D382B2399AA56009E6A43 /* Text Image.swift */; };
 		966D382E239AA024009E6A43 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D382D239AA024009E6A43 /* Helper.swift */; };
+		96A8D18B23F363AF003C3EAB /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D18A23F363AF003C3EAB /* ContactUsVC.swift */; };
+		96A8D18D23F3A625003C3EAB /* AboutImmunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D18C23F3A625003C3EAB /* AboutImmunityVC.swift */; };
+		96A8D18F23F3ABA0003C3EAB /* API+UpdatePatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D18E23F3ABA0003C3EAB /* API+UpdatePatientData.swift */; };
+		96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D19123F3B202003C3EAB /* SearchVC.swift */; };
 		96AD201623E32A600053657F /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD201523E32A600053657F /* moreVC.swift */; };
 		96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C3F23F2DA3F0069AEC5 /* settingVC.swift */; };
 		96B55C4223F2DBC40069AEC5 /* UpdateDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C4123F2DBC40069AEC5 /* UpdateDataVC.swift */; };
 		96B55C4423F2E8A00069AEC5 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C4323F2E8A00069AEC5 /* ChangePasswordVC.swift */; };
+		96E0A9C323F34FA70027BA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A9C223F34FA70027BA06 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +51,6 @@
 		966D37F023929B63009E6A43 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		966D37F323929B63009E6A43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Patient.storyboard; sourceTree = "<group>"; };
 		966D37F623929B63009E6A43 /* IMMUNITY.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IMMUNITY.xcdatamodel; sourceTree = "<group>"; };
-		966D37F823929B65009E6A43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		966D37FB23929B65009E6A43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		966D37FD23929B65009E6A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966D380423929F76009E6A43 /* RoundedEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdges.swift; sourceTree = "<group>"; };
@@ -67,10 +70,15 @@
 		966D382923999DB4009E6A43 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		966D382B2399AA56009E6A43 /* Text Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text Image.swift"; sourceTree = "<group>"; };
 		966D382D239AA024009E6A43 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		96A8D18A23F363AF003C3EAB /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
+		96A8D18C23F3A625003C3EAB /* AboutImmunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutImmunityVC.swift; sourceTree = "<group>"; };
+		96A8D18E23F3ABA0003C3EAB /* API+UpdatePatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+UpdatePatientData.swift"; sourceTree = "<group>"; };
+		96A8D19123F3B202003C3EAB /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		96AD201523E32A600053657F /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		96B55C3F23F2DA3F0069AEC5 /* settingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
 		96B55C4123F2DBC40069AEC5 /* UpdateDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDataVC.swift; sourceTree = "<group>"; };
 		96B55C4323F2E8A00069AEC5 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		96E0A9C223F34FA70027BA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3AAA4A6708A28F3D8F4BDD0 /* Pods-IMMUNITY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMMUNITY.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMMUNITY/Pods-IMMUNITY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,10 +132,10 @@
 				966D380323929F5C009E6A43 /* View */,
 				966D37EE23929B63009E6A43 /* AppDelegate.swift */,
 				966D37F223929B63009E6A43 /* Patient.storyboard */,
-				966D37F823929B65009E6A43 /* Assets.xcassets */,
 				966D37FA23929B65009E6A43 /* LaunchScreen.storyboard */,
 				966D37FD23929B65009E6A43 /* Info.plist */,
 				966D37F523929B63009E6A43 /* IMMUNITY.xcdatamodeld */,
+				96E0A9C223F34FA70027BA06 /* Assets.xcassets */,
 			);
 			path = IMMUNITY;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 		966D38082392B97C009E6A43 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
+				96A8D19023F3B1EB003C3EAB /* Search */,
 				966D38092392B9C2009E6A43 /* Auth */,
 				96AD201423E32A470053657F /* more */,
 			);
@@ -176,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				966D381423955D57009E6A43 /* API+Auth.swift */,
+				96A8D18E23F3ABA0003C3EAB /* API+UpdatePatientData.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -202,6 +212,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		96A8D19023F3B1EB003C3EAB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				96A8D19123F3B202003C3EAB /* SearchVC.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		96AD201423E32A470053657F /* more */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +227,8 @@
 				96B55C3F23F2DA3F0069AEC5 /* settingVC.swift */,
 				96B55C4123F2DBC40069AEC5 /* UpdateDataVC.swift */,
 				96B55C4323F2E8A00069AEC5 /* ChangePasswordVC.swift */,
+				96A8D18A23F363AF003C3EAB /* ContactUsVC.swift */,
+				96A8D18C23F3A625003C3EAB /* AboutImmunityVC.swift */,
 			);
 			path = more;
 			sourceTree = "<group>";
@@ -284,11 +304,11 @@
 				966D37FC23929B65009E6A43 /* LaunchScreen.storyboard in Resources */,
 				966D382423972AB2009E6A43 /* Cairo-ExtraLight.ttf in Resources */,
 				966D382523972AB2009E6A43 /* Cairo-SemiBold.ttf in Resources */,
-				966D37F923929B65009E6A43 /* Assets.xcassets in Resources */,
 				966D382323972AB2009E6A43 /* Cairo-Regular.ttf in Resources */,
 				966D37F423929B63009E6A43 /* Patient.storyboard in Resources */,
 				966D382723972AB2009E6A43 /* Cairo-Bold.ttf in Resources */,
 				966D382823972AB2009E6A43 /* Cairo-Black.ttf in Resources */,
+				96E0A9C323F34FA70027BA06 /* Assets.xcassets in Resources */,
 				966D382623972AB2009E6A43 /* Cairo-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,14 +367,18 @@
 				966D38102392BB37009E6A43 /* SignUpVC.swift in Sources */,
 				966D382E239AA024009E6A43 /* Helper.swift in Sources */,
 				966D37F723929B63009E6A43 /* IMMUNITY.xcdatamodeld in Sources */,
+				96A8D18D23F3A625003C3EAB /* AboutImmunityVC.swift in Sources */,
 				96AD201623E32A600053657F /* moreVC.swift in Sources */,
 				966D380723929FBF009E6A43 /* RoundedTF.swift in Sources */,
 				966D3818239588F8009E6A43 /* config.swift in Sources */,
 				966D382C2399AA56009E6A43 /* Text Image.swift in Sources */,
+				96A8D18F23F3ABA0003C3EAB /* API+UpdatePatientData.swift in Sources */,
 				966D380B2392B9E0009E6A43 /* LoginVC.swift in Sources */,
+				96A8D18B23F363AF003C3EAB /* ContactUsVC.swift in Sources */,
 				966D37F123929B63009E6A43 /* FirstVC.swift in Sources */,
 				96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */,
 				966D380E2392BB02009E6A43 /* ShowAlert.swift in Sources */,
+				96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */,
 				966D381523955D57009E6A43 /* API+Auth.swift in Sources */,
 				960CE3D723DF8A22001A8818 /* JSON+Extentions.swift in Sources */,
 				966D38122392D4BF009E6A43 /* gradiantColor.swift in Sources */,

@@ -63,20 +63,32 @@ class ChangePasswordVC: UIViewController {
     
     @IBAction func BtnActSend(_ sender: Any){
         
-    guard let password = TxtfieldPassword.text, !password.isEmpty else {
+    guard let Password = TxtfieldPassword.text, !Password.isEmpty else {
     let messages = NSLocalizedString("enter your password", comment: "hhhh")
     let title = NSLocalizedString("Login Failed", comment: "hhhh")
     self.showAlert(title: title, message: messages)
     return
     }
     
-    guard let passwordConfirmation = TxtFieldPasswordConfirmation.text, !passwordConfirmation.isEmpty else {
+    guard let PasswordConfirmation = TxtFieldPasswordConfirmation.text, !PasswordConfirmation.isEmpty else {
     let messages = NSLocalizedString("enter your password Confirmation", comment: "hhhh")
     let title = NSLocalizedString("Login Failed", comment: "hhhh")
     self.showAlert(title: title, message: messages)
     return
         }
+        
+        API_UpdatePatientData.UpdatePatientPassword(password: Password) { (error: Error?, success: Bool) in
+            if success {
+                print("Update Patient Password Done")
+            }else
+            {
+                print("Update Patient Password")
+            }
+        }
+        
     }
+    
+    
     @IBAction func showHideAction2(_ sender: Any) {
         
         _ = TxtFieldPasswordConfirmation.text!;

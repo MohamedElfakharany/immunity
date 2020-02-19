@@ -9,7 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 
-class SignUpVC: UIViewController  {
+class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
     
     var datePicker = UIDatePicker()
     var pickerView = UIPickerView()
@@ -43,7 +43,7 @@ class SignUpVC: UIViewController  {
         datePicker.addTarget(self, action: #selector(SignUpVC.dateChanged(datePicker :)), for: .valueChanged)
         TxtfieldDateOfBirth.inputView = datePicker
         
-//        backgroundImage.alpha = 0.1
+        backgroundImage.alpha = 0.1
         gradBTNS()
         BackgroundTF()
         self.navigationController?.navigationBar.setGradientBackground(colors: [
@@ -63,7 +63,24 @@ class SignUpVC: UIViewController  {
     }
     
     
-
+    // Picker Views
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return genders.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return genders[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            TxtfieldGender.text = genders[row]
+            self.view.endEditing(true)
+    }
     
     func BackgroundTF() {
         
@@ -273,26 +290,4 @@ class SignUpVC: UIViewController  {
     }//EndShouldReturn
     
     
-}
-
-// Picker Views
-
-extension SignUpVC : UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return genders.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genders[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        TxtfieldGender.text = genders[row]
-        self.view.endEditing(true)
-    }
 }

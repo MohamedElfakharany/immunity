@@ -22,7 +22,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         
-//        backgroundImage.alpha = 0.1
+        backgroundImage.alpha = 0.1
         gradBTNS()
         BackgroundTF()
         self.navigationController?.navigationBar.setGradientBackground(colors: [

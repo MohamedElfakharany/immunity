@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let access_token = Helper.getAccessToken() {
                     print("access_token is : \(access_token)")
         
-                    let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "SelectedDoctorVC")
+                    let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs")
                     window?.rootViewController = tab
                 }
         self.window?.makeKeyAndVisible()

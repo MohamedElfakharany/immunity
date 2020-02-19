@@ -53,5 +53,11 @@ func gradBTNS() {
     BtnSearchByDoctorNameOutlet.layer.cornerRadius = 10
     BtnSearchByDoctorNameOutlet.clipsToBounds = true
 }//EndGrad
+
+@IBAction func BackBTN(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
+}
+
+
     
 }

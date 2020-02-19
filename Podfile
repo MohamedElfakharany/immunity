@@ -11,4 +11,5 @@ target 'IMMUNITY' do
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'IQKeyboardManagerSwift'
+pod 'Cosmos'
 end

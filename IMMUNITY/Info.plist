@@ -20,6 +20,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cairo-Black.ttf</string>
+		<string>Cairo-Bold.ttf</string>
+		<string>Cairo-ExtraLight.ttf</string>
+		<string>Cairo-Lihgt.ttf</string>
+		<string>Regular.ttf</string>
+		<string>Cairo-SimiBold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -31,8 +45,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -41,19 +53,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Cairo-Black.ttf</string>
-		<string>Cairo-Bold.ttf</string>
-		<string>Cairo-ExtraLight.ttf</string>
-		<string>Cairo-Lihgt.ttf</string>
-		<string>Regular.ttf</string>
-		<string>Cairo-SimiBold.ttf</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

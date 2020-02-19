@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 //        self.NotNow.center.y += 30
 //
         
-        backgroundImage.alpha = 0.1
+//        backgroundImage.alpha = 0.1
         gradBTNS()
         
     }

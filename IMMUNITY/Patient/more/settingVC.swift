@@ -18,7 +18,7 @@ class settingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageBG.alpha = 0.2
+//        imageBG.alpha = 0.2
         gradBTNS()
         
     }

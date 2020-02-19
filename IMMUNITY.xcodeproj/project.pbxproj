@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		745744703AD262BBD903B09B /* Pods_IMMUNITY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170890E670AA592F629ADED4 /* Pods_IMMUNITY.framework */; };
+		96091CC523FB04B600035A11 /* SearchCritriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96091CC423FB04B600035A11 /* SearchCritriaVC.swift */; };
+		96091CC723FB2A5A00035A11 /* SearchCritriaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96091CC623FB2A5A00035A11 /* SearchCritriaTableViewCell.swift */; };
 		960CE3D723DF8A22001A8818 /* JSON+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CE3D623DF8A22001A8818 /* JSON+Extentions.swift */; };
+		9644927A23FCC5E200C12A93 /* PopupVisitorRatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644927923FCC5E200C12A93 /* PopupVisitorRatingVC.swift */; };
+		9644927C23FCD14300C12A93 /* VisitorRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644927B23FCD14300C12A93 /* VisitorRatingTableViewCell.swift */; };
+		9644D07123F80BFF00BBBC52 /* SearchByArea&SpecialityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644D07023F80BFF00BBBC52 /* SearchByArea&SpecialityVC.swift */; };
+		964EFA8E23FC1F0400035A11 /* SelectedDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964EFA8D23FC1F0400035A11 /* SelectedDoctorVC.swift */; };
+		964EFA9023FC3E8600035A11 /* SelectedDoctorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964EFA8F23FC3E8600035A11 /* SelectedDoctorCollectionViewCell.swift */; };
 		966D37EF23929B63009E6A43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D37EE23929B63009E6A43 /* AppDelegate.swift */; };
 		966D37F123929B63009E6A43 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D37F023929B63009E6A43 /* FirstVC.swift */; };
 		966D37F423929B63009E6A43 /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966D37F223929B63009E6A43 /* Patient.storyboard */; };
@@ -31,6 +38,7 @@
 		966D382A23999DB4009E6A43 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D382923999DB4009E6A43 /* ResetPasswordVC.swift */; };
 		966D382C2399AA56009E6A43 /* Text Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D382B2399AA56009E6A43 /* Text Image.swift */; };
 		966D382E239AA024009E6A43 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D382D239AA024009E6A43 /* Helper.swift */; };
+		96770F8823FCC23100AB3A15 /* SBCardPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96770F8723FCC23100AB3A15 /* SBCardPopupVC.swift */; };
 		96A8D18B23F363AF003C3EAB /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D18A23F363AF003C3EAB /* ContactUsVC.swift */; };
 		96A8D18D23F3A625003C3EAB /* AboutImmunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D18C23F3A625003C3EAB /* AboutImmunityVC.swift */; };
 		96A8D18F23F3ABA0003C3EAB /* API+UpdatePatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D18E23F3ABA0003C3EAB /* API+UpdatePatientData.swift */; };
@@ -45,7 +53,14 @@
 /* Begin PBXFileReference section */
 		170890E670AA592F629ADED4 /* Pods_IMMUNITY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMMUNITY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		457436457AD0E0E2B8076D61 /* Pods-IMMUNITY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMMUNITY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMMUNITY/Pods-IMMUNITY.debug.xcconfig"; sourceTree = "<group>"; };
+		96091CC423FB04B600035A11 /* SearchCritriaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCritriaVC.swift; sourceTree = "<group>"; };
+		96091CC623FB2A5A00035A11 /* SearchCritriaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCritriaTableViewCell.swift; sourceTree = "<group>"; };
 		960CE3D623DF8A22001A8818 /* JSON+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extentions.swift"; sourceTree = "<group>"; };
+		9644927923FCC5E200C12A93 /* PopupVisitorRatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVisitorRatingVC.swift; sourceTree = "<group>"; };
+		9644927B23FCD14300C12A93 /* VisitorRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorRatingTableViewCell.swift; sourceTree = "<group>"; };
+		9644D07023F80BFF00BBBC52 /* SearchByArea&SpecialityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchByArea&SpecialityVC.swift"; sourceTree = "<group>"; };
+		964EFA8D23FC1F0400035A11 /* SelectedDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDoctorVC.swift; sourceTree = "<group>"; };
+		964EFA8F23FC3E8600035A11 /* SelectedDoctorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDoctorCollectionViewCell.swift; sourceTree = "<group>"; };
 		966D37EB23929B63009E6A43 /* IMMUNITY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMMUNITY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966D37EE23929B63009E6A43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966D37F023929B63009E6A43 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
@@ -70,6 +85,7 @@
 		966D382923999DB4009E6A43 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		966D382B2399AA56009E6A43 /* Text Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text Image.swift"; sourceTree = "<group>"; };
 		966D382D239AA024009E6A43 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		96770F8723FCC23100AB3A15 /* SBCardPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBCardPopupVC.swift; sourceTree = "<group>"; };
 		96A8D18A23F363AF003C3EAB /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		96A8D18C23F3A625003C3EAB /* AboutImmunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutImmunityVC.swift; sourceTree = "<group>"; };
 		96A8D18E23F3ABA0003C3EAB /* API+UpdatePatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+UpdatePatientData.swift"; sourceTree = "<group>"; };
@@ -124,14 +140,15 @@
 		966D37ED23929B63009E6A43 /* IMMUNITY */ = {
 			isa = PBXGroup;
 			children = (
+				96770F8723FCC23100AB3A15 /* SBCardPopupVC.swift */,
+				966D37EE23929B63009E6A43 /* AppDelegate.swift */,
+				966D37F223929B63009E6A43 /* Patient.storyboard */,
 				966D381C23972A82009E6A43 /* Fonts */,
 				966D3816239588E5009E6A43 /* URLS */,
 				966D381323955CBD009E6A43 /* APIs */,
 				966D380C2392BAF0009E6A43 /* Extentions */,
 				966D38082392B97C009E6A43 /* Patient */,
 				966D380323929F5C009E6A43 /* View */,
-				966D37EE23929B63009E6A43 /* AppDelegate.swift */,
-				966D37F223929B63009E6A43 /* Patient.storyboard */,
 				966D37FA23929B65009E6A43 /* LaunchScreen.storyboard */,
 				966D37FD23929B65009E6A43 /* Info.plist */,
 				966D37F523929B63009E6A43 /* IMMUNITY.xcdatamodeld */,
@@ -154,8 +171,8 @@
 		966D38082392B97C009E6A43 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
-				96A8D19023F3B1EB003C3EAB /* Search */,
 				966D38092392B9C2009E6A43 /* Auth */,
+				96A8D19023F3B1EB003C3EAB /* Search */,
 				96AD201423E32A470053657F /* more */,
 			);
 			path = Patient;
@@ -216,6 +233,13 @@
 			isa = PBXGroup;
 			children = (
 				96A8D19123F3B202003C3EAB /* SearchVC.swift */,
+				9644D07023F80BFF00BBBC52 /* SearchByArea&SpecialityVC.swift */,
+				96091CC423FB04B600035A11 /* SearchCritriaVC.swift */,
+				96091CC623FB2A5A00035A11 /* SearchCritriaTableViewCell.swift */,
+				964EFA8D23FC1F0400035A11 /* SelectedDoctorVC.swift */,
+				964EFA8F23FC3E8600035A11 /* SelectedDoctorCollectionViewCell.swift */,
+				9644927923FCC5E200C12A93 /* PopupVisitorRatingVC.swift */,
+				9644927B23FCD14300C12A93 /* VisitorRatingTableViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -324,12 +348,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IMMUNITY/Pods-IMMUNITY-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -366,17 +392,24 @@
 				96B55C4423F2E8A00069AEC5 /* ChangePasswordVC.swift in Sources */,
 				966D38102392BB37009E6A43 /* SignUpVC.swift in Sources */,
 				966D382E239AA024009E6A43 /* Helper.swift in Sources */,
+				9644927A23FCC5E200C12A93 /* PopupVisitorRatingVC.swift in Sources */,
+				96770F8823FCC23100AB3A15 /* SBCardPopupVC.swift in Sources */,
+				96091CC523FB04B600035A11 /* SearchCritriaVC.swift in Sources */,
 				966D37F723929B63009E6A43 /* IMMUNITY.xcdatamodeld in Sources */,
 				96A8D18D23F3A625003C3EAB /* AboutImmunityVC.swift in Sources */,
+				96091CC723FB2A5A00035A11 /* SearchCritriaTableViewCell.swift in Sources */,
 				96AD201623E32A600053657F /* moreVC.swift in Sources */,
 				966D380723929FBF009E6A43 /* RoundedTF.swift in Sources */,
 				966D3818239588F8009E6A43 /* config.swift in Sources */,
 				966D382C2399AA56009E6A43 /* Text Image.swift in Sources */,
 				96A8D18F23F3ABA0003C3EAB /* API+UpdatePatientData.swift in Sources */,
+				964EFA9023FC3E8600035A11 /* SelectedDoctorCollectionViewCell.swift in Sources */,
+				9644D07123F80BFF00BBBC52 /* SearchByArea&SpecialityVC.swift in Sources */,
 				966D380B2392B9E0009E6A43 /* LoginVC.swift in Sources */,
 				96A8D18B23F363AF003C3EAB /* ContactUsVC.swift in Sources */,
 				966D37F123929B63009E6A43 /* FirstVC.swift in Sources */,
 				96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */,
+				9644927C23FCD14300C12A93 /* VisitorRatingTableViewCell.swift in Sources */,
 				966D380E2392BB02009E6A43 /* ShowAlert.swift in Sources */,
 				96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */,
 				966D381523955D57009E6A43 /* API+Auth.swift in Sources */,
@@ -385,6 +418,7 @@
 				966D380523929F76009E6A43 /* RoundedEdges.swift in Sources */,
 				966D37EF23929B63009E6A43 /* AppDelegate.swift in Sources */,
 				966D382A23999DB4009E6A43 /* ResetPasswordVC.swift in Sources */,
+				964EFA8E23FC1F0400035A11 /* SelectedDoctorVC.swift in Sources */,
 				96B55C4223F2DBC40069AEC5 /* UpdateDataVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,7 +576,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.IMMUNITY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -561,7 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Elfakharany.IMMUNITY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

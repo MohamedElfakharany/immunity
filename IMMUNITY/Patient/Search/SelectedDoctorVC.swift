@@ -69,6 +69,11 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.CollectionView.frame.height , height: self.CollectionView.frame.height)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TicketInformationVC") as? TicketInformationVC {
+        self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
     @IBAction func BtnVisOpinionAction(_ sender: Any) {
         

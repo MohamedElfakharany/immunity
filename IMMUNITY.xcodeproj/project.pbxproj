@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		745744703AD262BBD903B09B /* Pods_IMMUNITY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170890E670AA592F629ADED4 /* Pods_IMMUNITY.framework */; };
 		960CE3D723DF8A22001A8818 /* JSON+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CE3D623DF8A22001A8818 /* JSON+Extentions.swift */; };
+		9669B30A23FEC08E0051ED74 /* TicketInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9669B30923FEC08E0051ED74 /* TicketInformationVC.swift */; };
 		966D37EF23929B63009E6A43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D37EE23929B63009E6A43 /* AppDelegate.swift */; };
 		966D37F123929B63009E6A43 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D37F023929B63009E6A43 /* FirstVC.swift */; };
 		966D37F423929B63009E6A43 /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966D37F223929B63009E6A43 /* Patient.storyboard */; };
@@ -47,13 +48,16 @@
 		96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C3F23F2DA3F0069AEC5 /* settingVC.swift */; };
 		96B55C4223F2DBC40069AEC5 /* UpdateDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C4123F2DBC40069AEC5 /* UpdateDataVC.swift */; };
 		96B55C4423F2E8A00069AEC5 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C4323F2E8A00069AEC5 /* ChangePasswordVC.swift */; };
-		96E0A9C323F34FA70027BA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A9C223F34FA70027BA06 /* Assets.xcassets */; };
+		96E0A9C323F34FA70027BA06 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A9C223F34FA70027BA06 /* assets.xcassets */; };
+		96ED723A23FEDAA0009EFA70 /* BookingConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED723923FEDAA0009EFA70 /* BookingConfirmationVC.swift */; };
+		96ED723C23FEDB0F009EFA70 /* MyAppointmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED723B23FEDB0F009EFA70 /* MyAppointmentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		170890E670AA592F629ADED4 /* Pods_IMMUNITY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMMUNITY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		457436457AD0E0E2B8076D61 /* Pods-IMMUNITY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMMUNITY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMMUNITY/Pods-IMMUNITY.debug.xcconfig"; sourceTree = "<group>"; };
 		960CE3D623DF8A22001A8818 /* JSON+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extentions.swift"; sourceTree = "<group>"; };
+		9669B30923FEC08E0051ED74 /* TicketInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInformationVC.swift; sourceTree = "<group>"; };
 		966D37EB23929B63009E6A43 /* IMMUNITY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMMUNITY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966D37EE23929B63009E6A43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966D37F023929B63009E6A43 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
@@ -94,7 +98,9 @@
 		96B55C3F23F2DA3F0069AEC5 /* settingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
 		96B55C4123F2DBC40069AEC5 /* UpdateDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDataVC.swift; sourceTree = "<group>"; };
 		96B55C4323F2E8A00069AEC5 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
-		96E0A9C223F34FA70027BA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96E0A9C223F34FA70027BA06 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		96ED723923FEDAA0009EFA70 /* BookingConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmationVC.swift; sourceTree = "<group>"; };
+		96ED723B23FEDB0F009EFA70 /* MyAppointmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentVC.swift; sourceTree = "<group>"; };
 		E3AAA4A6708A28F3D8F4BDD0 /* Pods-IMMUNITY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMMUNITY.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMMUNITY/Pods-IMMUNITY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +152,7 @@
 				966D37FA23929B65009E6A43 /* LaunchScreen.storyboard */,
 				966D37FD23929B65009E6A43 /* Info.plist */,
 				966D37F523929B63009E6A43 /* IMMUNITY.xcdatamodeld */,
-				96E0A9C223F34FA70027BA06 /* Assets.xcassets */,
+				96E0A9C223F34FA70027BA06 /* assets.xcassets */,
 				966D381C23972A82009E6A43 /* Fonts */,
 				966D3816239588E5009E6A43 /* URLS */,
 				966D381323955CBD009E6A43 /* APIs */,
@@ -174,6 +180,7 @@
 				966D38092392B9C2009E6A43 /* Auth */,
 				96A8D19023F3B1EB003C3EAB /* Search */,
 				96AD201423E32A470053657F /* more */,
+				96ED723B23FEDB0F009EFA70 /* MyAppointmentVC.swift */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -240,6 +247,8 @@
 				96867DF223FDAC3E005CF342 /* SelectedDoctorCollectionViewCell.swift */,
 				96867DE623FD9D09005CF342 /* PopupVisitorRatingVC.swift */,
 				96867DEE23FDAB71005CF342 /* VisitorRatingTableViewCell.swift */,
+				9669B30923FEC08E0051ED74 /* TicketInformationVC.swift */,
+				96ED723923FEDAA0009EFA70 /* BookingConfirmationVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -332,7 +341,7 @@
 				966D37F423929B63009E6A43 /* Patient.storyboard in Resources */,
 				966D382723972AB2009E6A43 /* Cairo-Bold.ttf in Resources */,
 				966D382823972AB2009E6A43 /* Cairo-Black.ttf in Resources */,
-				96E0A9C323F34FA70027BA06 /* Assets.xcassets in Resources */,
+				96E0A9C323F34FA70027BA06 /* assets.xcassets in Resources */,
 				966D382623972AB2009E6A43 /* Cairo-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +412,7 @@
 				96A8D18F23F3ABA0003C3EAB /* API+UpdatePatientData.swift in Sources */,
 				96867DF123FDAC12005CF342 /* SearchCritriaTableViewCell.swift in Sources */,
 				966D380B2392B9E0009E6A43 /* LoginVC.swift in Sources */,
+				96ED723C23FEDB0F009EFA70 /* MyAppointmentVC.swift in Sources */,
 				96A8D18B23F363AF003C3EAB /* ContactUsVC.swift in Sources */,
 				966D37F123929B63009E6A43 /* FirstVC.swift in Sources */,
 				96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */,
@@ -412,8 +422,10 @@
 				96867DEB23FD9D6A005CF342 /* SearchCritriaVC.swift in Sources */,
 				96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */,
 				966D381523955D57009E6A43 /* API+Auth.swift in Sources */,
+				9669B30A23FEC08E0051ED74 /* TicketInformationVC.swift in Sources */,
 				960CE3D723DF8A22001A8818 /* JSON+Extentions.swift in Sources */,
 				966D38122392D4BF009E6A43 /* gradiantColor.swift in Sources */,
+				96ED723A23FEDAA0009EFA70 /* BookingConfirmationVC.swift in Sources */,
 				966D380523929F76009E6A43 /* RoundedEdges.swift in Sources */,
 				966D37EF23929B63009E6A43 /* AppDelegate.swift in Sources */,
 				96867DE923FD9D48005CF342 /* SearchByArea&SpecialityVC.swift in Sources */,

@@ -22,6 +22,9 @@
         <array key="Cairo-SemiBold.ttf">
             <string>Cairo-SemiBold</string>
         </array>
+        <array key="SFUIText.ttf">
+            <string>.SFUIText</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -141,7 +144,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iY-gj-gS6">
-                                <rect key="frame" x="76" y="434" width="223" height="44"/>
+                                <rect key="frame" x="76" y="434" width="223" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,7 +154,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtz-bu-Mfj">
-                                <rect key="frame" x="109" y="499" width="157" height="48"/>
+                                <rect key="frame" x="105" y="487" width="165" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="bnV-BV-fXq"/>
                                 </constraints>
@@ -221,19 +224,19 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="please confirm your mobile number so that we can send you a temporary password , You can reset it any time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yk-lW-AFD">
-                                <rect key="frame" x="38" y="108" width="299" height="150"/>
+                                <rect key="frame" x="38" y="108" width="299" height="93.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpI-o4-zSz">
-                                <rect key="frame" x="20" y="298" width="335" height="38"/>
+                                <rect key="frame" x="20" y="241.33333333333334" width="335" height="24.000000000000028"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKK-ac-Nul">
-                                <rect key="frame" x="40" y="376" width="295" height="40"/>
+                                <rect key="frame" x="40" y="305.33333333333331" width="295" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qKM-uC-TL2"/>
@@ -480,7 +483,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="52.666666666666664"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKS-aa-Iww">
-                                                <rect key="frame" x="30.000000000000007" y="7.3333333333333428" width="70.666666666666686" height="37.666666666666664"/>
+                                                <rect key="frame" x="30.000000000000007" y="14.666666666666655" width="73.666666666666686" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -521,7 +524,7 @@
                                         <rect key="frame" x="0.0" y="67.666666666666657" width="315" height="52.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approval List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ew-dn-xEF">
-                                                <rect key="frame" x="29.999999999999993" y="7.3333333333333428" width="110.33333333333331" height="37.666666666666664"/>
+                                                <rect key="frame" x="29.999999999999993" y="14.333333333333341" width="117.33333333333331" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -555,7 +558,7 @@
                                         <rect key="frame" x="0.0" y="135" width="315" height="52.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmA-j7-uTB">
-                                                <rect key="frame" x="30" y="7.3333333333333144" width="92" height="37.666666666666664"/>
+                                                <rect key="frame" x="29.999999999999993" y="14.666666666666684" width="101.33333333333331" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -592,7 +595,7 @@
                                         <rect key="frame" x="0.0" y="202.66666666666669" width="315" height="52.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWY-KC-X4y">
-                                                <rect key="frame" x="30.000000000000007" y="7.3333333333333144" width="77.666666666666686" height="37.666666666666664"/>
+                                                <rect key="frame" x="30" y="14.333333333333313" width="84" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -631,7 +634,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dq3-pi-cv8">
-                                <rect key="frame" x="50" y="463" width="275" height="52"/>
+                                <rect key="frame" x="50" y="463" width="275" height="37"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -717,10 +720,10 @@
             </objects>
             <point key="canvasLocation" x="1676" y="804.67980295566508"/>
         </scene>
-        <!--Appointments-->
+        <!--MyAppointmentVC-->
         <scene sceneID="ova-vN-hoq">
             <objects>
-                <viewController id="ZMT-fX-6I2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyAppointmentVC" title="MyAppointmentVC" id="ZMT-fX-6I2" customClass="MyAppointmentVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUd-ka-lpl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -777,10 +780,10 @@
                                 <rect key="frame" x="84.333333333333329" y="138" width="206.33333333333337" height="203"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JgX-ch-zoR">
-                                <rect key="frame" x="15" y="401" width="345" height="130"/>
+                                <rect key="frame" x="15" y="401" width="345" height="102"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFy-OQ-o4O">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="36"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Search By Area , Speciality" image="locations-map"/>
@@ -790,7 +793,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-hn-W3n">
-                                        <rect key="frame" x="0.0" y="80" width="345" height="50"/>
+                                        <rect key="frame" x="0.0" y="66" width="345" height="36"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -840,10 +843,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="HEo-0o-LFa">
-                                <rect key="frame" x="50" y="351" width="275" height="154"/>
+                                <rect key="frame" x="50" y="351" width="275" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoy-K3-xXS">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="24"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -854,7 +857,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K2-FH-m5O">
-                                        <rect key="frame" x="0.0" y="97" width="275" height="57"/>
+                                        <rect key="frame" x="0.0" y="80" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="24"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -910,13 +913,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your new password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGD-Yz-jPm">
-                                <rect key="frame" x="50" y="158" width="275" height="35.666666666666657"/>
+                                <rect key="frame" x="50" y="158" width="275" height="44.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="19"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="TUL-9o-si1">
-                                <rect key="frame" x="30" y="243.66666666666666" width="315" height="109.66666666666666"/>
+                                <rect key="frame" x="30" y="252.33333333333334" width="315" height="109.66666666666666"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73f-LA-3wb">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="50.333333333333336"/>
@@ -967,7 +970,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="are-ao-kZr">
-                                <rect key="frame" x="60" y="403.33333333333331" width="255" height="40"/>
+                                <rect key="frame" x="60" y="412" width="255" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ke3-pf-yYG"/>
@@ -1180,13 +1183,13 @@
                                                         <rect key="frame" x="0.0" y="67.333333333333343" width="253" height="57"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   +201001263049" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vg-fV-UcA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="33.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="25"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   CEO Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iv9-tH-6wM">
-                                                                <rect key="frame" x="0.0" y="34" width="253" height="23"/>
+                                                                <rect key="frame" x="0.0" y="33.666666666666657" width="253" height="23.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1230,13 +1233,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="253" height="57.333333333333336"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   ImmunityHealthCare@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FK9-70-qjG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="27"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="26.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Foundation Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytm-24-GxK">
-                                                                <rect key="frame" x="0.0" y="27" width="253" height="30.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="26.666666666666686" width="253" height="30.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1314,13 +1317,13 @@
                                                         <rect key="frame" x="0.0" y="67.333333333333314" width="253" height="57"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Smart Vilage " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckl-Ge-Nfp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="33.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="25"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Head Quarter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-RC-GB6">
-                                                                <rect key="frame" x="0.0" y="34" width="253" height="23"/>
+                                                                <rect key="frame" x="0.0" y="33.666666666666686" width="253" height="23.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1558,11 +1561,11 @@
             </objects>
             <point key="canvasLocation" x="-95.200000000000003" y="1769.7044334975369"/>
         </scene>
-        <!--My Appointments-->
+        <!--Appointments-->
         <scene sceneID="YYS-FO-iJf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pxJ-oG-pee" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Appointments" image="nav-myappointments" id="vyB-r0-ilI"/>
+                    <tabBarItem key="tabBarItem" title="Appointments" image="appointments" id="vyB-r0-ilI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ABC-ie-Nuj">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1581,7 +1584,7 @@
         <scene sceneID="j20-Gp-UJO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Za0-6o-Cu4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Nes-hh-epO"/>
+                    <tabBarItem key="tabBarItem" selectedImage="More" systemItem="more" id="Nes-hh-epO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oyr-Gc-7Ta">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1694,7 +1697,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4lO-K5-0hT">
-                                                            <rect key="frame" x="71.666666666666657" y="90.666666666666671" width="287.33333333333337" height="35.666666666666671"/>
+                                                            <rect key="frame" x="71.666666666666657" y="98.666666666666671" width="287.33333333333337" height="35.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available from Saturday,Nov,20th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o60-Tt-d5H">
                                                                     <rect key="frame" x="0.0" y="0.0" width="287.33333333333331" height="17.666666666666668"/>
@@ -1733,7 +1736,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.96852558851242065" green="0.96868783235549927" blue="0.96850281953811646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="4lO-K5-0hT" firstAttribute="top" secondItem="aDm-xJ-aPb" secondAttribute="bottom" constant="-8" id="0QQ-ay-3g7"/>
+                                                        <constraint firstItem="4lO-K5-0hT" firstAttribute="top" secondItem="aDm-xJ-aPb" secondAttribute="bottom" id="0QQ-ay-3g7"/>
                                                         <constraint firstItem="aDm-xJ-aPb" firstAttribute="top" secondItem="XtT-Hg-P99" secondAttribute="bottom" constant="-8" id="8A4-2I-3us"/>
                                                         <constraint firstItem="8BC-eD-rrE" firstAttribute="height" secondItem="IJY-Xj-XzV" secondAttribute="height" multiplier="0.3" id="D7h-Px-VhT"/>
                                                         <constraint firstItem="8BC-eD-rrE" firstAttribute="centerX" secondItem="IJY-Xj-XzV" secondAttribute="centerX" id="R8Q-Rz-7sz"/>
@@ -1840,19 +1843,19 @@
                                         <rect key="frame" x="137.33333333333334" y="3" width="68.333333333333343" height="53.333333333333336"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DR. Ahmed Mohamed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqU-v0-lxP">
-                                        <rect key="frame" x="0.0" y="56.333333333333321" width="343" height="22.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="56.333333333333329" width="343" height="14"/>
                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="12"/>
                                         <color key="textColor" red="0.30588235289999999" green="0.47843137250000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iterate seamless systems" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDV-Qa-jsV">
-                                        <rect key="frame" x="0.0" y="71" width="343" height="22.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="62.333333333333329" width="343" height="14"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="km9-Le-lqj">
-                                        <rect key="frame" x="85.666666666666671" y="93.666666666666657" width="240.33333333333331" height="35.666666666666657"/>
+                                        <rect key="frame" x="85.666666666666671" y="76.333333333333329" width="240.33333333333331" height="35.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available from Saturday,Nov,20th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGE-Wo-wQr">
                                                 <rect key="frame" x="0.0" y="0.0" width="240.33333333333334" height="17.666666666666668"/>
@@ -1861,7 +1864,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universty" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UX-Xa-yYv">
-                                                <rect key="frame" x="0.0" y="17.666666666666686" width="240.33333333333334" height="18"/>
+                                                <rect key="frame" x="0.0" y="17.666666666666671" width="240.33333333333334" height="18"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="13"/>
                                                 <color key="textColor" red="0.30588235289999999" green="0.47843137250000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1869,7 +1872,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Price : 200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfy-4H-Zi9">
-                                        <rect key="frame" x="260" y="137.33333333333334" width="75" height="20.666666666666657"/>
+                                        <rect key="frame" x="253.33333333333329" y="120" width="81.666666666666657" height="13"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="11"/>
                                         <color key="textColor" red="0.30588235289999999" green="0.47843137250000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1891,14 +1894,13 @@
                                     <constraint firstItem="Rwa-hu-eZm" firstAttribute="top" secondItem="9o0-Vi-sDa" secondAttribute="top" constant="3" id="k8r-4h-Lf0"/>
                                     <constraint firstItem="km9-Le-lqj" firstAttribute="width" secondItem="9o0-Vi-sDa" secondAttribute="width" multiplier="0.7" id="kJm-Uf-wke"/>
                                     <constraint firstItem="Rwa-hu-eZm" firstAttribute="width" secondItem="9o0-Vi-sDa" secondAttribute="width" multiplier="0.2" id="uGy-Fw-ooZ"/>
-                                    <constraint firstItem="HDV-Qa-jsV" firstAttribute="top" secondItem="vqU-v0-lxP" secondAttribute="bottom" constant="-7.9999999999999858" id="uIR-LB-GHm"/>
                                     <constraint firstItem="yfy-4H-Zi9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9o0-Vi-sDa" secondAttribute="leading" constant="20" symbolic="YES" id="uRz-rK-Pmx"/>
                                     <constraint firstItem="Rwa-hu-eZm" firstAttribute="centerX" secondItem="9o0-Vi-sDa" secondAttribute="centerX" id="vmU-S8-Qui"/>
                                     <constraint firstItem="yfy-4H-Zi9" firstAttribute="top" secondItem="km9-Le-lqj" secondAttribute="bottom" constant="8" id="xLh-3I-nmk"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YXO-Km-kpN">
-                                <rect key="frame" x="8" y="266.66666666666669" width="359" height="122"/>
+                                <rect key="frame" x="8" y="256" width="359" height="122"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="6" id="oGq-FA-ucO">
                                     <size key="itemSize" width="106" height="93"/>
@@ -1974,18 +1976,18 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVAILABLE APPOINTMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxH-2M-dJs">
-                                <rect key="frame" x="16" y="222.33333333333334" width="179" height="28.333333333333343"/>
+                                <rect key="frame" x="16" y="222.33333333333334" width="196.66666666666666" height="17.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="doctor like honey ,Puting it on the injured skin make it cold" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su0-xA-23y">
-                                <rect key="frame" x="16" y="449" width="343" height="121.66666666666663"/>
+                                <rect key="frame" x="16" y="427.66666666666669" width="343" height="121.66666666666669"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-JQ-fop">
-                                <rect key="frame" x="75" y="586.66666666666663" width="225" height="48"/>
+                                <rect key="frame" x="75" y="565.33333333333337" width="225" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="19"/>
                                 <color key="tintColor" red="0.96852558850000003" green="0.9686878324" blue="0.96850281949999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1995,7 +1997,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOCTOR INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmt-di-ys8">
-                                <rect key="frame" x="16" y="404.66666666666669" width="343" height="28.333333333333314"/>
+                                <rect key="frame" x="16" y="394" width="343" height="17.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2061,13 +2063,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="295" height="66.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOCTOR DATA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWg-6b-yqq">
-                                        <rect key="frame" x="89" y="15" width="117" height="36"/>
+                                        <rect key="frame" x="82.333333333333329" y="22" width="130.66666666666669" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="19"/>
                                         <color key="textColor" red="0.96852558850000003" green="0.9686878324" blue="0.96850281949999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2I-hk-YwZ">
-                                        <rect key="frame" x="261" y="22" width="16" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2I-hk-YwZ">
+                                        <rect key="frame" x="265" y="22" width="8" height="22"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="btn-cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2089,13 +2091,13 @@
                                 <rect key="frame" x="0.0" y="66.333333333333343" width="295" height="99.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visitor Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYm-d2-5bc">
-                                        <rect key="frame" x="14.666666666666671" y="11.666666666666671" width="118.00000000000001" height="36"/>
+                                        <rect key="frame" x="12.666666666666664" y="18.333333333333343" width="122.33333333333334" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="19"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEi-Bt-8x0" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="13.666666666666671" y="64.333333333333329" width="120.00000000000001" height="20"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEi-Bt-8x0" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="13.666666666666686" y="64.333333333333329" width="120" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="FBq-tq-zPc"/>
@@ -2176,10 +2178,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-jy-fyu">
-                                <rect key="frame" x="0.0" y="165.66666666666666" width="295" height="382.33333333333337"/>
+                                <rect key="frame" x="0.0" y="165.66666666666666" width="295" height="386.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VisitorRatingTableViewCell" rowHeight="85" id="Pa2-SY-MTc" customClass="VisitorRatingTableViewCell" customModule="IMMUNITY" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VisitorRatingTableViewCell" rowHeight="85" id="Pa2-SY-MTc" customClass="VisitorRatingTableViewCell" customModule="IMMUNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="295" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pa2-SY-MTc" id="cvQ-m6-S6R">
@@ -2187,25 +2189,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXL-Dx-sZe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="295" height="84.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="215" height="84.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed Hassan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZQ-cf-boC">
-                                                            <rect key="frame" x="8" y="8" width="132.66666666666666" height="32"/>
+                                                            <rect key="frame" x="8" y="8" width="96.666666666666671" height="20"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                             <color key="textColor" red="0.30588235289999999" green="0.47843137250000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17/1/2018 | 11:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpz-FB-pgN">
-                                                            <rect key="frame" x="8" y="44.666666666666664" width="177" height="31.999999999999993"/>
+                                                            <rect key="frame" x="8" y="56.666666666666657" width="129" height="20"/>
                                                             <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
                                                             <color key="textColor" red="0.30588235289999999" green="0.47843137250000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-shape-outline" translatesAutoresizingMaskIntoConstraints="NO" id="EbU-KN-VrJ">
-                                                            <rect key="frame" x="221.33333333333334" y="12.666666666666668" width="59.000000000000028" height="59.333333333333329"/>
+                                                            <rect key="frame" x="161.33333333333334" y="12.666666666666668" width="43" height="59.333333333333329"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="047-cc-ZAE">
-                                                            <rect key="frame" x="0.0" y="83.666666666666671" width="295" height="1"/>
+                                                            <rect key="frame" x="0.0" y="83.666666666666671" width="215" height="1"/>
                                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="ZdK-wJ-rNL"/>
@@ -2222,8 +2224,10 @@
                                                         <constraint firstItem="NZQ-cf-boC" firstAttribute="leading" secondItem="TXL-Dx-sZe" secondAttribute="leading" constant="8" id="IH4-cv-Ll4"/>
                                                         <constraint firstItem="NZQ-cf-boC" firstAttribute="top" secondItem="TXL-Dx-sZe" secondAttribute="top" constant="8" id="Jw2-pw-vSW"/>
                                                         <constraint firstAttribute="bottom" secondItem="047-cc-ZAE" secondAttribute="bottom" id="WTi-Sc-ai9"/>
+                                                        <constraint firstItem="EbU-KN-VrJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NZQ-cf-boC" secondAttribute="trailing" constant="8" symbolic="YES" id="XHg-Ei-ih4"/>
                                                         <constraint firstItem="Wpz-FB-pgN" firstAttribute="leading" secondItem="TXL-Dx-sZe" secondAttribute="leading" constant="8" id="d0W-Zx-t2O"/>
                                                         <constraint firstItem="047-cc-ZAE" firstAttribute="top" secondItem="Wpz-FB-pgN" secondAttribute="bottom" constant="7" id="h1d-eL-Uta"/>
+                                                        <constraint firstItem="EbU-KN-VrJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wpz-FB-pgN" secondAttribute="trailing" constant="8" symbolic="YES" id="h4v-dt-taH"/>
                                                         <constraint firstItem="NZQ-cf-boC" firstAttribute="width" secondItem="TXL-Dx-sZe" secondAttribute="width" multiplier="0.45" id="mu8-iF-AYs"/>
                                                         <constraint firstItem="047-cc-ZAE" firstAttribute="leading" secondItem="TXL-Dx-sZe" secondAttribute="leading" id="put-Nl-Uti"/>
                                                         <constraint firstItem="Wpz-FB-pgN" firstAttribute="width" secondItem="TXL-Dx-sZe" secondAttribute="width" multiplier="0.6" id="yhd-Uf-0uN"/>
@@ -2232,8 +2236,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="TXL-Dx-sZe" firstAttribute="top" secondItem="cvQ-m6-S6R" secondAttribute="top" id="5td-0X-VKH"/>
+                                                <constraint firstAttribute="trailing" secondItem="TXL-Dx-sZe" secondAttribute="trailing" id="BUf-iX-iUw"/>
                                                 <constraint firstAttribute="bottom" secondItem="TXL-Dx-sZe" secondAttribute="bottom" id="Td1-OP-6Qs"/>
-                                                <constraint firstAttribute="trailing" secondItem="TXL-Dx-sZe" secondAttribute="trailing" id="ryc-iT-xRU"/>
                                                 <constraint firstItem="TXL-Dx-sZe" firstAttribute="leading" secondItem="cvQ-m6-S6R" secondAttribute="leading" id="t6f-TP-3T1"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2244,8 +2248,8 @@
                                     <outlet property="delegate" destination="FNd-OQ-vhE" id="3Ra-Fo-eP6"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An excellentand competent doctor I would recommend hem to You" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-pU-bNs">
-                                <rect key="frame" x="16" y="548" width="263" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An excellent and competent doctor I would recommend hem to You" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-pU-bNs">
+                                <rect key="frame" x="16" y="552.33333333333337" width="263" height="59.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2280,12 +2284,256 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54B-Fn-hbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7175.1999999999998" y="1773.3990147783252"/>
+            <point key="canvasLocation" x="6326" y="2458"/>
+        </scene>
+        <!--Ticket Information-->
+        <scene sceneID="nna-Al-x84">
+            <objects>
+                <viewController storyboardIdentifier="TicketInformationVC" title="Ticket Information" id="28i-Js-HVD" customClass="TicketInformationVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="em6-Iv-G1L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="ecz-MR-dyx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oz9-1L-8lM">
+                                <rect key="frame" x="20" y="74" width="335" height="527.66666666666663"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doctor" translatesAutoresizingMaskIntoConstraints="NO" id="SLk-cZ-71V">
+                                        <rect key="frame" x="134" y="7.9999999999999964" width="67" height="52.666666666666657"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Y4-rj-Qfz">
+                                        <rect key="frame" x="8" y="113.66666666666663" width="319" height="406"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="utb-PN-54H">
+                                                <rect key="frame" x="0.0" y="0.0" width="319" height="89.666666666666671"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmj-TN-xeE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="45"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cairo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRa-lC-E0K">
+                                                        <rect key="frame" x="0.0" y="45" width="319" height="44.666666666666657"/>
+                                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="20"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-fA-u99">
+                                                <rect key="frame" x="0.0" y="105.66666666666666" width="319" height="89.333333333333343"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrZ-dp-vYG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="44.666666666666664"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 L.E" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYO-tU-rwK">
+                                                        <rect key="frame" x="0.0" y="44.666666666666686" width="319" height="44.666666666666657"/>
+                                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="20"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MWG-k8-QwO">
+                                                <rect key="frame" x="0.0" y="211.00000000000003" width="319" height="89.666666666666657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APPOINTMENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GK5-m8-SJi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Januray , 18nd , 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya4-Zf-Nvd">
+                                                        <rect key="frame" x="0.0" y="30" width="319" height="29.666666666666671"/>
+                                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="20"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From 5:00 PM TO 5:20 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq9-5h-TtM">
+                                                        <rect key="frame" x="0.0" y="59.666666666666629" width="319" height="30"/>
+                                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="16"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhy-uM-AsA">
+                                                <rect key="frame" x="0.0" y="316.66666666666663" width="319" height="89.333333333333314"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOCTOR INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qir-le-ueD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="28.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjH-qx-h4e">
+                                                        <rect key="frame" x="0.0" y="28.333333333333314" width="319" height="61"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="13"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DR. Ahmed Mohamed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH3-l3-vvX">
+                                        <rect key="frame" x="112" y="70.666666666666657" width="111" height="16"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="12"/>
+                                        <color key="textColor" red="0.30588235289999999" green="0.47843137250000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iterate seamless systems" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzh-Kv-gJE">
+                                        <rect key="frame" x="103" y="86.666666666666657" width="129" height="27"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SLk-cZ-71V" firstAttribute="centerX" secondItem="Oz9-1L-8lM" secondAttribute="centerX" id="0Q2-yB-tW9"/>
+                                    <constraint firstItem="Pzh-Kv-gJE" firstAttribute="top" secondItem="SLk-cZ-71V" secondAttribute="bottom" constant="26" id="C2I-Uv-1vH"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Y4-rj-Qfz" secondAttribute="trailing" constant="8" id="CyG-YW-UBO"/>
+                                    <constraint firstItem="Pzh-Kv-gJE" firstAttribute="centerX" secondItem="Oz9-1L-8lM" secondAttribute="centerX" id="Md0-GW-F9b"/>
+                                    <constraint firstItem="SLk-cZ-71V" firstAttribute="top" secondItem="Oz9-1L-8lM" secondAttribute="top" constant="8" id="QYh-nI-cml"/>
+                                    <constraint firstItem="gH3-l3-vvX" firstAttribute="centerX" secondItem="Oz9-1L-8lM" secondAttribute="centerX" id="SeM-9s-vaX"/>
+                                    <constraint firstItem="8Y4-rj-Qfz" firstAttribute="leading" secondItem="Oz9-1L-8lM" secondAttribute="leading" constant="8" id="X9F-aq-rAb"/>
+                                    <constraint firstItem="Pzh-Kv-gJE" firstAttribute="top" secondItem="gH3-l3-vvX" secondAttribute="bottom" id="ZFM-jU-3Mb"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Y4-rj-Qfz" secondAttribute="bottom" constant="8" id="ZX2-DR-rFU"/>
+                                    <constraint firstItem="gH3-l3-vvX" firstAttribute="top" secondItem="SLk-cZ-71V" secondAttribute="bottom" constant="10" id="bIm-p1-Qnc"/>
+                                    <constraint firstItem="8Y4-rj-Qfz" firstAttribute="top" secondItem="Pzh-Kv-gJE" secondAttribute="bottom" id="dxc-Fm-6XH"/>
+                                    <constraint firstItem="SLk-cZ-71V" firstAttribute="width" secondItem="Oz9-1L-8lM" secondAttribute="width" multiplier="0.2" id="met-Bt-Lij"/>
+                                    <constraint firstItem="SLk-cZ-71V" firstAttribute="height" secondItem="Oz9-1L-8lM" secondAttribute="height" multiplier="0.1" id="ubs-m4-AAS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETb-TB-FbS">
+                                <rect key="frame" x="84.333333333333329" y="631.66666666666663" width="206.33333333333337" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="19"/>
+                                <color key="tintColor" red="0.96852558850000003" green="0.9686878324" blue="0.96850281949999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Confirm Booking"/>
+                                <connections>
+                                    <action selector="BtnConfirmAction:" destination="28i-Js-HVD" eventType="touchUpInside" id="dLX-AB-WN9"/>
+                                    <action selector="BtnVisOpinionAction:" destination="UU9-Kj-J5Q" eventType="touchUpInside" id="Kgg-Zb-GNa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ecz-MR-dyx" firstAttribute="top" secondItem="em6-Iv-G1L" secondAttribute="top" id="1Ug-5G-ZR1"/>
+                            <constraint firstItem="ETb-TB-FbS" firstAttribute="centerX" secondItem="em6-Iv-G1L" secondAttribute="centerX" id="57i-sQ-ygA"/>
+                            <constraint firstItem="ETb-TB-FbS" firstAttribute="top" secondItem="Oz9-1L-8lM" secondAttribute="bottom" constant="30" id="6of-Lk-Mul"/>
+                            <constraint firstItem="8Y4-rj-Qfz" firstAttribute="height" secondItem="ecz-MR-dyx" secondAttribute="height" multiplier="0.5" id="6yP-3Q-mC6"/>
+                            <constraint firstItem="ecz-MR-dyx" firstAttribute="leading" secondItem="em6-Iv-G1L" secondAttribute="leading" id="Nr1-kB-Z5l"/>
+                            <constraint firstItem="ETb-TB-FbS" firstAttribute="width" secondItem="ecz-MR-dyx" secondAttribute="width" multiplier="0.55" id="VPW-Wr-Ksg"/>
+                            <constraint firstItem="Oz9-1L-8lM" firstAttribute="height" secondItem="ecz-MR-dyx" secondAttribute="height" multiplier="0.65" id="cHf-uY-eoa"/>
+                            <constraint firstItem="Oz9-1L-8lM" firstAttribute="top" secondItem="7wj-Bd-TYP" secondAttribute="top" constant="30" id="oEC-eu-qm5"/>
+                            <constraint firstItem="7wj-Bd-TYP" firstAttribute="trailing" secondItem="Oz9-1L-8lM" secondAttribute="trailing" constant="20" id="qJg-JA-08n"/>
+                            <constraint firstItem="7wj-Bd-TYP" firstAttribute="trailing" secondItem="ecz-MR-dyx" secondAttribute="trailing" id="vAg-VW-OwK"/>
+                            <constraint firstItem="Oz9-1L-8lM" firstAttribute="leading" secondItem="7wj-Bd-TYP" secondAttribute="leading" constant="20" id="xn4-x2-MDu"/>
+                            <constraint firstAttribute="bottom" secondItem="ecz-MR-dyx" secondAttribute="bottom" id="zkR-GQ-aRt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7wj-Bd-TYP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Appointments" id="ZzZ-Fp-TVA"/>
+                    <connections>
+                        <outlet property="BackView" destination="Oz9-1L-8lM" id="OaO-Ci-g3Z"/>
+                        <outlet property="BtnConfirmOutlet" destination="ETb-TB-FbS" id="LhC-Vg-dyI"/>
+                        <outlet property="DocImage" destination="SLk-cZ-71V" id="XTV-y8-FbS"/>
+                        <outlet property="LblDocAddress" destination="mRa-lC-E0K" id="a1E-fq-PpE"/>
+                        <outlet property="LblDocAppintment" destination="Mq9-5h-TtM" id="53r-ZD-G4M"/>
+                        <outlet property="LblDocAppintmentDay" destination="Ya4-Zf-Nvd" id="U2O-YS-O16"/>
+                        <outlet property="LblDocName" destination="gH3-l3-vvX" id="AiC-h6-3rc"/>
+                        <outlet property="LblDocPrice" destination="AYO-tU-rwK" id="M6f-Lk-zCk"/>
+                        <outlet property="LblDocSpeciality" destination="Pzh-Kv-gJE" id="eh3-dR-Smg"/>
+                        <outlet property="TxtviewDocInfo" destination="LjH-qx-h4e" id="2Ib-Vs-iDo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9a-Vt-Ayu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7200.8000000000002" y="1769.7044334975369"/>
+        </scene>
+        <!--BookingConfirmationVC-->
+        <scene sceneID="0hq-3b-GOo">
+            <objects>
+                <viewController storyboardIdentifier="BookingConfirmationVC" title="BookingConfirmationVC" id="NbD-rR-3dY" customClass="BookingConfirmationVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XiF-8y-gfa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="2Q9-yf-wzK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DR.Ahmed Mahmoud Hussien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKH-wg-xi7">
+                                <rect key="frame" x="55" y="338.33333333333331" width="265" height="39.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="21"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uku-Sh-ej9">
+                                <rect key="frame" x="93.666666666666671" y="74.000000000000014" width="187.66666666666663" height="162.33333333333337"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Succcessful" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgS-cx-4dA">
+                                <rect key="frame" x="114.33333333333333" y="276.33333333333331" width="146.66666666666669" height="32"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                <color key="textColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMR-Xj-YYW">
+                                <rect key="frame" x="93.666666666666671" y="448" width="187.66666666666663" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="19"/>
+                                <color key="tintColor" red="0.96852558850000003" green="0.9686878324" blue="0.96850281949999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="My Appointment"/>
+                                <connections>
+                                    <action selector="BtnConfirmAction:" destination="28i-Js-HVD" eventType="touchUpInside" id="Uw0-dP-J16"/>
+                                    <action selector="BtnMyAppointmentAction:" destination="NbD-rR-3dY" eventType="touchUpInside" id="7KI-h0-fzU"/>
+                                    <action selector="BtnVisOpinionAction:" destination="UU9-Kj-J5Q" eventType="touchUpInside" id="22D-FR-9dn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wMR-Xj-YYW" firstAttribute="width" secondItem="2Q9-yf-wzK" secondAttribute="width" multiplier="0.5" id="0Fy-fO-5sU"/>
+                            <constraint firstItem="uKH-wg-xi7" firstAttribute="centerX" secondItem="XiF-8y-gfa" secondAttribute="centerX" id="1Oh-tv-Wk3"/>
+                            <constraint firstItem="2Q9-yf-wzK" firstAttribute="top" secondItem="XiF-8y-gfa" secondAttribute="top" id="1w6-uX-tNb"/>
+                            <constraint firstItem="GgS-cx-4dA" firstAttribute="top" secondItem="uku-Sh-ej9" secondAttribute="bottom" constant="40" id="BhA-KU-dMM"/>
+                            <constraint firstItem="2Q9-yf-wzK" firstAttribute="leading" secondItem="7yc-9q-Hmy" secondAttribute="leading" id="Ce8-Rl-WbG"/>
+                            <constraint firstItem="uku-Sh-ej9" firstAttribute="width" secondItem="2Q9-yf-wzK" secondAttribute="width" multiplier="0.5" id="DPV-2f-n88"/>
+                            <constraint firstItem="GgS-cx-4dA" firstAttribute="centerX" secondItem="XiF-8y-gfa" secondAttribute="centerX" id="Hcw-ER-MEq"/>
+                            <constraint firstItem="uku-Sh-ej9" firstAttribute="top" secondItem="7yc-9q-Hmy" secondAttribute="top" constant="30" id="NhD-7C-S8I"/>
+                            <constraint firstItem="7yc-9q-Hmy" firstAttribute="trailing" secondItem="2Q9-yf-wzK" secondAttribute="trailing" id="Vxq-1z-bWB"/>
+                            <constraint firstItem="wMR-Xj-YYW" firstAttribute="top" secondItem="uKH-wg-xi7" secondAttribute="bottom" constant="70" id="XIF-uA-lNt"/>
+                            <constraint firstItem="uku-Sh-ej9" firstAttribute="centerX" secondItem="XiF-8y-gfa" secondAttribute="centerX" id="Zcx-pa-MMI"/>
+                            <constraint firstItem="wMR-Xj-YYW" firstAttribute="centerX" secondItem="XiF-8y-gfa" secondAttribute="centerX" id="k9A-gX-8Wd"/>
+                            <constraint firstItem="uKH-wg-xi7" firstAttribute="top" secondItem="GgS-cx-4dA" secondAttribute="bottom" constant="30" id="qbU-q0-wjG"/>
+                            <constraint firstItem="uku-Sh-ej9" firstAttribute="height" secondItem="2Q9-yf-wzK" secondAttribute="height" multiplier="0.2" id="tLF-KO-kmM"/>
+                            <constraint firstAttribute="bottom" secondItem="2Q9-yf-wzK" secondAttribute="bottom" id="uGn-IE-bUR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7yc-9q-Hmy"/>
+                    </view>
+                    <connections>
+                        <outlet property="BtnMyAppointmentOutlet" destination="wMR-Xj-YYW" id="boy-su-d1z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vac-Xo-ucb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8053.6000000000004" y="1769.7044334975369"/>
         </scene>
     </scenes>
     <resources>
         <image name="BG" width="800" height="800"/>
-        <image name="Doctor" width="150" height="150"/>
+        <image name="Doctor" width="425" height="425"/>
+        <image name="More" width="1200" height="1200"/>
+        <image name="appointments" width="15" height="15"/>
         <image name="back" width="30" height="20"/>
         <image name="btn-cancel" width="8" height="8"/>
         <image name="eye-show-password" width="18" height="11"/>

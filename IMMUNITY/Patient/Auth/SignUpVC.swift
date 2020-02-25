@@ -46,10 +46,7 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
         backgroundImage.alpha = 0.1
         gradBTNS()
         BackgroundTF()
-        self.navigationController?.navigationBar.setGradientBackground(colors: [
-            UIColor.init(cgColor: #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)).cgColor,
-            UIColor.init(cgColor: #colorLiteral(red: 0.9647058824, green: 0.7960784314, blue: 0.7921568627, alpha: 1)).cgColor
-            ])
+
         iconClick = true
         iconClick2 = true
         
@@ -232,6 +229,13 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
         guard let passwordConfirmation = TxtFieldPasswordConfirmation.text, !passwordConfirmation.isEmpty else {
             let messages = NSLocalizedString("enter your password Confirmation", comment: "hhhh")
             let title = NSLocalizedString("Login Failed", comment: "hhhh")
+            self.showAlert(title: title, message: messages)
+            return
+        }
+        
+        guard  password == passwordConfirmation else {
+            let messages = NSLocalizedString("Password and password confirmation are different", comment: "hhhh")
+            let title = NSLocalizedString("Register Filed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
             return
         }

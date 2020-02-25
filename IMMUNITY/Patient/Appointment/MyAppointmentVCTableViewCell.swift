@@ -1,38 +1,35 @@
 //
-//  SearchCritriaTableViewCell.swift
+//  MyAppointmentVCTableViewCell.swift
 //  IMMUNITY
 //
-//  Created by elfakharany on 2/17/20.
+//  Created by elfakharany on 2/21/20.
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
+
 import UIKit
 
-class SearchCritriaTableViewCell: UITableViewCell {
-    
+class MyAppointmentVCTableViewCell: UITableViewCell {
+
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var DocImage: UIImageView!
     @IBOutlet weak var LblDocName: UILabel!
-    @IBOutlet weak var LblDocRate: UILabel!
     @IBOutlet weak var LblDocSpeciality: UILabel!
-    @IBOutlet weak var LblDocAddress: UILabel!
-    @IBOutlet weak var LblDocPrice: UILabel!
-    @IBOutlet weak var LblDocUniversty: UILabel!
-    @IBOutlet weak var BtnBookNowOutlet: UIButton!
-    
-    
-    var makeReservation: (()->())?
+    @IBOutlet weak var BtnDetectedOutlet: UIButton!
+    @IBOutlet weak var BtnDetailsOutlet: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        
+        
         selectionStyle = .none
         
-        BtnBookNowOutlet.layer.cornerRadius = 10
-        BtnBookNowOutlet.clipsToBounds = true
+        BtnDetectedOutlet.layer.cornerRadius = 10
+        BtnDetectedOutlet.clipsToBounds = true
+        
         BackView.dropShadow(scale: true)
         backgroundView?.dropShadow(scale: true)
         gradBTNS()
-        
     }
     
     func gradBTNS() {
@@ -42,22 +39,25 @@ class SearchCritriaTableViewCell: UITableViewCell {
         // Sign in BTN
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = BtnBookNowOutlet.bounds
+        gradientLayer.frame = BtnDetectedOutlet.bounds
         
         gradientLayer.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
         
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         
-        BtnBookNowOutlet.layer.insertSublayer(gradientLayer, at: 0)
+        BtnDetectedOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        BtnBookNowOutlet.layer.cornerRadius = 10
-        BtnBookNowOutlet.clipsToBounds = true
-    }//EndGrad
+        BtnDetectedOutlet.layer.cornerRadius = 10
+        BtnDetectedOutlet.clipsToBounds = true
+        
+     }
     
-    @IBAction func BtnBookNowAction(_ sender: Any) {
-        makeReservation?()
-        
+    
+    @IBAction func BtnBookNowAction (_ sender : Any) {
+        if let vc = UIStoryboard.init().instantiateViewController(withIdentifier: "AppointmentDetailsVC") as? AppointmentDetailsVC {
+            self.inputViewController?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

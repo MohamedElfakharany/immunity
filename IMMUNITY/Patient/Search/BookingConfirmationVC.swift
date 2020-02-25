@@ -12,6 +12,8 @@ class BookingConfirmationVC: UIViewController {
     
     @IBOutlet weak var BtnMyAppointmentOutlet:UIButton!
     
+    var window: UIWindow?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,9 +43,9 @@ class BookingConfirmationVC: UIViewController {
     }
     
     @IBAction func BtnMyAppointmentAction (_ sender : Any) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "MyAppointmentVC") as? MyAppointmentVC {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVCs") as? TabBarVCs {
+            vc.selectedIndex = 2
             self.present(vc, animated: true, completion: nil)
         }
     }
-    
 }

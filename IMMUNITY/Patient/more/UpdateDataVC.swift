@@ -30,7 +30,6 @@ class UpdateDataVC: UIViewController {
         datePicker.addTarget(self, action: #selector(SignUpVC.dateChanged(datePicker :)), for: .valueChanged)
         TxtfieldDateOfBirth.inputView = datePicker
         
-        backgroundImage.alpha = 0.1
         gradBTNS()
         
     }

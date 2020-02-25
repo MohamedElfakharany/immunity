@@ -25,8 +25,6 @@ class moreVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageBG.alpha = 0.2
-        
         gradBTNS()
         views()
  
@@ -83,6 +81,9 @@ class moreVC: UIViewController {
     @IBAction func BtnSignOutAction(_ sender: Any) {
         Helper.removeAccessToken()
         
+    }
+    @IBAction func BtnApprovalListAction(_ sender: Any) {
+    
     }
     
     

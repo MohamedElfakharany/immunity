@@ -21,8 +21,6 @@ class ChangePasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImage.alpha = 0.1
-        
         gradBTNS()
         
         

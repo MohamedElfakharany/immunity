@@ -29,7 +29,7 @@ class TicketInformationVC: UIViewController {
         BackView.clipsToBounds = true
         BackView.layer.shadowRadius = 4
         BackView.layer.shadowColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        BackView.layer.shadowOpacity = 1
+        BackView.layer.shadowOpacity = 0.1
         
         gradBTNS()
         

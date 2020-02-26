@@ -21,6 +21,11 @@ class PopupVisitorRatingVC: UIViewController ,SBCardPopupContent ,  UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.tableFooterView = UIView()
+        tableView.separatorInset = .zero
+        tableView.contentInset = .zero
+        tableView.separatorStyle = .none
+        
         BackView.layer.cornerRadius = 10
         
     }

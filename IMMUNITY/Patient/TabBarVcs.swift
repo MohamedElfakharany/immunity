@@ -1,14 +1,14 @@
 //
-//  MyAppointmentVC.swift
+//  TabBarVCs.swift
 //  IMMUNITY
 //
-//  Created by elfakharany on 2/20/20.
+//  Created by elfakharany on 2/21/20.
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
 
-class MyAppointmentVC: UIViewController {
+class TabBarVCs: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

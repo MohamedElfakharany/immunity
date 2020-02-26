@@ -30,7 +30,7 @@ class UpdateDataVC: UIViewController {
         datePicker.addTarget(self, action: #selector(SignUpVC.dateChanged(datePicker :)), for: .valueChanged)
         TxtfieldDateOfBirth.inputView = datePicker
         
-        backgroundImage.alpha = 0.1
+        BackgroundTF()
         gradBTNS()
         
     }
@@ -41,6 +41,52 @@ class UpdateDataVC: UIViewController {
         TxtfieldDateOfBirth.text = dateFormatter.string(from: datePicker.date)
         //        view.endEditing(true)
     }
+    
+    func BackgroundTF() {
+        
+        if let myImage = UIImage(named: "user"){
+            TxtfieldFirstName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtfieldFirstName.MakeRoundeEdges(TxtfieldFirstName)
+            TxtfieldFirstName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
+        }
+        
+        TxtfieldCity.MakeRoundeEdges(TxtfieldCity)
+        TxtfieldCity.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
+        
+        if let myImage = UIImage(named: "user"){
+            TxtfieldLastName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtfieldLastName.MakeRoundeEdges(TxtfieldLastName)
+            TxtfieldLastName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
+        }
+        
+        if let myImage = UIImage(named: "phone-call"){
+            TxtfieldMobile.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtfieldMobile.MakeRoundeEdges(TxtfieldMobile)
+            TxtfieldMobile.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+        
+        if let myImage = UIImage(named: "email"){
+            TxtfieldEmail.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtfieldEmail.MakeRoundeEdges(TxtfieldEmail)
+            TxtfieldEmail.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+        
+        
+        if let myImage = UIImage(named: "calendar"){
+            TxtfieldDateOfBirth.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
+            TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+        
+        
+        if let myImage = UIImage(named: "gray-downarrow"){
+            TxtfieldDateOfBirth.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
+            TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
+    }
+    
+    
     func gradBTNS() {
         
         let RightGradientColor = #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)

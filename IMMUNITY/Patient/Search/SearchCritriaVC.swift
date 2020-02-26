@@ -13,27 +13,24 @@ class SearchCritriaVC: UIViewController , UITableViewDelegate , UITableViewDataS
     @IBOutlet weak var TxtViewSpeciality: UITextView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var BackView:UIView!
-    // var doctors = [Doctor]()
     
     var SelectedSpeciality = ""
     var SelectedCity = ""
+    let cellSpacingHeight: CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        tableView.separatorInset = .zero
+        tableView.contentInset = .zero
+        tableView.separatorStyle = .none
         
         self.TxtViewSpeciality.text = SelectedSpeciality
         self.TxtViewCity.text = SelectedCity
+        self.navigationController?.title = ""
         
-        BackView.clipsToBounds = true
-        BackView.layer.cornerRadius = 10
-        if #available(iOS 11.0, *) {
-            BackView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        } else {
-            // Fallback on earlier versions
-            BackView.layer.cornerRadius = 10
-        }
         BackView.dropShadow(scale: true)
         
     }
@@ -53,16 +50,30 @@ class SearchCritriaVC: UIViewController , UITableViewDelegate , UITableViewDataS
             
         }
     }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
 }
 
 extension UIView {
     func dropShadow(scale: Bool = true) {
+        layer.cornerRadius = 15
         layer.masksToBounds = false
-        layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOpacity = 0.8
+        layer.shadowColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        layer.shadowOpacity = 0.4
         layer.shadowOffset = .zero
         layer.shadowRadius = 10
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
+    
 }

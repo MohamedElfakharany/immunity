@@ -20,44 +20,42 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.Signin.center.y += 30
-//        self.SignUP.center.y += 30
-//        self.NotNow.center.y += 30
-//
+        self.Signin.center.y += 20
+        self.SignUP.center.y += 30
+        self.NotNow.center.y += 40
         
-        backgroundImage.alpha = 0.1
         gradBTNS()
-        
+
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        backgroundImage.alpha = 0.0
-//        Signin.alpha = 0.0
-//        SignUP.alpha = 0.0
-//        NotNow.alpha = 0.0
-//        self.Signin.center.y += 30
-//        self.SignUP.center.y += 30
-//        self.NotNow.center.y += 30
-//    }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        UIView.animate(withDuration: 0.5, delay : 0.0, options :[] ,  animations: {
-//            self.backgroundImage.alpha = 1.0
-//        } ,completion : nil)
-//
-//        UIView.animate( withDuration: 1, animations: {
-//
-//            self.Signin.alpha = 1.0
-//            self.Signin.center.y -= 30
-//            self.SignUP.alpha = 1.0
-//            self.SignUP.center.y -= 30
-//            self.NotNow.alpha = 1.0
-//            self.NotNow.center.y -= 30
-//
-//        } ,completion : nil)
-//    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        backgroundImage.alpha = 0.1
+        Signin.alpha = 0.0
+        SignUP.alpha = 0.0
+        NotNow.alpha = 0.0
+        self.Signin.center.y += 20
+        self.SignUP.center.y += 30
+        self.NotNow.center.y += 40
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.5, delay : 0.0, options :[] ,  animations: {
+            self.backgroundImage.alpha = 0.1
+        } ,completion : nil)
+
+        UIView.animate( withDuration: 1, animations: {
+
+            self.Signin.alpha = 1.0
+            self.Signin.center.y -= 20
+            self.SignUP.alpha = 1.0
+            self.SignUP.center.y -= 30
+            self.NotNow.alpha = 1.0
+            self.NotNow.center.y -= 40
+
+        } ,completion : nil)
+    }
     
     
     
@@ -111,6 +109,14 @@ class ViewController: UIViewController {
         NotNow.layer.cornerRadius = 10
         NotNow.clipsToBounds = true
         
+    }
+    
+    
+    @IBAction func BtnNotNowAction (_ sender : Any){
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "TabBarVCs")as? TabBarVCs {
+            vc.selectedIndex = 3
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 
 }

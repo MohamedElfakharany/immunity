@@ -21,10 +21,6 @@ class ResetPasswordVC: UIViewController {
         backgroundImage.alpha = 0.1
         gradBTNS()
         BackgroundTF()
-        self.navigationController?.navigationBar.setGradientBackground(colors: [
-            UIColor.init(cgColor: #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)).cgColor,
-            UIColor.init(cgColor: #colorLiteral(red: 0.9647058824, green: 0.7960784314, blue: 0.7921568627, alpha: 1)).cgColor
-            ])
     }
     
     func BackgroundTF() {

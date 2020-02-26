@@ -79,8 +79,8 @@ class moreVC: UIViewController {
     }//EndGrad
     
     @IBAction func BtnSignOutAction(_ sender: Any) {
-        Helper.removeAccessToken()
         
+            Helper.removeAccessToken()
     }
     @IBAction func BtnApprovalListAction(_ sender: Any) {
     

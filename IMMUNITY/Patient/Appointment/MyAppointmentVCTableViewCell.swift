@@ -19,16 +19,12 @@ class MyAppointmentVCTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        
         selectionStyle = .none
         
         BtnDetectedOutlet.layer.cornerRadius = 10
         BtnDetectedOutlet.clipsToBounds = true
-        
-        BackView.dropShadow(scale: true)
         backgroundView?.dropShadow(scale: true)
+        BackView.dropShadow(scale: true)
         gradBTNS()
     }
     

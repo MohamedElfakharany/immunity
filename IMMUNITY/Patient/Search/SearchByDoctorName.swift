@@ -10,15 +10,18 @@ import UIKit
 
 class SearchByDoctorName: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     
-    @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.TableView.delegate = self
-        self.TableView.dataSource = self
-
-        // Do any additional setup after loading the view, typically from a nib.
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        tableView.tableFooterView = UIView()
+        tableView.separatorInset = .zero
+        tableView.contentInset = .zero
+        tableView.separatorStyle = .none
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +37,13 @@ class SearchByDoctorName: UIViewController ,UITableViewDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookDoctorTableViewCell", for: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectedDoctorVC") as? SelectedDoctorVC{
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
     
 }

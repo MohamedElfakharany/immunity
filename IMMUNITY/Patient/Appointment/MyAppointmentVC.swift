@@ -17,6 +17,11 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.tableFooterView = UIView()
+        tableView.separatorInset = .zero
+        tableView.contentInset = .zero
+        tableView.separatorStyle = .none
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.backgroundView?.backgroundColor = UIColor.clear

@@ -33,8 +33,10 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
         self.CollectionView.layer.shadowRadius = 2
         self.CollectionView.layer.shadowColor = UIColor.gray.cgColor
         self.CollectionView.layer.shadowOpacity = 0.4
-        
+        self.navigationController?.title = ""
+        BackView.dropShadow(scale: true)
         gradBTNS()
+        BackView.dropShadow(scale: true)
         
     }
     func gradBTNS() {

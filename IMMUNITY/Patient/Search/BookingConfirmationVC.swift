@@ -17,7 +17,7 @@ class BookingConfirmationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.navigationController?.title = ""
         gradBTNS()
         
     }

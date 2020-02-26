@@ -16,9 +16,13 @@ class ApprovalListVC: UIViewController , UITableViewDelegate , UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.tableFooterView = UIView()
+        tableView.separatorInset = .zero
+        tableView.contentInset = .zero
+        tableView.separatorStyle = .none
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

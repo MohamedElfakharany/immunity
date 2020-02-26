@@ -15,6 +15,8 @@ class SelectedDoctorCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        BackView.dropShadow(scale: true)
+        
         BackView.layer.cornerRadius = 10
         BackView.clipsToBounds = true
         BackView.layer.shadowRadius = 2

@@ -11,10 +11,11 @@ import UIKit
 class BookDoctorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var BtnOutletBookNow: UIButton!
-    
+    @IBOutlet weak var BackView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        BackView.dropShadow(scale: true)
         gradBTNS()
     }
     

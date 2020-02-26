@@ -16,9 +16,37 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-    gradBTNS()
+
+        self.BtnSearchByAreaOutlet.center.y += 20
+        self.BtnSearchByDoctorNameOutlet.center.y += 30
+        
+        gradBTNS()
+        
+    }
     
-}
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        BtnSearchByAreaOutlet.alpha = 0.0
+        BtnSearchByDoctorNameOutlet.alpha = 0.0
+        self.BtnSearchByAreaOutlet.center.y += 20
+        self.BtnSearchByDoctorNameOutlet.center.y += 30
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.5, delay : 0.0, options :[] ,  animations: {
+        } ,completion : nil)
+        
+        UIView.animate( withDuration: 1, animations: {
+            
+            self.BtnSearchByAreaOutlet.alpha = 1.0
+            self.BtnSearchByAreaOutlet.center.y -= 20
+            self.BtnSearchByDoctorNameOutlet.alpha = 1.0
+            self.BtnSearchByDoctorNameOutlet.center.y -= 30
+            
+        } ,completion : nil)
+    }
+    
 func gradBTNS() {
     
     let RightGradientColor = #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)

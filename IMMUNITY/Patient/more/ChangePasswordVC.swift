@@ -22,8 +22,25 @@ class ChangePasswordVC: UIViewController {
         super.viewDidLoad()
         
         gradBTNS()
+        BackgroundTF()
+        
+    }
+    
+    
+    func BackgroundTF(){
+        
+        if let myImage = UIImage(named: "password"){
+            TxtfieldPassword.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtfieldPassword.MakeRoundeEdges(TxtfieldPassword)
+            TxtfieldPassword.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
         
         
+        if let myImage = UIImage(named: "password"){
+            TxtFieldPasswordConfirmation.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+            TxtFieldPasswordConfirmation.MakeRoundeEdges(TxtFieldPasswordConfirmation)
+            TxtFieldPasswordConfirmation.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        }
     }
     
     func gradBTNS() {

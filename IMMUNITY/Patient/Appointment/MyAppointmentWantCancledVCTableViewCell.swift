@@ -1,33 +1,31 @@
 //
-//  ApprovalListTableViewCell.swift
+//  MyAppointmentWantCancledVCTableViewCell.swift
 //  IMMUNITY
 //
-//  Created by elfakharany on 2/21/20.
+//  Created by elfakharany on 2/29/20.
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
 
-class ApprovalListConfirmTableViewCell: UITableViewCell {
+class MyAppointmentWantCancledVCTableViewCell: UITableViewCell {
+
     @IBOutlet weak var BackView: UIView!
-    @IBOutlet weak var PharmacyImage: UIImageView!
-    @IBOutlet weak var LblPharmacyName: UILabel!
-    @IBOutlet weak var LblPharmacyLocation: UILabel!
-    @IBOutlet weak var BtnConfirmOutlet: UIButton!
-    @IBOutlet weak var BtnRejectOutlet: UIButton!
+    @IBOutlet weak var DocImage: UIImageView!
+    @IBOutlet weak var LblDocName: UILabel!
+    @IBOutlet weak var LblDocSpeciality: UILabel!
+    @IBOutlet weak var BtnDetectedOutlet: UIButton!
+    @IBOutlet weak var BtnCancelOutlet: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         selectionStyle = .none
         
-        BtnRejectOutlet.layer.cornerRadius = 10
-        BtnRejectOutlet.clipsToBounds = true
         
+        BtnCancelOutlet.layer.cornerRadius = 10
+        BtnCancelOutlet.clipsToBounds = true
         BackView.dropShadow(scale: true)
-        backgroundView?.dropShadow(scale: true)
         gradBTNS()
-        
     }
     
     func gradBTNS() {
@@ -37,17 +35,17 @@ class ApprovalListConfirmTableViewCell: UITableViewCell {
         // Sign in BTN
         let gradientLayer = CAGradientLayer()
         
-        gradientLayer.frame = BtnConfirmOutlet.bounds
+        gradientLayer.frame = BtnDetectedOutlet.bounds
         
         gradientLayer.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
         
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         
-        BtnConfirmOutlet.layer.insertSublayer(gradientLayer, at: 0)
+        BtnDetectedOutlet.layer.insertSublayer(gradientLayer, at: 0)
         
-        BtnConfirmOutlet.layer.cornerRadius = 10
-        BtnConfirmOutlet.clipsToBounds = true
+        BtnDetectedOutlet.layer.cornerRadius = 10
+        BtnDetectedOutlet.clipsToBounds = true
         
     }
     

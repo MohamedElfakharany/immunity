@@ -32,6 +32,7 @@ class API_Auth: NSObject {
                     print(error)
                 case . success(let value):
                     print(" login successed ")
+                    
                     print(value)
                     let json = JSON(value)
                     if let api_token =  json["data"]["access_token"].string {
@@ -39,6 +40,7 @@ class API_Auth: NSObject {
                         
                         completion(nil,  true)
                         print ("api_token : \(api_token) ")
+                        
                     }
                 }
         }

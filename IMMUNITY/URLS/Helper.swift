@@ -25,6 +25,13 @@ class Helper: NSObject {
         
     }
     
+    class func saveId (ID : String){
+        let def = UserDefaults.standard
+        def.setValue(ID, forKey: "id")
+        def.synchronize()
+        
+    }
+    
     class func saveAccessToken ( token : String ){
         let def = UserDefaults.standard
         def.setValue(token, forKey: "access_token")

@@ -20,7 +20,7 @@ struct URLs {
     
     static let UpdatePatientPassword = main + "UpdatePatientPassword"
     
-    
+    static let doctorData = main + "doctorData"
     
     
     

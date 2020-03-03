@@ -26,6 +26,9 @@ class UpdateDataVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(SignUpVC.dateChanged(datePicker :)), for: .valueChanged)
         TxtfieldDateOfBirth.inputView = datePicker

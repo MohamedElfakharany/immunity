@@ -42,6 +42,8 @@
 		96867DEF23FDAB71005CF342 /* VisitorRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96867DEE23FDAB71005CF342 /* VisitorRatingTableViewCell.swift */; };
 		96867DF123FDAC12005CF342 /* SearchCritriaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96867DF023FDAC12005CF342 /* SearchCritriaTableViewCell.swift */; };
 		96867DF323FDAC3E005CF342 /* SelectedDoctorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96867DF223FDAC3E005CF342 /* SelectedDoctorCollectionViewCell.swift */; };
+		96960146240AF42300621117 /* MyAppointmentWantCancledVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96960145240AF42300621117 /* MyAppointmentWantCancledVCTableViewCell.swift */; };
+		96960148240AF43B00621117 /* MyAppointmentDidCanceledVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96960147240AF43B00621117 /* MyAppointmentDidCanceledVCTableViewCell.swift */; };
 		9698B66E2403396200DD3B83 /* BookDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698B66C2403395F00DD3B83 /* BookDoctorTableViewCell.swift */; };
 		9698B66F2403396200DD3B83 /* SearchByDoctorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698B66D2403396100DD3B83 /* SearchByDoctorName.swift */; };
 		96A8D18B23F363AF003C3EAB /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D18A23F363AF003C3EAB /* ContactUsVC.swift */; };
@@ -55,6 +57,7 @@
 		96E0A9C323F34FA70027BA06 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E0A9C223F34FA70027BA06 /* assets.xcassets */; };
 		96E9186924045F4600D4A60C /* AppointmentDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9186824045F4600D4A60C /* AppointmentDetailsVC.swift */; };
 		96E9186B240483C600D4A60C /* AppointmentDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9186A240483C600D4A60C /* AppointmentDetailsTableViewCell.swift */; };
+		96ECDBFF240C715F00C29834 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ECDBFE240C715F00C29834 /* Person.swift */; };
 		96ED723A23FEDAA0009EFA70 /* BookingConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED723923FEDAA0009EFA70 /* BookingConfirmationVC.swift */; };
 		96ED723C23FEDB0F009EFA70 /* MyAppointmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED723B23FEDB0F009EFA70 /* MyAppointmentVC.swift */; };
 		96ED723E23FF5362009EFA70 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED723D23FF5362009EFA70 /* FavoritesVC.swift */; };
@@ -101,6 +104,8 @@
 		96867DEE23FDAB71005CF342 /* VisitorRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorRatingTableViewCell.swift; sourceTree = "<group>"; };
 		96867DF023FDAC12005CF342 /* SearchCritriaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCritriaTableViewCell.swift; sourceTree = "<group>"; };
 		96867DF223FDAC3E005CF342 /* SelectedDoctorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDoctorCollectionViewCell.swift; sourceTree = "<group>"; };
+		96960145240AF42300621117 /* MyAppointmentWantCancledVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentWantCancledVCTableViewCell.swift; sourceTree = "<group>"; };
+		96960147240AF43B00621117 /* MyAppointmentDidCanceledVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentDidCanceledVCTableViewCell.swift; sourceTree = "<group>"; };
 		9698B66C2403395F00DD3B83 /* BookDoctorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDoctorTableViewCell.swift; sourceTree = "<group>"; };
 		9698B66D2403396100DD3B83 /* SearchByDoctorName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchByDoctorName.swift; sourceTree = "<group>"; };
 		96A8D18A23F363AF003C3EAB /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 		96E0A9C223F34FA70027BA06 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		96E9186824045F4600D4A60C /* AppointmentDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailsVC.swift; sourceTree = "<group>"; };
 		96E9186A240483C600D4A60C /* AppointmentDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		96ECDBFE240C715F00C29834 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		96ED723923FEDAA0009EFA70 /* BookingConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingConfirmationVC.swift; sourceTree = "<group>"; };
 		96ED723B23FEDB0F009EFA70 /* MyAppointmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentVC.swift; sourceTree = "<group>"; };
 		96ED723D23FF5362009EFA70 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				966D37FD23929B65009E6A43 /* Info.plist */,
 				966D37F523929B63009E6A43 /* IMMUNITY.xcdatamodeld */,
 				96E0A9C223F34FA70027BA06 /* assets.xcassets */,
+				96ECDBFD240C713B00C29834 /* models */,
 				966D381C23972A82009E6A43 /* Fonts */,
 				966D3816239588E5009E6A43 /* URLS */,
 				966D381323955CBD009E6A43 /* APIs */,
@@ -290,11 +297,21 @@
 			path = more;
 			sourceTree = "<group>";
 		};
+		96ECDBFD240C713B00C29834 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				96ECDBFE240C715F00C29834 /* Person.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		96ED7245240007E0009EFA70 /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
 				96ED723B23FEDB0F009EFA70 /* MyAppointmentVC.swift */,
 				96ED72462400080F009EFA70 /* MyAppointmentVCTableViewCell.swift */,
+				96960145240AF42300621117 /* MyAppointmentWantCancledVCTableViewCell.swift */,
+				96960147240AF43B00621117 /* MyAppointmentDidCanceledVCTableViewCell.swift */,
 				96E9186824045F4600D4A60C /* AppointmentDetailsVC.swift */,
 				96E9186A240483C600D4A60C /* AppointmentDetailsTableViewCell.swift */,
 			);
@@ -435,6 +452,7 @@
 			files = (
 				96B55C4423F2E8A00069AEC5 /* ChangePasswordVC.swift in Sources */,
 				966D38102392BB37009E6A43 /* SignUpVC.swift in Sources */,
+				96960148240AF43B00621117 /* MyAppointmentDidCanceledVCTableViewCell.swift in Sources */,
 				966D382E239AA024009E6A43 /* Helper.swift in Sources */,
 				966D37F723929B63009E6A43 /* IMMUNITY.xcdatamodeld in Sources */,
 				96A8D18D23F3A625003C3EAB /* AboutImmunityVC.swift in Sources */,
@@ -456,6 +474,7 @@
 				96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */,
 				96867DEF23FDAB71005CF342 /* VisitorRatingTableViewCell.swift in Sources */,
 				96867DF323FDAC3E005CF342 /* SelectedDoctorCollectionViewCell.swift in Sources */,
+				96ECDBFF240C715F00C29834 /* Person.swift in Sources */,
 				966D380E2392BB02009E6A43 /* ShowAlert.swift in Sources */,
 				96867DEB23FD9D6A005CF342 /* SearchCritriaVC.swift in Sources */,
 				96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */,
@@ -474,6 +493,7 @@
 				96ED72472400080F009EFA70 /* MyAppointmentVCTableViewCell.swift in Sources */,
 				96867DE923FD9D48005CF342 /* SearchByArea&SpecialityVC.swift in Sources */,
 				966D382A23999DB4009E6A43 /* ResetPasswordVC.swift in Sources */,
+				96960146240AF42300621117 /* MyAppointmentWantCancledVCTableViewCell.swift in Sources */,
 				96867DE523FD9CCE005CF342 /* SelectedDoctorVC.swift in Sources */,
 				96B55C4223F2DBC40069AEC5 /* UpdateDataVC.swift in Sources */,
 			);

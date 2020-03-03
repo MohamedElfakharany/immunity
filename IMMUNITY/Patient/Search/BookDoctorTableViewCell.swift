@@ -13,10 +13,13 @@ class BookDoctorTableViewCell: UITableViewCell {
     @IBOutlet weak var BtnOutletBookNow: UIButton!
     @IBOutlet weak var BackView: UIView!
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         
+        selectionStyle = .none
         BackView.dropShadow(scale: true)
         gradBTNS()
+        
     }
     
     func gradBTNS() {

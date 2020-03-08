@@ -21,11 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
                 if let access_token = Helper.getAccessToken() {
                     print("access_token is : \(access_token)")
-                    
-                    let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs") as?TabBarVCs
-                    tab?.selectedIndex = 3
+
+                    let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "SearchByDoctorName") as?SearchByDoctorName
+//                    tab?.selectedIndex = 3
                     window?.rootViewController = tab
                 }
+        
+//        let storyboard = UIStoryboard(name: "Hospital", bundle: nil)
+//
+//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "HFirstVC")
+//
+//        let navigationController = UINavigationController.init(rootViewController: initialViewController)
+//
+//        self.window?.rootViewController = navigationController
+//
         self.window?.makeKeyAndVisible()
         return true
     }

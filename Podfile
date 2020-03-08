@@ -12,4 +12,5 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'IQKeyboardManagerSwift'
 pod 'Cosmos'
+pod 'Kingfisher'
 end

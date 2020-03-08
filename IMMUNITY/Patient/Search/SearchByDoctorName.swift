@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchByDoctorName: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var doc = [SingleDoctor]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +25,37 @@ class SearchByDoctorName: UIViewController ,UITableViewDelegate,UITableViewDataS
         tableView.separatorInset = .zero
         tableView.contentInset = .zero
         tableView.separatorStyle = .none
+    
+        
+        getDoctors()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        tableView.reloadData()
+        
+    }
+    
+    func getDoctors() {
+        
+        let headers: HTTPHeaders = [
+            "APP_KEY": "123456"
+        ]
+        
+        Alamofire.request(URLs.mainDoctors, method: .get, parameters: nil, encoding: URLEncoding.queryString , headers: headers).responseJSON {(response) in
+            do {
+                print (response)
+                let allDoctors = try JSONDecoder().decode(MainDoctors.self, from: response.data!)
+                print(allDoctors)
+            } catch {
+                
+            }
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return doc.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -35,8 +65,12 @@ class SearchByDoctorName: UIViewController ,UITableViewDelegate,UITableViewDataS
         return 20
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookDoctorTableViewCell", for: indexPath)
-        return cell
+        if let cell  = tableView.dequeueReusableCell(withIdentifier: "BookDoctorTableViewCell", for: indexPath) as? BookDoctorTableViewCell {
+            cell.configureCell(user: doc[indexPath.row])
+            return cell
+        }else {
+        return BookDoctorTableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

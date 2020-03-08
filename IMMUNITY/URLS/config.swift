@@ -10,19 +10,19 @@ import Foundation
 
 struct URLs {
     
-    static let main = "https://medicalsupport.website/api/person/"
+    static let mainPatient = "https://medicalsupport.website/api/person/"
+    static let mainDoctors = "https://medicalsupport.website/api/doctors"
+    static let mainImage = "https://medicalsupport.website"
     
-    static let login = main + "login"
+    static let login = mainPatient + "login"
     
-    static let register = main + "register"
+    static let register = mainPatient + "register"
     
-    static let UpdatePatientData = main + "UpdatePatientData"
+    static let UpdatePatientData = mainPatient + "UpdatePatientData"
     
-    static let UpdatePatientPassword = main + "UpdatePatientPassword"
+    static let UpdatePatientPassword = mainPatient + "UpdatePatientPassword"
     
-    static let doctorData = main + "doctorData"
-    
-    
+    static let doctorsAll = mainDoctors + ""
     
     
 }

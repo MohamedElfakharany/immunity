@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uSo-dJ-NyF">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-SemiBold.ttf">
+            <string>Cairo-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--FirstVC-->
+        <scene sceneID="15n-lW-9by">
+            <objects>
+                <viewController storyboardIdentifier="HFirstVC" id="SgF-0n-ubd" customClass="HFirstVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ivi-eX-0g7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="Gs8-6I-WWY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="n8d-Er-0bv">
+                                <rect key="frame" x="28" y="162.33333333333334" width="319" height="365.33333333333326"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrp-za-GHB">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="61"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                        <state key="normal" title="Hospital/Clinic Definition">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="wcK-Oj-BHT" kind="show" id="od0-GP-Qr9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-0R-Z8I">
+                                        <rect key="frame" x="0.0" y="76" width="319" height="61.333333333333343"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                        <state key="normal" title="Create Doctor">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="xd4-fi-Yxp" kind="show" id="TX9-aw-mQV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWp-T6-pI5">
+                                        <rect key="frame" x="0.0" y="152.33333333333334" width="319" height="61"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                        <state key="normal" title="Edit/Delete Doctor">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enQ-gy-NBR">
+                                        <rect key="frame" x="0.0" y="228.33333333333337" width="319" height="61"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                        <state key="normal" title="Define Working Times">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1n-Fb-LXx">
+                                        <rect key="frame" x="0.0" y="304.33333333333337" width="319" height="61"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                        <state key="normal" title="View/Edit Define Working Times">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-4Q-0wC">
+                                <rect key="frame" x="112.66666666666669" y="542.66666666666663" width="150" height="46"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.4549019608" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnActionSignOut:" destination="SgF-0n-ubd" eventType="touchUpInside" id="r1L-eE-mXW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5tm-gq-HJZ" firstAttribute="trailing" secondItem="Gs8-6I-WWY" secondAttribute="trailing" id="0KK-cu-ps2"/>
+                            <constraint firstItem="AR1-4Q-0wC" firstAttribute="width" secondItem="Gs8-6I-WWY" secondAttribute="width" multiplier="0.4" id="ABZ-uo-dZD"/>
+                            <constraint firstItem="AR1-4Q-0wC" firstAttribute="centerX" secondItem="Ivi-eX-0g7" secondAttribute="centerX" id="DLY-mS-gbv"/>
+                            <constraint firstItem="AR1-4Q-0wC" firstAttribute="top" secondItem="n8d-Er-0bv" secondAttribute="bottom" constant="15" id="LSg-3M-gz7"/>
+                            <constraint firstItem="Gs8-6I-WWY" firstAttribute="leading" secondItem="5tm-gq-HJZ" secondAttribute="leading" id="MZa-g1-JYo"/>
+                            <constraint firstItem="n8d-Er-0bv" firstAttribute="centerX" secondItem="Ivi-eX-0g7" secondAttribute="centerX" id="ZyV-Jl-FVX"/>
+                            <constraint firstItem="Gs8-6I-WWY" firstAttribute="top" secondItem="Ivi-eX-0g7" secondAttribute="top" id="cRN-Zo-xbs"/>
+                            <constraint firstItem="n8d-Er-0bv" firstAttribute="width" secondItem="Ivi-eX-0g7" secondAttribute="width" multiplier="0.85" id="eAS-eJ-F1U"/>
+                            <constraint firstItem="n8d-Er-0bv" firstAttribute="height" secondItem="Ivi-eX-0g7" secondAttribute="height" multiplier="0.45" id="f3y-s4-5aO"/>
+                            <constraint firstAttribute="bottom" secondItem="Gs8-6I-WWY" secondAttribute="bottom" id="fF9-sC-JbO"/>
+                            <constraint firstItem="n8d-Er-0bv" firstAttribute="centerY" secondItem="Ivi-eX-0g7" secondAttribute="centerY" multiplier="0.85" id="xbL-ut-Nnj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5tm-gq-HJZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lue-px-IJY"/>
+                    <connections>
+                        <outlet property="BtnOutletCreateDoctor" destination="Qgj-0R-Z8I" id="P7V-Gt-fRW"/>
+                        <outlet property="BtnOutletDefineWorkingTimes" destination="enQ-gy-NBR" id="fBv-wH-yI6"/>
+                        <outlet property="BtnOutletEditDeleteDoctor" destination="dWp-T6-pI5" id="blX-oS-veb"/>
+                        <outlet property="BtnOutletHospitalClinicDefinition" destination="vrp-za-GHB" id="l5P-ih-G3y"/>
+                        <outlet property="BtnOutletSignOut" destination="AR1-4Q-0wC" id="lWD-jt-NDM"/>
+                        <outlet property="BtnOutletViewEditDefineWorkingTimes" destination="G1n-Fb-LXx" id="cTq-vj-MTx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iy6-Q7-1u5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317.5999999999999" y="272.66009852216752"/>
+        </scene>
+        <!--Clinic DefinitionVC-->
+        <scene sceneID="OVX-3M-I9P">
+            <objects>
+                <viewController id="wcK-Oj-BHT" customClass="HClinicDefinitionVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KYh-XU-d48">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="ea1-QD-NB0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K9t-wI-B4B">
+                                <rect key="frame" x="28" y="142" width="319" height="406"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hospital Name" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="23x-YY-rYX">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="45.333333333333336"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hospital Address" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="pim-eG-FrO">
+                                        <rect key="frame" x="0.0" y="60.333333333333343" width="319" height="45"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="znJ-wc-HTQ">
+                                        <rect key="frame" x="0.0" y="120.3333333333333" width="319" height="45.333333333333329"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail Address" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="G8p-qe-f7i">
+                                        <rect key="frame" x="0.0" y="180.66666666666669" width="319" height="45"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hospital Web Site" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-SW-6fp">
+                                        <rect key="frame" x="0.0" y="240.66666666666669" width="319" height="45"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hospital Phone Number" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="FMv-rE-W8Q">
+                                        <rect key="frame" x="0.0" y="300.66666666666669" width="319" height="45.333333333333314"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Hospital Speciality" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="B6B-yW-Sf3">
+                                        <rect key="frame" x="0.0" y="361" width="319" height="45"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExV-Qi-PVh">
+                                <rect key="frame" x="112.66666666666669" y="563" width="150" height="46"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.4549019608" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnActionSignOut:" destination="wcK-Oj-BHT" eventType="touchUpInside" id="drV-Hd-Ibg"/>
+                                    <action selector="BtnSaveAction:" destination="wcK-Oj-BHT" eventType="touchUpInside" id="lDl-dx-vEx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ea1-QD-NB0" firstAttribute="top" secondItem="KYh-XU-d48" secondAttribute="top" id="4yX-5X-pHq"/>
+                            <constraint firstItem="K9t-wI-B4B" firstAttribute="centerX" secondItem="KYh-XU-d48" secondAttribute="centerX" id="O8h-DA-GdH"/>
+                            <constraint firstItem="ExV-Qi-PVh" firstAttribute="top" secondItem="K9t-wI-B4B" secondAttribute="bottom" constant="15" id="SAJ-fZ-nhz"/>
+                            <constraint firstItem="K9t-wI-B4B" firstAttribute="width" secondItem="KYh-XU-d48" secondAttribute="width" multiplier="0.85" id="T1k-8a-km7"/>
+                            <constraint firstItem="K9t-wI-B4B" firstAttribute="height" secondItem="KYh-XU-d48" secondAttribute="height" multiplier="0.5" id="ZUp-Fw-qku"/>
+                            <constraint firstAttribute="bottom" secondItem="ea1-QD-NB0" secondAttribute="bottom" id="gQ1-22-7Bn"/>
+                            <constraint firstItem="HWN-0i-S3u" firstAttribute="trailing" secondItem="ea1-QD-NB0" secondAttribute="trailing" id="hbC-QJ-ZL3"/>
+                            <constraint firstItem="ea1-QD-NB0" firstAttribute="leading" secondItem="HWN-0i-S3u" secondAttribute="leading" id="kMs-88-7Oi"/>
+                            <constraint firstItem="K9t-wI-B4B" firstAttribute="centerY" secondItem="KYh-XU-d48" secondAttribute="centerY" multiplier="0.85" id="kdI-9R-mra"/>
+                            <constraint firstItem="ExV-Qi-PVh" firstAttribute="width" secondItem="ea1-QD-NB0" secondAttribute="width" multiplier="0.4" id="orC-lE-67S"/>
+                            <constraint firstItem="ExV-Qi-PVh" firstAttribute="centerX" secondItem="KYh-XU-d48" secondAttribute="centerX" id="u6W-Sx-PD7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HWN-0i-S3u"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gQF-Lg-ail"/>
+                    <connections>
+                        <outlet property="BtnSaveOutlet" destination="ExV-Qi-PVh" id="aEc-0a-102"/>
+                        <outlet property="TxtFieldCity" destination="znJ-wc-HTQ" id="jcI-w5-tES"/>
+                        <outlet property="TxtFieldHospitalAddress" destination="pim-eG-FrO" id="JV0-LK-fOx"/>
+                        <outlet property="TxtFieldHospitalEmail" destination="G8p-qe-f7i" id="fHV-rd-6f1"/>
+                        <outlet property="TxtFieldHospitalMobile" destination="FMv-rE-W8Q" id="X3v-ph-ADX"/>
+                        <outlet property="TxtFieldHospitalName" destination="23x-YY-rYX" id="VM9-PE-U6Z"/>
+                        <outlet property="TxtFieldHospitalSpeciality" destination="B6B-yW-Sf3" id="NhB-a1-xts"/>
+                        <outlet property="TxtFieldHospitalWebSite" destination="9Yc-SW-6fp" id="nL5-xZ-va2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGJ-XG-38l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="-559"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yco-Dn-8jM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uSo-dJ-NyF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="clt-x5-GU4">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SgF-0n-ubd" kind="relationship" relationship="rootViewController" id="lox-dl-2s5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Brz-4g-GI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373.60000000000002" y="272.66009852216752"/>
+        </scene>
+        <!--Create DoctorVC-->
+        <scene sceneID="2kZ-YO-mqe">
+            <objects>
+                <viewController id="xd4-fi-Yxp" customClass="HCreateDoctorVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D3K-nO-Z6K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="CiU-bO-4G8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="i5T-3Y-ku8">
+                                <rect key="frame" x="28" y="162.33333333333334" width="319" height="365.33333333333326"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Speciality" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jdA-f5-Bq9">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="48.333333333333336"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Doctor Name" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="kUv-yC-Hdt">
+                                        <rect key="frame" x="0.0" y="63.333333333333314" width="319" height="48.666666666666657"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-nr-3LY">
+                                        <rect key="frame" x="0.0" y="126.99999999999996" width="319" height="48.333333333333329"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail Address" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="RCx-0e-fkR">
+                                        <rect key="frame" x="0.0" y="190.33333333333334" width="319" height="48.333333333333343"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="85x-s1-49d">
+                                        <rect key="frame" x="0.0" y="253.66666666666666" width="319" height="48.333333333333343"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password Confirmation" textAlignment="center" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="CnT-FJ-Dpx">
+                                        <rect key="frame" x="0.0" y="317" width="319" height="48.333333333333314"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="690-mE-BPd">
+                                <rect key="frame" x="28" y="542.66666666666663" width="319" height="46"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.4549019608" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="18"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CiU-bO-4G8" secondAttribute="bottom" id="4VY-eK-hPA"/>
+                            <constraint firstItem="i5T-3Y-ku8" firstAttribute="centerX" secondItem="D3K-nO-Z6K" secondAttribute="centerX" id="Knx-Xk-SDV"/>
+                            <constraint firstItem="690-mE-BPd" firstAttribute="top" secondItem="i5T-3Y-ku8" secondAttribute="bottom" constant="15" id="We5-Ze-bBr"/>
+                            <constraint firstItem="h3c-LK-AQY" firstAttribute="trailing" secondItem="CiU-bO-4G8" secondAttribute="trailing" id="ZT1-rV-781"/>
+                            <constraint firstItem="i5T-3Y-ku8" firstAttribute="width" secondItem="D3K-nO-Z6K" secondAttribute="width" multiplier="0.85" id="cQt-u2-fUy"/>
+                            <constraint firstItem="CiU-bO-4G8" firstAttribute="leading" secondItem="h3c-LK-AQY" secondAttribute="leading" id="cay-Ye-7I0"/>
+                            <constraint firstItem="690-mE-BPd" firstAttribute="leading" secondItem="i5T-3Y-ku8" secondAttribute="leading" id="ddp-6s-bjf"/>
+                            <constraint firstItem="CiU-bO-4G8" firstAttribute="top" secondItem="D3K-nO-Z6K" secondAttribute="top" id="sYo-Vq-AOp"/>
+                            <constraint firstItem="690-mE-BPd" firstAttribute="trailing" secondItem="i5T-3Y-ku8" secondAttribute="trailing" id="szf-Wc-4SB"/>
+                            <constraint firstItem="i5T-3Y-ku8" firstAttribute="centerY" secondItem="D3K-nO-Z6K" secondAttribute="centerY" multiplier="0.85" id="w4B-RB-8qs"/>
+                            <constraint firstItem="i5T-3Y-ku8" firstAttribute="height" secondItem="D3K-nO-Z6K" secondAttribute="height" multiplier="0.45" id="yPA-Xw-61y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h3c-LK-AQY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IGu-vN-VBL"/>
+                    <connections>
+                        <outlet property="BtnOutletSave" destination="690-mE-BPd" id="Qd2-L8-Ya8"/>
+                        <outlet property="PasswordConfirmationTextField" destination="CnT-FJ-Dpx" id="7tJ-7R-fvu"/>
+                        <outlet property="PasswordTextField" destination="85x-s1-49d" id="ld6-ca-MwI"/>
+                        <outlet property="doctorNameTextField" destination="kUv-yC-Hdt" id="ft1-40-9OK"/>
+                        <outlet property="emailTextField" destination="RCx-0e-fkR" id="2Rr-3l-Ghi"/>
+                        <outlet property="mobileNumberTextField" destination="Biq-nr-3LY" id="FVy-mr-pxV"/>
+                        <outlet property="specialityTextField" destination="jdA-f5-Bq9" id="X5r-IS-0kg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sG-Tr-hJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2377" y="273"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BG" width="800" height="800"/>
+    </resources>
+</document>

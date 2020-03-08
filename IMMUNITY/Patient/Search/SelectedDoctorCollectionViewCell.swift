@@ -9,6 +9,7 @@ import UIKit
 
 class SelectedDoctorCollectionViewCell: UICollectionViewCell {
     
+    
     @IBOutlet weak var LblDay: UILabel!
     @IBOutlet weak var LblDate: UILabel!
     @IBOutlet weak var BackView: UIView!

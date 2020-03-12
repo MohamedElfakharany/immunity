@@ -12,11 +12,10 @@ class SearchCritriaTableViewCell: UITableViewCell {
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var DocImage: UIImageView!
     @IBOutlet weak var LblDocName: UILabel!
-    @IBOutlet weak var LblDocRate: UILabel!
     @IBOutlet weak var LblDocSpeciality: UILabel!
     @IBOutlet weak var LblDocAddress: UILabel!
     @IBOutlet weak var LblDocPrice: UILabel!
-    @IBOutlet weak var LblDocUniversty: UILabel!
+    @IBOutlet weak var LblDocRate: UILabel!
     @IBOutlet weak var BtnBookNowOutlet: UIButton!
     
     
@@ -35,6 +34,22 @@ class SearchCritriaTableViewCell: UITableViewCell {
         
     }
     
+    func configureCell (user : SingleDoctor){
+        LblDocName.text = "DR. \(user.firstName ?? "") \(user.lastName ?? "")"
+        LblDocSpeciality.text = user.specialities
+        LblDocAddress.text = user.city
+        LblDocRate.text = "Doctor rate : \(user.rate ?? "")"
+        LblDocPrice.text = "Book price : \(user.fees ?? "") LE"
+        
+        let urlWithoutEncoding = "\(user.image!)"
+        let encodedLink = urlWithoutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let encodedURL = NSURL(string: encodedLink!)! as URL
+        DocImage.kf.indicatorType = .activity
+        
+        if let url = URL(string: "\(encodedURL)") {
+            self.DocImage.kf.setImage(with: url)
+        }
+    }
     func gradBTNS() {
         
         let RightGradientColor = #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)

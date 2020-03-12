@@ -3,6 +3,9 @@ PODS:
   - Cosmos (19.0.3)
   - IQKeyboardManagerSwift (6.4.1)
   - Kingfisher (5.7.0)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -10,6 +13,7 @@ DEPENDENCIES:
   - Cosmos
   - IQKeyboardManagerSwift
   - Kingfisher
+  - NVActivityIndicatorView
   - SwiftyJSON
 
 SPEC REPOS:
@@ -18,6 +22,7 @@ SPEC REPOS:
     - Cosmos
     - IQKeyboardManagerSwift
     - Kingfisher
+    - NVActivityIndicatorView
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -25,8 +30,9 @@ SPEC CHECKSUMS:
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
   IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 69d6ba4ff1cbbf0f90ccb3d86a3d100b2835bbae
+PODFILE CHECKSUM: 2cb147386ea2b3bfd39389d6cd170a14232210d3
 
 COCOAPODS: 1.5.2

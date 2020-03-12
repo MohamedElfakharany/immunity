@@ -6,16 +6,22 @@
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 import UIKit
+import Alamofire
+import Kingfisher
+import NVActivityIndicatorView
 
-class SearchCritriaVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
+class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSource, NVActivityIndicatorViewable{
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    private var doc : [SingleDoctor] = [SingleDoctor]()
     @IBOutlet weak var TxtViewCity: UITextView!
     @IBOutlet weak var TxtViewSpeciality: UITextView!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var BackView:UIView!
     
-    var SelectedSpeciality = ""
-    var SelectedCity = ""
+    var SelectedSpeciality = "leverage 24/365 infomediaries"
+    var SelectedCity = "ismailia"
     let cellSpacingHeight: CGFloat = 20
     
     override func viewDidLoad() {
@@ -32,16 +38,89 @@ class SearchCritriaVC: UIViewController , UITableViewDelegate , UITableViewDataS
         self.navigationController?.title = ""
         
         BackView.dropShadow(scale: true)
+        doctorsHandleRefresh()
+        getDoctors()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        tableView.reloadData()
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+    func doctorsHandleRefresh() {
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        
+        DoctorAPI.allDoctors { (error, networkSuccess, codeSucess, doc) in
+            if networkSuccess {
+                if codeSucess {
+                    if let docs = doc{
+                        self.doc = docs.data ?? []
+                        print("zzzz\(docs)")
+                        self.tableView.reloadData()
+                        self.tableView.endUpdates()
+                        self.stopAnimating()
+                    }else {
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error doctors")
+                    }
+                    
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Favorite", message: "There is no doctors")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "Network", message: "Check your network connection")
+            }
+        }
+        
     }
     
+    func getDoctors() {
+        
+        let parameters = [
+            
+            "city": SelectedCity,
+            "specialities" : SelectedSpeciality
+        ]
+        
+        let headers: HTTPHeaders = [
+            "APP_KEY": "123456"
+        ]
+        
+        Alamofire.request(URLs.mainDoctors, method: .get, parameters: parameters as Parameters, encoding: URLEncoding.queryString , headers: headers).responseJSON {(response) in
+            do {
+                print (response)
+                let allDoctors = try JSONDecoder().decode(MainDoctors.self, from: response.data!)
+                print(allDoctors)
+            } catch {
+                
+            }
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return doc.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 193
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCritriaTableViewCell", for: indexPath)
-        return cell
+        if let cell  = tableView.dequeueReusableCell(withIdentifier: "SearchCritriaTableViewCell", for: indexPath) as? SearchCritriaTableViewCell {
+            cell.configureCell(user: doc[indexPath.row])
+            //            print ("table view after cell for row at")
+            
+            return cell
+        }else {
+            return SearchCritriaTableViewCell()
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -51,17 +130,6 @@ class SearchCritriaVC: UIViewController , UITableViewDelegate , UITableViewDataS
         }
     }
     
-    // Set the spacing between sections
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
-    }
-    
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        return headerView
-    }
 }
 
 extension UIView {

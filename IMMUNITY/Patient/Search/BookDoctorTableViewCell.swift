@@ -16,7 +16,7 @@ class BookDoctorTableViewCell: UITableViewCell {
     @IBOutlet weak var LblDocSpeciality: UILabel!
     @IBOutlet weak var LblDocAddress: UILabel!
     @IBOutlet weak var LblDocPrice: UILabel!
-    @IBOutlet weak var LblDocUniversty: UILabel!
+    @IBOutlet weak var LblDocRate: UILabel!
     @IBOutlet weak var BtnOutletBookNow: UIButton!
     @IBOutlet weak var BackView: UIView!
     override func awakeFromNib() {
@@ -30,11 +30,11 @@ class BookDoctorTableViewCell: UITableViewCell {
     }
     
     func configureCell (user : SingleDoctor){
-        LblDocName.text = "\(String(describing: user.firstName)) \(String(describing: user.lastName))"
+        LblDocName.text = "DR. \(user.firstName ?? "") \(user.lastName ?? "")"
         LblDocSpeciality.text = user.specialities
         LblDocAddress.text = user.city
-        LblDocUniversty.text = "Doctor rate : \(String(describing: user.rate))"
-        LblDocPrice.text = "Book price : \(String(describing: user.fees)) LE"
+        LblDocRate.text = "Doctor rate : \(user.rate ?? "")"
+        LblDocPrice.text = "Book price : \(user.fees ?? "") LE"
         
         let urlWithoutEncoding = "\(user.image!)"
         let encodedLink = urlWithoutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
@@ -43,9 +43,7 @@ class BookDoctorTableViewCell: UITableViewCell {
         
         if let url = URL(string: "\(encodedURL)") {
             self.DocImage.kf.setImage(with: url)
-            
         }
-            
     }
     
     func gradBTNS() {

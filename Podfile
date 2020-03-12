@@ -13,4 +13,5 @@ pod 'SwiftyJSON'
 pod 'IQKeyboardManagerSwift'
 pod 'Cosmos'
 pod 'Kingfisher'
+pod 'NVActivityIndicatorView'
 end

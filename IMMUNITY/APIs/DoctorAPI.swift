@@ -11,7 +11,7 @@ import Alamofire
 
 class DoctorAPI: NSObject {
     
-    class func allProducts(completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :MainDoctors?)-> Void){
+    class func allDoctors(completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :MainDoctors?)-> Void){
         
         let headers  = [
             "APP_KEY" : "123456"
@@ -30,7 +30,7 @@ class DoctorAPI: NSObject {
                 do{
                     print(response)
                     let showDoctors = try JSONDecoder().decode(MainDoctors.self, from: response.data!)
-                    completion(nil,false,false,showDoctors)
+                    completion(nil,true,true,showDoctors)
                     
                 }catch{
                     print("error")

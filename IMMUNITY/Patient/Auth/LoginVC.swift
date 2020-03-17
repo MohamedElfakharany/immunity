@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
+import NVActivityIndicatorView
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, NVActivityIndicatorViewable {
     
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -78,12 +78,17 @@ class LoginVC: UIViewController {
             
         }
         
+        startAnimating(CGSize(width: 45, height: 45),message: "Loading",type: .ballSpinFadeLoader,color: .orange,textColor: .white)
+        
         API_Auth.login(email: email, password: password) { (error: Error?, success: Bool) in
             if success {
+                self.stopAnimating()
                 print("login done")
             }
             else{
+                self.stopAnimating()
                 print("login failed")
+                self.showAlert(title: "Network", message: "Check your network comnnection")
             }
         }
         

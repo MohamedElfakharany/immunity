@@ -17,12 +17,23 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var tableView: UITableView!
     
     
+    fileprivate var activityIndicator: LoadMoreActivityIndicator!
+    
     var docArray : [SingleDoctor] = [SingleDoctor]()
     var searching = false
     var selectedDoc : [SingleDoctor] = [SingleDoctor]()
+    var choosedDoctor : [SingleDoctor] = [SingleDoctor]()
+    
+    lazy var Refresher : UIRefreshControl = {
+        let Refresher = UIRefreshControl()
+        Refresher.addTarget(self, action: #selector(getDoctors), for: .valueChanged)
+        return Refresher
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.DocNameSearch.showsCancelButton = false
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -32,6 +43,7 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
         tableView.separatorInset = .zero
         tableView.contentInset = .zero
         tableView.separatorStyle = .none
+        tableView.addSubview(Refresher)
         
         doctorsHandleRefresh()
         getDoctors()
@@ -67,12 +79,14 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
             }else {
                 self.stopAnimating()
                 self.showAlert(title: "Network", message: "Check your network connection")
+                
             }
         }
         
     }
     
-    func getDoctors() {
+    @objc func getDoctors() {
+        self.Refresher.endRefreshing()
         
         let headers: HTTPHeaders = [
             "APP_KEY": "123456"
@@ -86,9 +100,9 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
             } catch {
                 
             }
-            
         }
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
@@ -121,8 +135,65 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectedDoctorVC") as? SelectedDoctorVC{
-            self.navigationController?.pushViewController(vc, animated: true)
             
+            if let ticketInformation = self.storyboard?.instantiateViewController(withIdentifier: "TicketInformationVC")as? TicketInformationVC {
+                
+                if let bookinginformation = self.storyboard?.instantiateViewController(withIdentifier: "BookingConfirmationVC") as? BookingConfirmationVC {
+            
+                    if searching {
+                        
+                        vc.Name = "DR. \(selectedDoc[indexPath.row].firstName ?? "") \(selectedDoc[indexPath.row].lastName ?? "") "
+                        vc.Speciality = "\(selectedDoc[indexPath.row].specialities ?? "")"
+                        vc.Address = "\(selectedDoc[indexPath.row].city ?? "")"
+                        vc.Rate = "Doctor rate : \(selectedDoc[indexPath.row].rate ?? "")"
+                        vc.Price = "price : \(selectedDoc[indexPath.row].fees ?? "")"
+                        vc.Info = "\(selectedDoc[indexPath.row].info ?? "")"
+                        
+                        ticketInformation.Name = "DR. \(selectedDoc[indexPath.row].firstName ?? "") \(selectedDoc[indexPath.row].lastName ?? "") "
+                        ticketInformation.Speciality = "\(selectedDoc[indexPath.row].specialities ?? "")"
+                        ticketInformation.Address = "\(selectedDoc[indexPath.row].city ?? "")"
+                        ticketInformation.Rate = "Doctor rate : \(selectedDoc[indexPath.row].rate ?? "")"
+                        ticketInformation.Price = "price : \(selectedDoc[indexPath.row].fees ?? "")"
+                        ticketInformation.Info = "\(selectedDoc[indexPath.row].info ?? "")"
+                        
+                        bookinginformation.Name = "DR. \(selectedDoc[indexPath.row].firstName ?? "") \(selectedDoc[indexPath.row].lastName ?? "") "
+                        
+                        let urlWithOutEncoding = "\(selectedDoc[indexPath.row].image ?? "")"
+                        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+                        let encodedURL = NSURL(string: encodedLink!)! as URL
+                        vc.docImage.kf.indicatorType = .activity
+                        if let url = URL(string: "\(encodedURL)"){
+                            vc.docImage.kf.setImage(with: url)
+                        }
+                    }else {
+                        vc.Name = "DR. \(docArray[indexPath.row].firstName ?? "") \(docArray[indexPath.row].lastName ?? "") "
+                        vc.Speciality = "\(docArray[indexPath.row].specialities ?? "")"
+                        vc.Address = "\(docArray[indexPath.row].city ?? "")"
+                        vc.Rate = "Doctor rate : \(docArray[indexPath.row].rate ?? "")"
+                        vc.Price = "price : \(docArray[indexPath.row].fees ?? "")"
+                        vc.Info = "\(docArray[indexPath.row].info ?? "")"
+                        
+                        ticketInformation.Name = "DR. \(docArray[indexPath.row].firstName ?? "") \(docArray[indexPath.row].lastName ?? "") "
+                        ticketInformation.Speciality = "\(docArray[indexPath.row].specialities ?? "")"
+                        ticketInformation.Address = "\(docArray[indexPath.row].city ?? "")"
+                        ticketInformation.Rate = "Doctor rate : \(docArray[indexPath.row].rate ?? "")"
+                        ticketInformation.Price = "price : \(docArray[indexPath.row].fees ?? "")"
+                        ticketInformation.Info = "\(docArray[indexPath.row].info ?? "")"
+                        
+                        bookinginformation.Name = "DR. \(docArray[indexPath.row].firstName ?? "") \(docArray[indexPath.row].lastName ?? "") "
+                        
+                        let urlWithOutEncoding = "\(docArray[indexPath.row].image ?? "")"
+                        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+                        let encodedURL = NSURL(string: encodedLink!)! as URL
+                        vc.docImage.kf.indicatorType = .activity
+                        vc.docImage.kf.setImage(with: encodedURL)
+    //                    vc.DocImage.kf.indicatorType = .activity
+                    }
+                }
+            }
+               
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -143,10 +214,12 @@ extension searchByDocNameVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchBar.text == "" {
+            self.DocNameSearch.showsCancelButton = false
             searching = false
             print ("not typing")
             self.tableView.reloadData()
         } else {
+            self.DocNameSearch.showsCancelButton = true
             print("typing")
             searching = true
             selectedDoc.removeAll()
@@ -166,7 +239,7 @@ extension searchByDocNameVC: UISearchBarDelegate {
         
         let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes , for: .normal)
-        
+        self.DocNameSearch.showsCancelButton = false
         searching = false
         searchBar.text = ""
         tableView.reloadData()

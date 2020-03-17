@@ -20,8 +20,25 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnVisOpinionOutlet: UIButton!
     
+    var docImage = UIImageView()
+    var Name = ""
+    var Speciality = ""
+    var Address = ""
+    var Price = ""
+    var Rate = ""
+    var Info = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LblDocName.text = Name
+        LblDocSpeciality.text = Speciality
+        LblDocAddress.text = Address
+        LblDocPrice.text = Price
+        LblDocUniversty.text = Rate
+        TxtviewDocInfo.text = Info
+        
+        
         
         //cell back view
         BackView.layer.cornerRadius = 10

@@ -11,11 +11,15 @@ import UIKit
 class BookingConfirmationVC: UIViewController {
     
     @IBOutlet weak var BtnMyAppointmentOutlet:UIButton!
+    @IBOutlet weak var LblDocName: UILabel!
     
     var window: UIWindow?
+    var Name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.LblDocName.text = Name
         
         self.navigationController?.title = ""
         gradBTNS()

@@ -42,11 +42,24 @@ class API_Auth: NSObject {
                         print ("api_token : \(api_token) ")
                         
                     }
+                    
+                    if let FirstName = json["data"]["first_name"].string, let LastName = json["data"]["last_name"].string , let DateOfBirth = json["data"]["date_of_birth"].string , let Email = json["data"]["email"].string , let Phone = json["data"]["phone"].string , let City = json ["data"]["city"].string {
+                        
+                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City )
+                        print("Patient Data firstName : \(FirstName) ")
+                        print("Patient Data lastName : \(LastName) ")
+                        print("Patient Data dateOfBirth : \(DateOfBirth) ")
+                        print("Patient Data email : \(Email) ")
+                        print("Patient Data phone : \(Phone) ")
+                        print("Patient Data city : \(City) ")
+                        
+                    }
+                    
                 }
         }
     }
     
-    class func register (first_name : String,last_name : String, email : String , password : String , phone : String, city : String,  completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
+    class func register (first_name : String,last_name : String, email : String , password : String , phone : String, city : String, gander: String , date_of_birth : String,  completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
         
         let url = URLs.register
         
@@ -56,8 +69,10 @@ class API_Auth: NSObject {
             "email" :  email ,
             "password" : password,
             "phone":phone,
-            "city":city
-        ]
+            "city":city,
+            "gander": gander,
+            "date_of_birth": date_of_birth
+            ] 
         let headers = [
             "APP_KEY" : "123456"
         ]
@@ -69,7 +84,7 @@ class API_Auth: NSObject {
                 case .failure(let error):
                     completion(error ,  false)
                     print(error)
-                    print("register failed")
+                    print("register failed from request")
                 case . success(let value):
                     print("register successed")
                     let json = JSON(value)

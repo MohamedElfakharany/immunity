@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
+import NVActivityIndicatorView
 
-class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
+class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource,NVActivityIndicatorViewable {
     
     var datePicker = UIDatePicker()
     var pickerView = UIPickerView()
-    var genders = ["Male","Female"]
+    var genders = ["MALE","FEMALE"]
     var iconClick : Bool!
     var iconClick2 : Bool!
     
@@ -54,7 +54,7 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
     
     @objc func dateChanged(datePicker : UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         TxtfieldDateOfBirth.text = dateFormatter.string(from: datePicker.date)
 //        view.endEditing(true)
     }
@@ -190,6 +190,8 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
     
     @IBAction func BtnActSignin(_ sender: Any) {
         
+        startAnimating(CGSize(width: 45, height: 45),message: "Loading",type: .ballSpinFadeLoader,color: .orange,textColor: .white)
+        
         guard let FirstName = TxtfieldFirstName.text, !FirstName.isEmpty else {
             let messages = NSLocalizedString("enter your First Name", comment: "hhhh")
             let title = NSLocalizedString("Login Failed", comment: "hhhh")
@@ -201,14 +203,6 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
             let messages = NSLocalizedString("enter your First Name", comment: "hhhh")
             let title = NSLocalizedString("Login Failed", comment: "hhhh")
             self.showAlert(title: title, message: messages)
-            return
-        }
-        
-        guard let Phone = TxtfieldMobile.text,!Phone.isEmpty else {
-            let messages = NSLocalizedString("enter Your Mobile Number", comment: "please")
-            let title = NSLocalizedString("Login Failed", comment: "please")
-            self.showAlert(title: title, message: messages)
-            
             return
         }
         
@@ -240,6 +234,14 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
             return
         }
         
+        guard let Phone = TxtfieldMobile.text,!Phone.isEmpty else {
+            let messages = NSLocalizedString("enter Your Mobile Number", comment: "please")
+            let title = NSLocalizedString("Login Failed", comment: "please")
+            self.showAlert(title: title, message: messages)
+            
+            return
+        }
+        
         guard let City = TxtfieldMobile.text,!City.isEmpty else {
             let messages = NSLocalizedString("enter Your Mobile Number", comment: "please")
             let title = NSLocalizedString("Login Failed", comment: "please")
@@ -262,22 +264,23 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource {
             return
         }
  
+        if password == passwordConfirmation {
         
-        API_Auth.register(first_name: FirstName, last_name: LastName, email: Email, password: password, phone: Phone, city: City) { (error :Error?, success :Bool) in
-            if success {
-                print("Register Done")
-            }
-            else{
-                print("register failed")
+            API_Auth.register(first_name: FirstName, last_name: LastName, email: Email, password: password, phone: Phone, city: City, gander: Gender, date_of_birth: DateOfBirth ) { (error :Error?, success :Bool) in
+                if success {
+                    self.stopAnimating()
+                    print("Register Done")
+                }
+                else{
+                    self.stopAnimating()
+                    self.showAlert(title: "Network", message: "Check your network connection")
+                    print("register failed")
+                    print(error ?? "there is no errors")
+                }
             }
         }
-        
-        
-        
-        
     }
     
-
     @IBAction func BtnBack (_ sender : Any){
         dismiss(animated: true, completion:     nil)
     }

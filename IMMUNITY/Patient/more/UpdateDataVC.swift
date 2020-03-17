@@ -36,11 +36,43 @@ class UpdateDataVC: UIViewController {
         BackgroundTF()
         gradBTNS()
         
+        if let FirstName = Helper.getPatientFirstName(){
+            self.TxtfieldFirstName.placeholder = FirstName
+            print(FirstName)
+        }
+        
+        if let LastName = Helper.getPatientLastName(){
+            self.TxtfieldLastName.placeholder = LastName
+            print(LastName)
+        }
+        
+        if let Email = Helper.getPatientEmail(){
+            self.TxtfieldEmail.placeholder = Email
+            print(Email)
+        }
+        
+        if let Phone = Helper.getPatientPhone(){
+            self.TxtfieldMobile.placeholder = Phone
+            print(Phone)
+        }
+        
+        if let City = Helper.getPatientCity(){
+            self.TxtfieldCity.placeholder = City
+            print(City)
+        }
+        
+        if let DateOfBirth = Helper.getPatientDateOfBirth(){
+            self.TxtfieldDateOfBirth.placeholder = DateOfBirth
+            print(DateOfBirth)
+        }
+        
+        
     }
+    
 
     @objc func dateChanged(datePicker : UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "yyyy/MM/dd"
         TxtfieldDateOfBirth.text = dateFormatter.string(from: datePicker.date)
         //        view.endEditing(true)
     }

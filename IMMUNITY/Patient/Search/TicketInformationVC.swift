@@ -16,13 +16,29 @@ class TicketInformationVC: UIViewController {
     @IBOutlet weak var LblDocSpeciality: UILabel!
     @IBOutlet weak var LblDocAddress: UILabel!
     @IBOutlet weak var LblDocPrice: UILabel!
+    @IBOutlet weak var LblDocUniversty: UILabel!
     @IBOutlet weak var LblDocAppintmentDay: UILabel!
     @IBOutlet weak var LblDocAppintment: UILabel!
     @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnConfirmOutlet: UIButton!
     
+    var docImage = UIImageView()
+    var Name = ""
+    var Speciality = ""
+    var Address = ""
+    var Price = ""
+    var Rate = ""
+    var Info = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LblDocName.text = Name
+        LblDocSpeciality.text = Speciality
+        LblDocAddress.text = Address
+        LblDocPrice.text = Price
+        LblDocUniversty.text = Rate
+        TxtviewDocInfo.text = Info
         
         //cell back view
         BackView.layer.cornerRadius = 20

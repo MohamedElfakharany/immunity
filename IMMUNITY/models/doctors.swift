@@ -62,7 +62,8 @@ struct Links: Codable {
 
 // MARK: - Meta
 struct Meta: Codable {
-    var currentPage, from, lastPage: Int?
+    var currentPage, lastPage: Int?
+    var from:Int?
     var path: String?
     var perPage, to, total: Int?
     

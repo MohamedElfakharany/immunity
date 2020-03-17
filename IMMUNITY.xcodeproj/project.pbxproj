@@ -68,6 +68,7 @@
 		96ED723E23FF5362009EFA70 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED723D23FF5362009EFA70 /* FavoritesVC.swift */; };
 		96ED724423FF5988009EFA70 /* TabBarVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED724323FF5988009EFA70 /* TabBarVCs.swift */; };
 		96ED72472400080F009EFA70 /* MyAppointmentVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ED72462400080F009EFA70 /* MyAppointmentVCTableViewCell.swift */; };
+		96FEF8E9241C95E7003D574F /* loadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEF8E8241C95E7003D574F /* loadMore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		96ED723D23FF5362009EFA70 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		96ED724323FF5988009EFA70 /* TabBarVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVCs.swift; sourceTree = "<group>"; };
 		96ED72462400080F009EFA70 /* MyAppointmentVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentVCTableViewCell.swift; sourceTree = "<group>"; };
+		96FEF8E8241C95E7003D574F /* loadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadMore.swift; sourceTree = "<group>"; };
 		E3AAA4A6708A28F3D8F4BDD0 /* Pods-IMMUNITY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMMUNITY.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMMUNITY/Pods-IMMUNITY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +208,7 @@
 				966D380623929FBF009E6A43 /* RoundedTF.swift */,
 				966D38112392D4BF009E6A43 /* gradiantColor.swift */,
 				966D382B2399AA56009E6A43 /* Text Image.swift */,
+				96FEF8E8241C95E7003D574F /* loadMore.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				966D380E2392BB02009E6A43 /* ShowAlert.swift in Sources */,
 				96867DEB23FD9D6A005CF342 /* SearchCritriaVC.swift in Sources */,
 				96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */,
+				96FEF8E9241C95E7003D574F /* loadMore.swift in Sources */,
 				966D381523955D57009E6A43 /* API+Auth.swift in Sources */,
 				96E9186924045F4600D4A60C /* AppointmentDetailsVC.swift in Sources */,
 				9669B30A23FEC08E0051ED74 /* TicketInformationVC.swift in Sources */,

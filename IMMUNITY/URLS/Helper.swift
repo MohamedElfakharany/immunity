@@ -40,6 +40,70 @@ class Helper: NSObject {
         RestartApp()
     }
     
+    class func SavePatientData (firstName : String ,lastName : String , dateOfBirth : String , email:String , phone : String , city : String){
+        let defFirstName = UserDefaults.standard
+        defFirstName.setValue(firstName, forKey: "first_name")
+        defFirstName.synchronize()
+        
+        let defLastName = UserDefaults.standard
+        defLastName.setValue(lastName, forKey: "last_name")
+        defLastName.synchronize()
+        
+        let defDateOfBirth = UserDefaults.standard
+        defDateOfBirth.setValue(dateOfBirth, forKey: "date_of_birth")
+        defDateOfBirth.synchronize()
+        
+        let DefEmail = UserDefaults.standard
+        DefEmail.setValue(email, forKey: "email")
+        DefEmail.synchronize()
+        
+        let defPhone = UserDefaults.standard
+        defPhone.setValue(phone, forKey: "phone")
+        defPhone.synchronize()
+        
+        let defCity = UserDefaults.standard
+        defCity.setValue(city, forKey: "city")
+        defCity.synchronize()
+        
+    }
+    
+    
+    class func getPatientFirstName () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "first_name") as? String?)!
+        
+    }
+    
+    class func getPatientLastName () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "last_name")  as? String?)!
+        
+    }
+    
+    class func getPatientDateOfBirth () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "date_of_birth")  as? String?)!
+        
+    }
+    
+    class func getPatientEmail () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "email")  as? String?)!
+        
+    }
+    
+    class func getPatientPhone () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "phone")  as? String?)!
+        
+    }
+    
+    class func getPatientCity () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "city")  as? String?)!
+        
+    }
+    
     class func getAccessToken () -> String?{
         let def = UserDefaults.standard
         return (def.object(forKey: "access_token")  as? String?)!

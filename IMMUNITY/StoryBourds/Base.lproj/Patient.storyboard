@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0L7-a0-pfJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,7 +30,7 @@
         <!--IMMUNITY-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="FirstVC" id="BYZ-38-t0r" customClass="ViewController" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstVC" id="BYZ-38-t0r" customClass="FirstVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -621,6 +621,7 @@
                         <outlet property="ContactUsView" destination="96F-Ah-VRs" id="txM-Is-dqN"/>
                         <outlet property="SettingView" destination="Qrj-pl-VtR" id="Ce2-Qo-k0n"/>
                         <outlet property="imageBG" destination="WKW-At-nb3" id="riV-BU-tNz"/>
+                        <outlet property="stackView" destination="SpA-ko-DqY" id="6xl-sv-ibN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQz-iM-vax" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -662,12 +663,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Za0-6o-Cu4" kind="relationship" relationship="viewControllers" id="96Y-0p-R5q"/>
-                        <segue destination="Wcf-NG-9Bk" kind="relationship" relationship="viewControllers" id="0f2-tE-wYv"/>
-                        <segue destination="pxJ-oG-pee" kind="relationship" relationship="viewControllers" id="FLM-FV-0kz"/>
-                        <segue destination="S6W-T0-3kk" kind="relationship" relationship="viewControllers" id="wii-D6-eQ6"/>
+                        <segue destination="S6W-T0-3kk" kind="relationship" relationship="viewControllers" id="Zf7-8t-kqv"/>
+                        <segue destination="Wcf-NG-9Bk" kind="relationship" relationship="viewControllers" id="uVK-QY-5gj"/>
+                        <segue destination="pxJ-oG-pee" kind="relationship" relationship="viewControllers" id="mkd-Fk-yUG"/>
+                        <segue destination="Za0-6o-Cu4" kind="relationship" relationship="viewControllers" id="jMM-oF-7tw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ov3-Bv-0xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1038,22 +1041,22 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ghq-zD-FMY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="112" height="200"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detection Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="QwK-dL-mpy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="112" height="66.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="66.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="IFj-5q-rsc">
-                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="112" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="90.333333333333329" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="HKt-ZS-8SA">
-                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="112" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="90.333333333333329" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1061,22 +1064,22 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rTi-fn-5EC">
-                                                        <rect key="frame" x="112.00000000000001" y="0.0" width="48.666666666666671" height="200"/>
+                                                        <rect key="frame" x="90.333333333333329" y="0.0" width="38.999999999999986" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="035" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="wdk-R2-0OB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="66.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="39" height="66.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112233" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="GDb-7B-Kx7">
-                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="48.666666666666664" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="39" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="432" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ao7-db-ZCF">
-                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="48.666666666666664" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="39" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1084,22 +1087,22 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kHJ-CA-9Vy">
-                                                        <rect key="frame" x="160.66666666666666" y="0.0" width="108.99999999999997" height="200"/>
+                                                        <rect key="frame" x="129.33333333333334" y="0.0" width="88" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Detection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="hjk-E6-IIy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="66.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="88" height="66.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ndu-KU-5Xq">
-                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="109" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="88" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Statues " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="6Pg-4p-fCs">
-                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="109" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="88" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1107,22 +1110,22 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="axb-tU-szV">
-                                                        <rect key="frame" x="269.66666666666669" y="0.0" width="73.333333333333314" height="200"/>
+                                                        <rect key="frame" x="217.33333333333334" y="0.0" width="125.66666666666666" height="200"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Sep , 2018" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="R9t-Tw-LaE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="73.333333333333329" height="66.666666666666671"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="66.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr.Ahmed Hassan Ahmed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="anM-Z7-1Z3">
-                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="73.333333333333329" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="66.666666666666657" width="125.66666666666667" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ngK-ZN-ZR3">
-                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="73.333333333333329" height="66.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="133.33333333333334" width="125.66666666666667" height="66.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1350,7 +1353,7 @@
         <!--Search-->
         <scene sceneID="XL0-rs-Wv3">
             <objects>
-                <viewController id="xat-G8-Vgs" customClass="SearchVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Search" id="xat-G8-Vgs" customClass="SearchVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jrf-sr-XKd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2098,11 +2101,12 @@
         <scene sceneID="XHd-a4-ilv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S6W-T0-3kk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="search" id="eax-IT-gUT"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="" systemItem="search" id="eax-IT-gUT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IpY-wi-WXm">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2117,7 +2121,7 @@
         <scene sceneID="2g4-Gv-GNd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wcf-NG-9Bk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="G0K-cr-XMk"/>
+                    <tabBarItem key="tabBarItem" tag="2" systemItem="favorites" id="G0K-cr-XMk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IVa-DC-ECt">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -2136,11 +2140,12 @@
         <scene sceneID="YYS-FO-iJf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pxJ-oG-pee" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Appointments" image="appointments" id="vyB-r0-ilI"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Appointments" image="appointments" id="vyB-r0-ilI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ABC-ie-Nuj">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -2155,11 +2160,12 @@
         <scene sceneID="j20-Gp-UJO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Za0-6o-Cu4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="More" systemItem="more" id="Nes-hh-epO"/>
+                    <tabBarItem key="tabBarItem" tag="1" selectedImage="More" systemItem="more" id="Nes-hh-epO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oyr-Gc-7Ta">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -3265,6 +3271,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VGy-n8-lam">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.93333333330000001" green="0.52941176469999995" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

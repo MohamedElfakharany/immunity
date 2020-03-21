@@ -9,6 +9,9 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+
+
+
 class API_Auth: NSObject {
     
     class func login ( email : String , password : String , completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
@@ -20,10 +23,13 @@ class API_Auth: NSObject {
             "password" : password
         ]
         let headers = [
-            "APP_KEY" : "123456"
+            "APP_KEY" : "123456",
+            "Accept" : "application/json",
+            "Content-Type" : "application/json"
+            
         ]
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
-            .responseJSON { response in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+            .responseJSON() { response in
                 
                 switch response.result{
                 case .failure(let error):
@@ -46,12 +52,15 @@ class API_Auth: NSObject {
                     if let FirstName = json["data"]["first_name"].string, let LastName = json["data"]["last_name"].string , let DateOfBirth = json["data"]["date_of_birth"].string , let Email = json["data"]["email"].string , let Phone = json["data"]["phone"].string , let City = json ["data"]["city"].string {
                         
                         Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City )
+                        
+                        completion( nil , true)
                         print("Patient Data firstName : \(FirstName) ")
                         print("Patient Data lastName : \(LastName) ")
                         print("Patient Data dateOfBirth : \(DateOfBirth) ")
                         print("Patient Data email : \(Email) ")
                         print("Patient Data phone : \(Phone) ")
                         print("Patient Data city : \(City) ")
+                        
                         
                     }
                     
@@ -74,19 +83,26 @@ class API_Auth: NSObject {
             "date_of_birth": date_of_birth
             ] 
         let headers = [
-            "APP_KEY" : "123456"
+            "APP_KEY" : "123456",
+            "Accept" : "application/json",
+            "Content-Type" : "application/json"
         ]
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
-            .validate (statusCode: 200..<300)
-            .responseJSON { response in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+//            .validate (statusCode: 200..<300)
+            
+            .responseString { response in
                 
                 switch response.result{
+                    
                 case .failure(let error):
                     completion(error ,  false)
                     print(error)
                     print("register failed from request")
+                    print(url)
+                    print(parameters)
                 case . success(let value):
                     print("register successed")
+                    print(value)
                     let json = JSON(value)
                     if let api_token = json["data"]["access_token"].string {
                         
@@ -95,6 +111,24 @@ class API_Auth: NSObject {
                         completion(nil,  true)
                         print ("api_token : \(api_token) ")
                     }
+                    
+                    if let FirstName = json["data"]["first_name"].string,
+                        let LastName = json["data"]["last_name"].string ,
+                        let DateOfBirth = json["data"]["date_of_birth"].string ,
+                        let Email = json["data"]["email"].string ,
+                        let Phone = json["data"]["phone"].string ,
+                        let City = json ["data"]["city"].string {
+                        
+                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City )
+                        print("Patient Data firstName : \(FirstName) ")
+                        print("Patient Data lastName : \(LastName) ")
+                        print("Patient Data dateOfBirth : \(DateOfBirth) ")
+                        print("Patient Data email : \(Email) ")
+                        print("Patient Data phone : \(Phone) ")
+                        print("Patient Data city : \(City) ")
+                        
+                    }
+                    
                 }
         }
     }

@@ -79,46 +79,26 @@ class UpdateDataVC: UIViewController {
     
     func BackgroundTF() {
         
-        if let myImage = UIImage(named: "user"){
-            TxtfieldFirstName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtfieldFirstName.MakeRoundeEdges(TxtfieldFirstName)
-            TxtfieldFirstName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
-        }
+        TxtfieldFirstName.MakeRoundeEdges(TxtfieldFirstName)
+        TxtfieldFirstName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
         
         TxtfieldCity.MakeRoundeEdges(TxtfieldCity)
         TxtfieldCity.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
         
-        if let myImage = UIImage(named: "user"){
-            TxtfieldLastName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtfieldLastName.MakeRoundeEdges(TxtfieldLastName)
-            TxtfieldLastName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
-        }
-        
-        if let myImage = UIImage(named: "phone-call"){
-            TxtfieldMobile.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtfieldMobile.MakeRoundeEdges(TxtfieldMobile)
-            TxtfieldMobile.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
-        
-        if let myImage = UIImage(named: "email"){
-            TxtfieldEmail.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtfieldEmail.MakeRoundeEdges(TxtfieldEmail)
-            TxtfieldEmail.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
-        
-        
-        if let myImage = UIImage(named: "calendar"){
-            TxtfieldDateOfBirth.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
-            TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
-        
-        
-        if let myImage = UIImage(named: "gray-downarrow"){
-            TxtfieldDateOfBirth.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
-            TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
+        TxtfieldLastName.MakeRoundeEdges(TxtfieldLastName)
+        TxtfieldLastName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
+    
+        TxtfieldMobile.MakeRoundeEdges(TxtfieldMobile)
+        TxtfieldMobile.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+    
+        TxtfieldEmail.MakeRoundeEdges(TxtfieldEmail)
+        TxtfieldEmail.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+    
+        TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
+        TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+    
+        TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
+        TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
     }
     
     
@@ -188,7 +168,7 @@ class UpdateDataVC: UIViewController {
             return
         }
         
-        API_UpdatePatientData.UpdatePatientData(first_name: FirstName, last_name: LastName, email: Email, phone: Phone, city: City) { (error:Error?, success: Bool) in
+        API_UpdatePatientData.UpdatePatientData(first_name: FirstName, last_name: LastName, email: Email, phone: Phone, city: City, date_of_birth: DateOfBirth) { (error:Error?, success: Bool) in
             if success {
                 print ("Update Patient Data Done ")
             }else

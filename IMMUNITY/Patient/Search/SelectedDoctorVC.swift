@@ -20,23 +20,30 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnVisOpinionOutlet: UIButton!
     
-    var docImage = UIImageView()
-    var Name = ""
-    var Speciality = ""
-    var Address = ""
-    var Price = ""
-    var Rate = ""
-    var Info = ""
+//    var docImage = UIImageView()
+//    var Name = ""
+//    var Speciality = ""
+//    var Address = ""
+//    var Price = ""
+//    var Rate = ""
+//    var Info = ""
+    var singelItem: SingleDoctor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LblDocName.text = Name
-        LblDocSpeciality.text = Speciality
-        LblDocAddress.text = Address
-        LblDocPrice.text = Price
-        LblDocUniversty.text = Rate
-        TxtviewDocInfo.text = Info
+        LblDocName.text = singelItem?.firstName
+        LblDocSpeciality.text = singelItem?.specialities
+        LblDocAddress.text = singelItem?.city
+        LblDocPrice.text = singelItem?.fees
+        LblDocUniversty.text = ""
+        TxtviewDocInfo.text = singelItem?.info
+        
+        let urlWithOutEncoding = "\(singelItem?.image ?? "")"
+        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let encodedURL = NSURL(string: encodedLink!)! as URL
+        DocImage.kf.indicatorType = .activity
+        DocImage.kf.setImage(with: encodedURL)
         
         
         
@@ -90,6 +97,7 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TicketInformationVC") as? TicketInformationVC {
+            vc.singItem = singelItem
         self.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -14,16 +14,20 @@ class BookingConfirmationVC: UIViewController {
     @IBOutlet weak var LblDocName: UILabel!
     
     var window: UIWindow?
-    var Name = ""
+    
+    var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.LblDocName.text = Name
+        if Helper.getAccessToken() == nil {
+            self.BtnMyAppointmentOutlet.setTitle("Sign In", for: UIControl.State.normal)
+        }
         
+        self.LblDocName.text = name
         self.navigationController?.title = ""
         gradBTNS()
-        
+        self.reloadInputViews()
     }
     func gradBTNS() {
         
@@ -47,9 +51,14 @@ class BookingConfirmationVC: UIViewController {
     }
     
     @IBAction func BtnMyAppointmentAction (_ sender : Any) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVCs") as? TabBarVCs {
-            vc.selectedIndex = 2
-            self.present(vc, animated: true, completion: nil)
+        
+        if Helper.getAccessToken() == nil {
+            Helper.removeAccessToken()
+        }else{
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVCs") as? TabBarVCs {
+                vc.selectedIndex = 2
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
 }

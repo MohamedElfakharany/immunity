@@ -118,5 +118,32 @@ class Helper: NSObject {
         RestartApp()
         
     }
+    class func removePatientData (){
+        let removeFName = UserDefaults.standard
+        removeFName.removeObject(forKey: "first_name")
+        removeFName.synchronize()
+        
+        let removeLName = UserDefaults.standard
+        removeLName.removeObject(forKey: "last_name")
+        removeLName.synchronize()
+        
+        let removeDateOfBirth = UserDefaults.standard
+        removeDateOfBirth.removeObject(forKey: "date_of_birth")
+        removeDateOfBirth.synchronize()
+        
+        let removeEmail = UserDefaults.standard
+        removeEmail.removeObject(forKey: "email")
+        removeEmail.synchronize()
+        
+        let removePhone = UserDefaults.standard
+        removePhone.removeObject(forKey: "phone")
+        removePhone.synchronize()
+        
+        let removeCity = UserDefaults.standard
+        removeCity.removeObject(forKey: "city")
+        removeCity.synchronize()
+        
+        RestartApp()
+    }
 }
 

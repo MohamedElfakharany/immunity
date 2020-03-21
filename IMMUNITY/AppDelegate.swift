@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let access_token = Helper.getAccessToken() {
                     print("access_token is : \(access_token)")
 
-                    let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs") as?TabBarVCs
-                    tab?.selectedIndex = 3
+                    let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs") as? TabBarVCs
+                    tab?.selectedIndex = 0
+                    
                     window?.rootViewController = tab
                 }
         

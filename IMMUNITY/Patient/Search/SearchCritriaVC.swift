@@ -51,7 +51,7 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
     func doctorsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        DoctorAPI.allDoctors { (error, networkSuccess, codeSucess, doc) in
+        DoctorAPI.allDoctors(page: 0) { (error, networkSuccess, codeSucess, doc,page ) in
             if networkSuccess {
                 if codeSucess {
                     if let docs = doc{

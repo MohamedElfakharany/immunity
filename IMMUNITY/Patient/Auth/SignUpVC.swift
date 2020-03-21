@@ -54,7 +54,7 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource,N
     
     @objc func dateChanged(datePicker : UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         TxtfieldDateOfBirth.text = dateFormatter.string(from: datePicker.date)
 //        view.endEditing(true)
     }
@@ -81,64 +81,36 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource,N
     
     func BackgroundTF() {
         
-        if let myImage = UIImage(named: "user"){
-        TxtfieldFirstName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         TxtfieldFirstName.MakeRoundeEdges(TxtfieldFirstName)
         TxtfieldFirstName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
-        }
 
         TxtfieldCity.MakeRoundeEdges(TxtfieldCity)
         TxtfieldCity.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
         
-        if let myImage = UIImage(named: "user"){
-        TxtfieldLastName.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         TxtfieldLastName.MakeRoundeEdges(TxtfieldLastName)
         TxtfieldLastName.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
-        }
         
-        if let myImage = UIImage(named: "phone-call"){
-        TxtfieldMobile.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         TxtfieldMobile.MakeRoundeEdges(TxtfieldMobile)
         TxtfieldMobile.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
         
-        if let myImage = UIImage(named: "email"){
-        TxtfieldEmail.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         TxtfieldEmail.MakeRoundeEdges(TxtfieldEmail)
         TxtfieldEmail.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
         
-        if let myImage = UIImage(named: "password"){
-        TxtfieldPassword.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         TxtfieldPassword.MakeRoundeEdges(TxtfieldPassword)
         TxtfieldPassword.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
         
-        
-        if let myImage = UIImage(named: "password"){
-        TxtFieldPasswordConfirmation.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         TxtFieldPasswordConfirmation.MakeRoundeEdges(TxtFieldPasswordConfirmation)
         TxtFieldPasswordConfirmation.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
         
-        
-        if let myImage = UIImage(named: "calendar"){
-        TxtfieldDateOfBirth.withImage(direction: .Left, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
         TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
-
-        if let myImage = UIImage(named: "gray-downarrow"){
-            TxtfieldGender.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
-            TxtfieldGender.MakeRoundeEdges(TxtfieldGender)
-            TxtfieldGender.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
         
-        if let myImage = UIImage(named: "gray-downarrow"){
-        TxtfieldDateOfBirth.withImage(direction: .Right, image: myImage, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
+        TxtfieldGender.MakeRoundeEdges(TxtfieldGender)
+        TxtfieldGender.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
+        
         TxtfieldDateOfBirth.MakeRoundeEdges(TxtfieldDateOfBirth)
         TxtfieldDateOfBirth.addShadowToTextField(color: UIColor.black, cornerRadius: 3)
-        }
+        
     }
     func gradBTNS() {
         
@@ -242,8 +214,8 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource,N
             return
         }
         
-        guard let City = TxtfieldMobile.text,!City.isEmpty else {
-            let messages = NSLocalizedString("enter Your Mobile Number", comment: "please")
+        guard let City = TxtfieldCity.text,!City.isEmpty else {
+            let messages = NSLocalizedString("enter Your City", comment: "please")
             let title = NSLocalizedString("Login Failed", comment: "please")
             self.showAlert(title: title, message: messages)
             

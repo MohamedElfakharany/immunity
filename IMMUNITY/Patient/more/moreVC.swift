@@ -22,12 +22,24 @@ class moreVC: UIViewController {
     
     @IBOutlet weak var BtnSignOutOutlet: UIButton!
     
+    @IBOutlet weak var stackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         gradBTNS()
         views()
- 
+
+        
+        if Helper.getAccessToken() == nil{
+            self.SettingView.isHidden = true
+            self.ApprovalListView.isHidden = true
+            self.BtnSignOutOutlet.setTitle("Sign In", for: UIControl.State.normal)
+            NSLayoutConstraint.activate([stackView.heightAnchor.constraint(equalToConstant: 135)])
+            self.reloadInputViews()
+        }
+        
+        
     }
     
     func views() {
@@ -80,7 +92,8 @@ class moreVC: UIViewController {
     
     @IBAction func BtnSignOutAction(_ sender: Any) {
         
-            Helper.removeAccessToken()
+        Helper.removePatientData()
+        Helper.removeAccessToken()
     }
     @IBAction func BtnApprovalListAction(_ sender: Any) {
     

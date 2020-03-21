@@ -22,24 +22,11 @@ class TicketInformationVC: UIViewController {
     @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnConfirmOutlet: UIButton!
     
-    var docImage = UIImageView()
-    var Name = ""
-    var Speciality = ""
-    var Address = ""
-    var Price = ""
-    var Rate = ""
-    var Info = ""
+    var singItem: SingleDoctor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        LblDocName.text = Name
-        LblDocSpeciality.text = Speciality
-        LblDocAddress.text = Address
-        LblDocPrice.text = Price
-        LblDocUniversty.text = Rate
-        TxtviewDocInfo.text = Info
-        
+
         //cell back view
         BackView.layer.cornerRadius = 20
         BackView.clipsToBounds = true
@@ -51,6 +38,20 @@ class TicketInformationVC: UIViewController {
         self.navigationController?.title = ""
         gradBTNS()
         
+        LblDocName.text = "DR. \(singItem?.firstName ?? "") \(singItem?.lastName ?? "")"
+        LblDocPrice.text = "Book Price: \(singItem?.fees ?? "")"
+        LblDocAddress.text = singItem?.city ?? ""
+//        LblDocUniversty.text = "Doctor Rate: \(singItem?.rate ?? "")"
+        LblDocSpeciality.text = singItem?.specialities ?? ""
+        TxtviewDocInfo.text = singItem?.info ?? ""
+        let urlWithoutEncoding = "\(singItem?.image! ?? "")"
+        let encodedLink = urlWithoutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let encodedURL = NSURL(string: encodedLink!)! as URL
+        DocImage.kf.indicatorType = .activity
+        
+        if let url = URL(string: "\(encodedURL)") {
+            self.DocImage.kf.setImage(with: url)
+        }
     }
     func gradBTNS() {
         
@@ -75,6 +76,7 @@ class TicketInformationVC: UIViewController {
     
     @IBAction func BtnConfirmAction(_ sender: Any) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "BookingConfirmationVC") as? BookingConfirmationVC {
+            vc.name =  "DR. \(singItem?.firstName ?? "") \(singItem?.lastName ?? "")"
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

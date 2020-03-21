@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstVC: UIViewController {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -111,13 +111,9 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func BtnNotNowAction (_ sender : Any){
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "TabBarVCs")as? TabBarVCs {
-            vc.selectedIndex = 3
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "TabBarVCs") {
             self.present(vc, animated: true, completion: nil)
         }
     }
-
 }
-

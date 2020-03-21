@@ -19,10 +19,13 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     
     fileprivate var activityIndicator: LoadMoreActivityIndicator!
     
-    var docArray : [SingleDoctor] = [SingleDoctor]()
+    var docArray = [SingleDoctor]()
     var searching = false
-    var selectedDoc : [SingleDoctor] = [SingleDoctor]()
-    var choosedDoctor : [SingleDoctor] = [SingleDoctor]()
+    var selectedDoc = [SingleDoctor]()
+    var choosedDoctor = [SingleDoctor]()
+    var curentPage = 1
+    var lastPage = 1
+    var isLoading:Bool = false
     
     lazy var Refresher : UIRefreshControl = {
         let Refresher = UIRefreshControl()
@@ -51,18 +54,60 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     }
     override func viewWillAppear(_ animated: Bool) {
         
-        tableView.reloadData()
+        doctorsHandleRefresh()
         
     }
     
-    func doctorsHandleRefresh() {
-        startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+    fileprivate func loadMore() {
+        guard !isLoading else {return}
+        guard curentPage < lastPage else {return}
+        isLoading = true
         
-        DoctorAPI.allDoctors { (error, networkSuccess, codeSucess, docArray) in
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        DoctorAPI.allDoctors(page: curentPage+1) { (error, networkSuccess, codeSucess, docArray, lastـPage:Int) in
+            self.isLoading = false
+            if networkSuccess {
+                            if codeSucess {
+                                        if let docs = docArray{
+                                            self.docArray = docs.data ?? []
+                                            print("zzzz\(docs)")
+                                            self.tableView.reloadData()
+                                            self.tableView.endUpdates()
+                                            self.stopAnimating()
+                                            self.curentPage += docs.meta?.currentPage ?? 1
+                                            print("curent page: \(docs.meta?.currentPage ?? 0)")
+                                            self.lastPage = lastـPage
+                                        }else {
+                                            self.stopAnimating()
+                                            self.showAlert(title: "Error", message: "Error Doctors")
+                                        }
+                                
+                            }else {
+                                self.stopAnimating()
+                                self.showAlert(title: "Doctor", message: "Doctor is empty")
+                            }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "Network", message: "Check your network connection")
+            }
+        }
+    }
+    
+    func doctorsHandleRefresh() {
+        
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        guard !isLoading else {return}
+        isLoading = true
+        DoctorAPI.allDoctors(page: curentPage + 1) { (error, networkSuccess, codeSucess, docArray,lastPage :Int)  in
+            
             if networkSuccess {
                 if codeSucess {
+                    self.isLoading = false
                     if let docs = docArray{
                         self.docArray = docs.data ?? []
+                        self.curentPage =  docs.meta?.currentPage ?? 1
+                        print("curent page: \(docs.meta?.currentPage ?? 0)")
+                        self.lastPage = lastPage
                         print("zzzz\(docs)")
                         self.tableView.reloadData()
                         self.tableView.endUpdates()
@@ -135,65 +180,19 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectedDoctorVC") as? SelectedDoctorVC{
-            
-            if let ticketInformation = self.storyboard?.instantiateViewController(withIdentifier: "TicketInformationVC")as? TicketInformationVC {
-                
-                if let bookinginformation = self.storyboard?.instantiateViewController(withIdentifier: "BookingConfirmationVC") as? BookingConfirmationVC {
-            
-                    if searching {
-                        
-                        vc.Name = "DR. \(selectedDoc[indexPath.row].firstName ?? "") \(selectedDoc[indexPath.row].lastName ?? "") "
-                        vc.Speciality = "\(selectedDoc[indexPath.row].specialities ?? "")"
-                        vc.Address = "\(selectedDoc[indexPath.row].city ?? "")"
-                        vc.Rate = "Doctor rate : \(selectedDoc[indexPath.row].rate ?? "")"
-                        vc.Price = "price : \(selectedDoc[indexPath.row].fees ?? "")"
-                        vc.Info = "\(selectedDoc[indexPath.row].info ?? "")"
-                        
-                        ticketInformation.Name = "DR. \(selectedDoc[indexPath.row].firstName ?? "") \(selectedDoc[indexPath.row].lastName ?? "") "
-                        ticketInformation.Speciality = "\(selectedDoc[indexPath.row].specialities ?? "")"
-                        ticketInformation.Address = "\(selectedDoc[indexPath.row].city ?? "")"
-                        ticketInformation.Rate = "Doctor rate : \(selectedDoc[indexPath.row].rate ?? "")"
-                        ticketInformation.Price = "price : \(selectedDoc[indexPath.row].fees ?? "")"
-                        ticketInformation.Info = "\(selectedDoc[indexPath.row].info ?? "")"
-                        
-                        bookinginformation.Name = "DR. \(selectedDoc[indexPath.row].firstName ?? "") \(selectedDoc[indexPath.row].lastName ?? "") "
-                        
-                        let urlWithOutEncoding = "\(selectedDoc[indexPath.row].image ?? "")"
-                        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                        let encodedURL = NSURL(string: encodedLink!)! as URL
-                        vc.docImage.kf.indicatorType = .activity
-                        if let url = URL(string: "\(encodedURL)"){
-                            vc.docImage.kf.setImage(with: url)
-                        }
+            if searching {
+                        vc.singelItem = selectedDoc[indexPath.row]
                     }else {
-                        vc.Name = "DR. \(docArray[indexPath.row].firstName ?? "") \(docArray[indexPath.row].lastName ?? "") "
-                        vc.Speciality = "\(docArray[indexPath.row].specialities ?? "")"
-                        vc.Address = "\(docArray[indexPath.row].city ?? "")"
-                        vc.Rate = "Doctor rate : \(docArray[indexPath.row].rate ?? "")"
-                        vc.Price = "price : \(docArray[indexPath.row].fees ?? "")"
-                        vc.Info = "\(docArray[indexPath.row].info ?? "")"
-                        
-                        ticketInformation.Name = "DR. \(docArray[indexPath.row].firstName ?? "") \(docArray[indexPath.row].lastName ?? "") "
-                        ticketInformation.Speciality = "\(docArray[indexPath.row].specialities ?? "")"
-                        ticketInformation.Address = "\(docArray[indexPath.row].city ?? "")"
-                        ticketInformation.Rate = "Doctor rate : \(docArray[indexPath.row].rate ?? "")"
-                        ticketInformation.Price = "price : \(docArray[indexPath.row].fees ?? "")"
-                        ticketInformation.Info = "\(docArray[indexPath.row].info ?? "")"
-                        
-                        bookinginformation.Name = "DR. \(docArray[indexPath.row].firstName ?? "") \(docArray[indexPath.row].lastName ?? "") "
-                        
-                        let urlWithOutEncoding = "\(docArray[indexPath.row].image ?? "")"
-                        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                        let encodedURL = NSURL(string: encodedLink!)! as URL
-                        vc.docImage.kf.indicatorType = .activity
-                        vc.docImage.kf.setImage(with: encodedURL)
-    //                    vc.DocImage.kf.indicatorType = .activity
-                    }
-                }
+                        vc.singelItem = docArray[indexPath.row]
             }
-               
-            
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let count = docArray.count
+        if  indexPath.row == count - 1 {
+            self.loadMore()
         }
     }
     

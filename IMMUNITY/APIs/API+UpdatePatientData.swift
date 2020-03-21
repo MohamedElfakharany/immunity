@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class API_UpdatePatientData: NSObject {
     
-    class func UpdatePatientData (first_name : String,last_name : String, email : String , phone : String, city : String,  completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
+    class func UpdatePatientData (first_name : String,last_name : String, email : String , phone : String, city : String,date_of_birth: String,  completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
         
         let url = URLs.UpdatePatientData
         
@@ -21,7 +21,8 @@ class API_UpdatePatientData: NSObject {
             "last_name": last_name,
             "email" :  email ,
             "phone":phone,
-            "city":city
+            "city":city,
+            "date_of_birth": date_of_birth
         ]
         let headers = [
             "APP_KEY" : "123456"

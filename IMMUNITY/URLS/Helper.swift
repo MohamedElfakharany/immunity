@@ -65,6 +65,8 @@ class Helper: NSObject {
         defCity.setValue(city, forKey: "city")
         defCity.synchronize()
         
+        RestartApp()
+        
     }
     
     

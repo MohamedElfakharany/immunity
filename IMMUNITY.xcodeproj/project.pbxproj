@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		745744703AD262BBD903B09B /* Pods_IMMUNITY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170890E670AA592F629ADED4 /* Pods_IMMUNITY.framework */; };
+		9605768D2430EFE800660EA6 /* FavoritesVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9605768C2430EFE800660EA6 /* FavoritesVCTableViewCell.swift */; };
+		9605768F2430FF5600660EA6 /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9605768E2430FF5600660EA6 /* Doctor.storyboard */; };
+		9605769324310A6900660EA6 /* DFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9605769224310A6900660EA6 /* DFirstVC.swift */; };
 		960CE3D723DF8A22001A8818 /* JSON+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960CE3D623DF8A22001A8818 /* JSON+Extentions.swift */; };
 		962803292400338000B3ABFD /* ApprovalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962803282400338000B3ABFD /* ApprovalListVC.swift */; };
 		9628032B240034EA00B3ABFD /* ApprovalListConfirmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628032A240034EA00B3ABFD /* ApprovalListConfirmTableViewCell.swift */; };
@@ -74,6 +77,9 @@
 /* Begin PBXFileReference section */
 		170890E670AA592F629ADED4 /* Pods_IMMUNITY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMMUNITY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		457436457AD0E0E2B8076D61 /* Pods-IMMUNITY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMMUNITY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMMUNITY/Pods-IMMUNITY.debug.xcconfig"; sourceTree = "<group>"; };
+		9605768C2430EFE800660EA6 /* FavoritesVCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVCTableViewCell.swift; sourceTree = "<group>"; };
+		9605768E2430FF5600660EA6 /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
+		9605769224310A6900660EA6 /* DFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFirstVC.swift; sourceTree = "<group>"; };
 		960CE3D623DF8A22001A8818 /* JSON+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Extentions.swift"; sourceTree = "<group>"; };
 		962803282400338000B3ABFD /* ApprovalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListVC.swift; sourceTree = "<group>"; };
 		9628032A240034EA00B3ABFD /* ApprovalListConfirmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListConfirmTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +167,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		960576902430FF9200660EA6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				966D38082392B97C009E6A43 /* Patient */,
+				96ECDC03240EC54E00C29834 /* Hospital */,
+				960576912430FFA300660EA6 /* Doctor */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		960576912430FFA300660EA6 /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				9605769224310A6900660EA6 /* DFirstVC.swift */,
+			);
+			path = Doctor;
+			sourceTree = "<group>";
+		};
 		966D37E223929B63009E6A43 = {
 			isa = PBXGroup;
 			children = (
@@ -189,8 +213,7 @@
 				966D37F523929B63009E6A43 /* IMMUNITY.xcdatamodeld */,
 				96E0A9C223F34FA70027BA06 /* assets.xcassets */,
 				96ECDC00240EC18D00C29834 /* StoryBourds */,
-				966D38082392B97C009E6A43 /* Patient */,
-				96ECDC03240EC54E00C29834 /* Hospital */,
+				960576902430FF9200660EA6 /* controller */,
 				96ECDBFD240C713B00C29834 /* models */,
 				966D381C23972A82009E6A43 /* Fonts */,
 				966D3816239588E5009E6A43 /* URLS */,
@@ -221,6 +244,7 @@
 				96AD201423E32A470053657F /* more */,
 				96ED7245240007E0009EFA70 /* Appointment */,
 				96ED723D23FF5362009EFA70 /* FavoritesVC.swift */,
+				9605768C2430EFE800660EA6 /* FavoritesVCTableViewCell.swift */,
 				96ED724323FF5988009EFA70 /* TabBarVCs.swift */,
 			);
 			path = Patient;
@@ -325,6 +349,7 @@
 			children = (
 				966D37F223929B63009E6A43 /* Patient.storyboard */,
 				96ECDC01240EC1B400C29834 /* Hospital.storyboard */,
+				9605768E2430FF5600660EA6 /* Doctor.storyboard */,
 			);
 			path = StoryBourds;
 			sourceTree = "<group>";
@@ -425,6 +450,7 @@
 				966D382523972AB2009E6A43 /* Cairo-SemiBold.ttf in Resources */,
 				966D382323972AB2009E6A43 /* Cairo-Regular.ttf in Resources */,
 				96ECDC02240EC1B400C29834 /* Hospital.storyboard in Resources */,
+				9605768F2430FF5600660EA6 /* Doctor.storyboard in Resources */,
 				966D37F423929B63009E6A43 /* Patient.storyboard in Resources */,
 				966D382723972AB2009E6A43 /* Cairo-Bold.ttf in Resources */,
 				966D382823972AB2009E6A43 /* Cairo-Black.ttf in Resources */,
@@ -491,6 +517,7 @@
 			files = (
 				96B55C4423F2E8A00069AEC5 /* ChangePasswordVC.swift in Sources */,
 				966D38102392BB37009E6A43 /* SignUpVC.swift in Sources */,
+				9605769324310A6900660EA6 /* DFirstVC.swift in Sources */,
 				96960148240AF43B00621117 /* MyAppointmentDidCanceledVCTableViewCell.swift in Sources */,
 				968184C824151F1900308CEE /* DoctorAPI.swift in Sources */,
 				966D382E239AA024009E6A43 /* Helper.swift in Sources */,
@@ -521,6 +548,7 @@
 				96867DEB23FD9D6A005CF342 /* SearchCritriaVC.swift in Sources */,
 				96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */,
 				96FEF8E9241C95E7003D574F /* loadMore.swift in Sources */,
+				9605768D2430EFE800660EA6 /* FavoritesVCTableViewCell.swift in Sources */,
 				966D381523955D57009E6A43 /* API+Auth.swift in Sources */,
 				96E9186924045F4600D4A60C /* AppointmentDetailsVC.swift in Sources */,
 				9669B30A23FEC08E0051ED74 /* TicketInformationVC.swift in Sources */,

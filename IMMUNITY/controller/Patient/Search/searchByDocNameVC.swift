@@ -58,57 +58,17 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    fileprivate func loadMore() {
-        guard !isLoading else {return}
-        guard curentPage < lastPage else {return}
-        isLoading = true
-        
-        startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
-        DoctorAPI.allDoctors(page: curentPage+1) { (error, networkSuccess, codeSucess, docArray, lastـPage:Int) in
-            self.isLoading = false
-            if networkSuccess {
-                            if codeSucess {
-                                        if let docs = docArray{
-                                            self.docArray = docs.data ?? []
-                                            print("zzzz\(docs)")
-                                            self.tableView.reloadData()
-                                            self.tableView.endUpdates()
-                                            self.stopAnimating()
-                                            self.curentPage += docs.meta?.currentPage ?? 1
-                                            print("curent page: \(docs.meta?.currentPage ?? 0)")
-                                            self.lastPage = lastـPage
-                                        }else {
-                                            self.stopAnimating()
-                                            self.showAlert(title: "Error", message: "Error Doctors")
-                                        }
-                                
-                            }else {
-                                self.stopAnimating()
-                                self.showAlert(title: "Doctor", message: "Doctor is empty")
-                            }
-            }else {
-                self.stopAnimating()
-                self.showAlert(title: "Network", message: "Check your network connection")
-            }
-        }
-    }
-    
     func doctorsHandleRefresh() {
         
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
-        guard !isLoading else {return}
-        isLoading = true
-        DoctorAPI.allDoctors(page: curentPage + 1) { (error, networkSuccess, codeSucess, docArray,lastPage :Int)  in
-            
+        DoctorAPI.allDoctors(page: curentPage) { (error, networkSuccess, codeSucess, docArray) in
             if networkSuccess {
                 if codeSucess {
-                    self.isLoading = false
                     if let docs = docArray{
                         self.docArray = docs.data ?? []
-                        self.curentPage =  docs.meta?.currentPage ?? 1
+                        self.curentPage = docs.meta?.currentPage ?? 1
                         print("curent page: \(docs.meta?.currentPage ?? 0)")
-                        self.lastPage = lastPage
-                        print("zzzz\(docs)")
+//                        print("zzzz\(docs)")
                         self.tableView.reloadData()
                         self.tableView.endUpdates()
                         self.stopAnimating()
@@ -180,19 +140,16 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectedDoctorVC") as? SelectedDoctorVC{
-            if searching {
+            
+
+                    if searching {
                         vc.singelItem = selectedDoc[indexPath.row]
                     }else {
                         vc.singelItem = docArray[indexPath.row]
             }
+               
+            
             self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let count = docArray.count
-        if  indexPath.row == count - 1 {
-            self.loadMore()
         }
     }
     

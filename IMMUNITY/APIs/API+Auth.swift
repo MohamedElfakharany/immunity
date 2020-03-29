@@ -44,9 +44,9 @@ class API_Auth: NSObject {
                     if let api_token =  json["data"]["access_token"].string {
                         Helper.saveAccessToken(token: api_token)
                         
-                        completion(nil,  true)
                         print ("api_token : \(api_token) ")
                         
+                        completion(nil,  true)
                     }
                     
                     if let FirstName = json["data"]["first_name"].string, let LastName = json["data"]["last_name"].string , let DateOfBirth = json["data"]["date_of_birth"].string , let Email = json["data"]["email"].string , let Phone = json["data"]["phone"].string , let City = json ["data"]["city"].string {
@@ -71,7 +71,6 @@ class API_Auth: NSObject {
     class func register (first_name : String,last_name : String, email : String , password : String , phone : String, city : String, gander: String , date_of_birth : String,  completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
         
         let url = URLs.register
-        
         let parameters = [
             "first_name" : first_name,
             "last_name": last_name,
@@ -79,7 +78,7 @@ class API_Auth: NSObject {
             "password" : password,
             "phone":phone,
             "city":city,
-            "gander": gander,
+            "gender": gander,
             "date_of_birth": date_of_birth
             ] 
         let headers = [
@@ -88,9 +87,7 @@ class API_Auth: NSObject {
             "Content-Type" : "application/json"
         ]
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
-//            .validate (statusCode: 200..<300)
-            
-            .responseString { response in
+            .responseJSON() { response in
                 
                 switch response.result{
                     
@@ -101,17 +98,13 @@ class API_Auth: NSObject {
                     print(url)
                     print(parameters)
                 case . success(let value):
-                    print("register successed")
                     print(value)
                     let json = JSON(value)
                     if let api_token = json["data"]["access_token"].string {
-                        
                         Helper.saveAccessToken(token: api_token)
-                        
                         completion(nil,  true)
                         print ("api_token : \(api_token) ")
                     }
-                    
                     if let FirstName = json["data"]["first_name"].string,
                         let LastName = json["data"]["last_name"].string ,
                         let DateOfBirth = json["data"]["date_of_birth"].string ,
@@ -127,8 +120,9 @@ class API_Auth: NSObject {
                         print("Patient Data phone : \(Phone) ")
                         print("Patient Data city : \(City) ")
                         
+                        completion(nil,  true)
                     }
-                    
+                        print("register successed")
                 }
         }
     }

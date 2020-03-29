@@ -14,14 +14,13 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    private var doc : [SingleDoctor] = [SingleDoctor]()
     @IBOutlet weak var TxtViewCity: UITextView!
     @IBOutlet weak var TxtViewSpeciality: UITextView!
     @IBOutlet weak var BackView:UIView!
     
-    var SelectedSpeciality = "leverage 24/365 infomediaries"
-    var SelectedCity = "ismailia"
+    private var doc = [SingleDoctor]()
+    var SelectedSpeciality = ""
+    var SelectedCity = ""
     let cellSpacingHeight: CGFloat = 20
     
     override func viewDidLoad() {
@@ -51,12 +50,13 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
     func doctorsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        DoctorAPI.allDoctors(page: 0) { (error, networkSuccess, codeSucess, doc,page ) in
+        DoctorAPI.allDoctorsByAreaAndSpeciality(city: SelectedCity, speciality: SelectedSpeciality, page: 0) { (error, networkSuccess, codeSucess, doc ) in
             if networkSuccess {
                 if codeSucess {
                     if let docs = doc{
                         self.doc = docs.data ?? []
                         print("zzzz\(docs)")
+                        print(Parameters.self)
                         self.tableView.reloadData()
                         self.tableView.endUpdates()
                         self.stopAnimating()
@@ -126,7 +126,7 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectedDoctorVC") as? SelectedDoctorVC{
             self.navigationController?.pushViewController(vc, animated: true)
-            
+            vc.singelItem = doc[indexPath.row]
         }
     }
     

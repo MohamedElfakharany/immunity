@@ -50,10 +50,10 @@ class MyAppointmentVCTableViewCell: UITableViewCell {
      }
     
     
-    @IBAction func BtnBookNowAction (_ sender : Any) {
-        if let vc = UIStoryboard.init().instantiateViewController(withIdentifier: "AppointmentDetailsVC") as? AppointmentDetailsVC {
-            self.inputViewController?.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
+//    @IBAction func BtnDetailsAction (_ sender : Any) {
+//        if let vc = UIStoryboard.init().instantiateViewController(withIdentifier: "AppointmentDetailsVC") as? AppointmentDetailsVC {
+//            self.inputViewController?.navigationController?.pushViewController(vc, animated: true)
+//        }
+//    }
     
 }

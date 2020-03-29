@@ -20,23 +20,16 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnVisOpinionOutlet: UIButton!
     
-//    var docImage = UIImageView()
-//    var Name = ""
-//    var Speciality = ""
-//    var Address = ""
-//    var Price = ""
-//    var Rate = ""
-//    var Info = ""
     var singelItem: SingleDoctor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LblDocName.text = singelItem?.firstName
-        LblDocSpeciality.text = singelItem?.specialities
-        LblDocAddress.text = singelItem?.city
-        LblDocPrice.text = singelItem?.fees
-        LblDocUniversty.text = ""
+        LblDocName.text = "DR. \(singelItem?.firstName ?? "") \(singelItem?.lastName ?? "")"
+        LblDocSpeciality.text = "\(singelItem?.specialities ?? "")"
+        LblDocAddress.text = "Address: \(singelItem?.city ?? "")"
+        LblDocPrice.text = "Price: \(singelItem?.fees ?? "")"
+        LblDocUniversty.text = "Rate: \(singelItem?.rate ?? "")"
         TxtviewDocInfo.text = singelItem?.info
         
         let urlWithOutEncoding = "\(singelItem?.image ?? "")"

@@ -26,7 +26,6 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     var curentPage = 1
     var lastPage = 1
     var isLoading:Bool = false
-    
     lazy var Refresher : UIRefreshControl = {
         let Refresher = UIRefreshControl()
         Refresher.addTarget(self, action: #selector(getDoctors), for: .valueChanged)
@@ -35,7 +34,7 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.title = "Doctor"
         self.DocNameSearch.showsCancelButton = false
         
         self.tableView.delegate = self

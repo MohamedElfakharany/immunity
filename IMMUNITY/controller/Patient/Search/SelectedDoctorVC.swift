@@ -6,8 +6,10 @@
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 import UIKit
+import Alamofire
+import NVActivityIndicatorView
 
-class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
+class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , NVActivityIndicatorViewable {
     
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var DocImage: UIImageView!
@@ -21,24 +23,33 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     @IBOutlet weak var BtnVisOpinionOutlet: UIButton!
     
     var singelItem: SingleDoctor?
+    var ticketArray = [SingleTicket]()
+    var doctor_id = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.title = "Doctor Information"
+        
+        self.doctor_id = singelItem?.id ?? 0
+        
         LblDocName.text = "DR. \(singelItem?.firstName ?? "") \(singelItem?.lastName ?? "")"
         LblDocSpeciality.text = "\(singelItem?.specialities ?? "")"
         LblDocAddress.text = "Address: \(singelItem?.city ?? "")"
-        LblDocPrice.text = "Price: \(singelItem?.fees ?? "")"
-        LblDocUniversty.text = "Rate: \(singelItem?.rate ?? "")"
+        LblDocPrice.text = "Price: \(singelItem?.fees ?? "") LE"
+        LblDocUniversty.text = "Hospital: \(singelItem?.hospitalName ?? "")"
         TxtviewDocInfo.text = singelItem?.info
-        
+        print("singelItem  \(singelItem)")
+        print("doctor_id  \(doctor_id)")
         let urlWithOutEncoding = "\(singelItem?.image ?? "")"
         let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         let encodedURL = NSURL(string: encodedLink!)! as URL
         DocImage.kf.indicatorType = .activity
         DocImage.kf.setImage(with: encodedURL)
         
-        
+        self.CollectionView.delegate = self
+        self.CollectionView.dataSource = self
         
         //cell back view
         BackView.layer.cornerRadius = 10
@@ -54,8 +65,42 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
         BackView.dropShadow(scale: true)
         gradBTNS()
         BackView.dropShadow(scale: true)
+        ticketsHandleRefresh()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.CollectionView.reloadData()
+        ticketsHandleRefresh()
+    }
+    
+    
+    func ticketsHandleRefresh() {
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        
+        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id) { (erroe, networkSuccess, codeSuccess, ticketArray) in
+            if networkSuccess {
+                if codeSuccess {
+                    if let tickets = ticketArray{
+                        self.ticketArray = tickets.data ?? []
+                        print(tickets)
+                        print(Parameters.self)
+                        self.CollectionView.reloadData()
+                        self.stopAnimating()
+                    }else{
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error doctors")
+                    }
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Doctor", message: "There is no doctors")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "NetWork", message: "Check your network Connection")
+            }
+        }
         
     }
+    
     func gradBTNS() {
         
         let RightGradientColor = #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)
@@ -78,12 +123,16 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return ticketArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectedDoctorCollectionViewCell", for: indexPath) as? SelectedDoctorCollectionViewCell
-        return cell!
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectedDoctorCollectionViewCell", for: indexPath) as? SelectedDoctorCollectionViewCell{
+            cell.configureCell(item: ticketArray[indexPath.row])
+            return cell
+        }else{
+        return SelectedDoctorCollectionViewCell()
+        }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.CollectionView.frame.height , height: self.CollectionView.frame.height)
@@ -91,6 +140,7 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TicketInformationVC") as? TicketInformationVC {
             vc.singItem = singelItem
+            vc.singleTicket = ticketArray[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
         }
     }

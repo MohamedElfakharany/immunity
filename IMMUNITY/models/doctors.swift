@@ -15,19 +15,19 @@ import Foundation
 // MARK: - MainDoctors
 struct MainDoctors: Codable {
     var data: [SingleDoctor]?
-    var links: Links?
-    var meta: Meta?
+    var links: LinksDoctor?
+    var meta: MetaDoctor?
 }
 
-// MARK: - Datum
+// MARK: - SingleDoctor
 struct SingleDoctor: Codable {
     var id: Int?
     var firstName, lastName, hospitalName, specialities: String?
-    var mobileNumber, phoneNumber, email, password, city: String?
-    var fees, info: String?
+    var mobileNumber, phoneNumber, email, password: String?
+    var fees, info, city: String?
     var image: String?
-    var dateOfBirth, rate, visitorRating: String?
-    var createdAt, updatedAt: AtedAt?
+    var dateOfBirth, rate, visitorRating, createdAt: String?
+    var updatedAt: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -46,24 +46,14 @@ struct SingleDoctor: Codable {
     }
 }
 
-
-enum AtedAt: String, Codable {
-    case the20200128054854 = "2020-01-28 05:48:54"
-    case the20200128054855 = "2020-01-28 05:48:55"
-    case the20200303193048 = "2020-03-03 19:30:48"
-}
-
 // MARK: - Links
-struct Links: Codable {
-    var first, last: String?
-    var prev: JSONNull?
-    var next: String?
+struct LinksDoctor: Codable {
+    var first, last, next: String?
 }
 
 // MARK: - Meta
-struct Meta: Codable {
-    var currentPage, lastPage: Int?
-    var from: Int?
+struct MetaDoctor: Codable {
+    var currentPage, from, lastPage: Int?
     var path: String?
     var perPage, to, total: Int?
     
@@ -74,32 +64,5 @@ struct Meta: Codable {
         case path
         case perPage = "per_page"
         case to, total
-    }
-}
-
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-    
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-    
-    public var hashValue: Int {
-        return 0
-    }
-    
-    public init() {}
-    
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
     }
 }

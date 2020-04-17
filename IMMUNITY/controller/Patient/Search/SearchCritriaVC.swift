@@ -25,6 +25,8 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.title = "Select doctor"
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.tableFooterView = UIView()

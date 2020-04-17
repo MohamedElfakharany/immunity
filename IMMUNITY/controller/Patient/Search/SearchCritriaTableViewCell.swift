@@ -38,7 +38,7 @@ class SearchCritriaTableViewCell: UITableViewCell {
         LblDocName.text = "DR. \(user.firstName ?? "") \(user.lastName ?? "")"
         LblDocSpeciality.text = user.specialities
         LblDocAddress.text = user.city
-        LblDocRate.text = "Doctor rate : \(user.rate ?? "")"
+        LblDocRate.text = "Hospital: \(user.hospitalName ?? "")"
         LblDocPrice.text = "Book price : \(user.fees ?? "") LE"
         
         let urlWithoutEncoding = "\(user.image!)"

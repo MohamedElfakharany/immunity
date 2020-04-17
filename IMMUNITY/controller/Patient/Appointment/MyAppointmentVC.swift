@@ -14,6 +14,13 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     @IBOutlet weak var image:UIImageView!
     @IBOutlet weak var BtnSignInOutlet:UIButton!
     
+    var ticketDone = [SingleTicket]()
+    var ticketCanCanceled = [SingleTicket]()
+    var ticketCanceled = [SingleTicket]()
+    
+    let patient_id = Helper.getPatientId()
+    let AvailabilityYes = ""
+    
     let cellSpacingHeight: CGFloat = 20
     
     override func viewDidLoad() {

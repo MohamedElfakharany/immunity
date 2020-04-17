@@ -16,17 +16,22 @@ class TicketInformationVC: UIViewController {
     @IBOutlet weak var LblDocSpeciality: UILabel!
     @IBOutlet weak var LblDocAddress: UILabel!
     @IBOutlet weak var LblDocPrice: UILabel!
-    @IBOutlet weak var LblDocUniversty: UILabel!
+    @IBOutlet weak var LblDocMobile: UILabel!
+    @IBOutlet weak var LblDocPhone: UILabel!
+    @IBOutlet weak var LblDocEmail: UILabel!
     @IBOutlet weak var LblDocAppintmentDay: UILabel!
     @IBOutlet weak var LblDocAppintment: UILabel!
     @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnConfirmOutlet: UIButton!
     
     var singItem: SingleDoctor?
+    var singleTicket: SingleTicket?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.title = "Ticket Information"
+        
         //cell back view
         BackView.layer.cornerRadius = 20
         BackView.clipsToBounds = true
@@ -39,9 +44,13 @@ class TicketInformationVC: UIViewController {
         gradBTNS()
         
         LblDocName.text = "DR. \(singItem?.firstName ?? "") \(singItem?.lastName ?? "")"
-        LblDocPrice.text = "Book Price: \(singItem?.fees ?? "")"
+        LblDocPrice.text = "Book Price: \(singItem?.fees ?? "") LE"
         LblDocAddress.text = singItem?.city ?? ""
-//        LblDocUniversty.text = "Doctor Rate: \(singItem?.rate ?? "")"
+        LblDocMobile.text = singItem?.mobileNumber ?? ""
+        LblDocPhone.text = singItem?.phoneNumber ?? ""
+        LblDocEmail.text = singItem?.email ?? ""
+        LblDocAppintmentDay.text = "\(singleTicket?.day ?? "" ) At: \(singleTicket?.date ?? "")"
+        LblDocAppintment.text = "Starts at: \(singleTicket?.time ?? "") & End after: \(singleTicket?.duration ?? "")"
         LblDocSpeciality.text = singItem?.specialities ?? ""
         TxtviewDocInfo.text = singItem?.info ?? ""
         let urlWithoutEncoding = "\(singItem?.image! ?? "")"

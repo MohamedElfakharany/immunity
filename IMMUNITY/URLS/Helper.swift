@@ -40,7 +40,8 @@ class Helper: NSObject {
         RestartApp()
     }
     
-    class func SavePatientData (firstName : String ,lastName : String , dateOfBirth : String , email:String , phone : String , city : String){
+    class func SavePatientData (firstName : String ,lastName : String , dateOfBirth : String , email:String , phone : String , city : String,id : String){
+        
         let defFirstName = UserDefaults.standard
         defFirstName.setValue(firstName, forKey: "first_name")
         defFirstName.synchronize()
@@ -64,6 +65,10 @@ class Helper: NSObject {
         let defCity = UserDefaults.standard
         defCity.setValue(city, forKey: "city")
         defCity.synchronize()
+        
+        let defId = UserDefaults.standard
+        defId.setValue(id, forKey: "id")
+        defId.synchronize()
         
         RestartApp()
         
@@ -110,6 +115,10 @@ class Helper: NSObject {
         let def = UserDefaults.standard
         return (def.object(forKey: "access_token")  as? String?)!
         
+    }
+    class func getPatientId() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "id") as? String?)!
     }
     
     class func removeAccessToken (){

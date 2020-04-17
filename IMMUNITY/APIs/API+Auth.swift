@@ -49,9 +49,9 @@ class API_Auth: NSObject {
                         completion(nil,  true)
                     }
                     
-                    if let FirstName = json["data"]["first_name"].string, let LastName = json["data"]["last_name"].string , let DateOfBirth = json["data"]["date_of_birth"].string , let Email = json["data"]["email"].string , let Phone = json["data"]["phone"].string , let City = json ["data"]["city"].string {
+                    if let FirstName = json["data"]["first_name"].string, let LastName = json["data"]["last_name"].string , let DateOfBirth = json["data"]["date_of_birth"].string , let Email = json["data"]["email"].string , let Phone = json["data"]["phone"].string , let City = json ["data"]["city"].string, let id = json["data"]["id"].string {
                         
-                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City )
+                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City, id : id )
                         
                         completion( nil , true)
                         print("Patient Data firstName : \(FirstName) ")
@@ -60,7 +60,7 @@ class API_Auth: NSObject {
                         print("Patient Data email : \(Email) ")
                         print("Patient Data phone : \(Phone) ")
                         print("Patient Data city : \(City) ")
-                        
+                        print("Patient Data id : \(id) ")
                         
                     }
                     
@@ -110,15 +110,17 @@ class API_Auth: NSObject {
                         let DateOfBirth = json["data"]["date_of_birth"].string ,
                         let Email = json["data"]["email"].string ,
                         let Phone = json["data"]["phone"].string ,
-                        let City = json ["data"]["city"].string {
+                        let City = json ["data"]["city"].string,
+                        let id = json["data"]["id"].string {
                         
-                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City )
+                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City,id : id )
                         print("Patient Data firstName : \(FirstName) ")
                         print("Patient Data lastName : \(LastName) ")
                         print("Patient Data dateOfBirth : \(DateOfBirth) ")
                         print("Patient Data email : \(Email) ")
                         print("Patient Data phone : \(Phone) ")
                         print("Patient Data city : \(City) ")
+                        print("Patient Data id : \(id) ")
                         
                         completion(nil,  true)
                     }

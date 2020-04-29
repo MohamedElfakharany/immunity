@@ -24,7 +24,7 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     
     var singelItem: SingleDoctor?
     var ticketArray = [SingleTicket]()
-    var doctor_id = 1
+    var doctor_id = 54
     
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
         LblDocPrice.text = "Price: \(singelItem?.fees ?? "") LE"
         LblDocUniversty.text = "Hospital: \(singelItem?.hospitalName ?? "")"
         TxtviewDocInfo.text = singelItem?.info
-        print("singelItem  \(singelItem)")
+        print("singelItem  \(singelItem!)")
         print("doctor_id  \(doctor_id)")
         let urlWithOutEncoding = "\(singelItem?.image ?? "")"
         let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)

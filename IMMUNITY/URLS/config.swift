@@ -12,7 +12,7 @@ struct URLs {
     
     static let mainPatient = "https://medicalsupport.website/api/person/"
     static let mainDoctors = "https://medicalsupport.website/api/doctors"
-    static let mainTickets = "https://medicalsupport.website/api/tickets"
+    static let mainTickets = "https://medicalsupport.website/api/tickets/"
     
     static let login = mainPatient + "login"
     
@@ -24,7 +24,8 @@ struct URLs {
     
     static let doctorsAll = mainDoctors + ""
     
-    static let ticketAll = mainTickets + ""
+    static let DocLogin = mainDoctors + "/login"
     
+    static let ticketAll = mainTickets + ""
     
 }

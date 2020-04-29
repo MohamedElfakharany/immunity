@@ -25,6 +25,20 @@ class Helper: NSObject {
         
     }
     
+    class func RestartDocApp(){
+        guard let window = UIApplication.shared.keyWindow else {return}
+        let sb = UIStoryboard ( name : "Doctor" , bundle : nil)
+        var vc : UIViewController
+        if getAccessToken() == nil {
+            vc = sb.instantiateInitialViewController()!
+        }else {
+            vc = sb.instantiateViewController(withIdentifier: "DAppointmentVC")
+        }
+        window.rootViewController = vc
+        
+        UIView.transition(with: window, duration: 0.5, options: .transitionCurlDown, animations: nil, completion: nil)
+    }
+    
     class func saveId (ID : String){
         let def = UserDefaults.standard
         def.setValue(ID, forKey: "id")
@@ -40,7 +54,15 @@ class Helper: NSObject {
         RestartApp()
     }
     
-    class func SavePatientData (firstName : String ,lastName : String , dateOfBirth : String , email:String , phone : String , city : String,id : String){
+    class func SavePatientData (
+        firstName : String ,
+        lastName : String ,
+        dateOfBirth : String ,
+        email:String ,
+        phone : String ,
+        city : String,
+        id : String
+        ){
         
         let defFirstName = UserDefaults.standard
         defFirstName.setValue(firstName, forKey: "first_name")
@@ -73,7 +95,6 @@ class Helper: NSObject {
         RestartApp()
         
     }
-    
     
     class func getPatientFirstName () -> String?{
         let def = UserDefaults.standard
@@ -156,5 +177,163 @@ class Helper: NSObject {
         
         RestartApp()
     }
+    
+    
+    class func SaveDoctorAccessToken (token : String){
+        let def = UserDefaults.standard
+        def.setValue(token, forKey: "access_token")
+        def.synchronize()
+        
+        RestartDocApp()
+    }
+    class func SaveDoctorData(
+        firstName : String ,
+        lastName : String ,
+        dateOfBirth : String ,
+        email:String ,
+        fees : String ,
+        hospitalName : String ,
+        image : String ,
+        phoneNumber : String ,
+        MobileNumber : String ,
+        city : String ,
+        id : String ,
+        specialities : String ,
+        info : String
+        ){
+        
+        let defFirstName = UserDefaults.standard
+        defFirstName.setValue(firstName, forKey: "first_name")
+        defFirstName.synchronize()
+        
+        let defLastName = UserDefaults.standard
+        defLastName.setValue(lastName, forKey: "last_name")
+        defLastName.synchronize()
+        
+        let defDateOfBirth = UserDefaults.standard
+        defDateOfBirth.setValue(dateOfBirth, forKey: "date_of_birth")
+        defDateOfBirth.synchronize()
+        
+        let DefEmail = UserDefaults.standard
+        DefEmail.setValue(email, forKey: "email")
+        DefEmail.synchronize()
+        
+        let defPhone = UserDefaults.standard
+        defPhone.setValue(phoneNumber, forKey: "phone")
+        defPhone.synchronize()
+        
+        let defCity = UserDefaults.standard
+        defCity.setValue(city, forKey: "city")
+        defCity.synchronize()
+        
+        let defId = UserDefaults.standard
+        defId.setValue(id, forKey: "id")
+        defId.synchronize()
+        
+        let defFees = UserDefaults.standard
+        defFees.setValue(fees, forKey: "fees")
+        defFees.synchronize()
+        
+        let defSpeciality = UserDefaults.standard
+        defSpeciality.setValue(specialities, forKey: "specialities")
+        defSpeciality.synchronize()
+        
+        let defMobile = UserDefaults.standard
+        defMobile.setValue(MobileNumber, forKey: "mobile_number")
+        defMobile.synchronize()
+        
+        let defHospitalName = UserDefaults.standard
+        defHospitalName.setValue(hospitalName, forKey: "hospital_name")
+        defHospitalName.synchronize()
+        
+        let defInfo = UserDefaults.standard
+        defInfo.setValue(info, forKey: "info")
+        defInfo.synchronize()
+        
+        let defImage = UserDefaults.standard
+        defImage.setValue(image, forKey: "image")
+        defImage.synchronize()
+        
+        RestartDocApp()
+        
+    }
+    
+    class func getDoctorFirstName () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "first_name") as? String?)!
+        
+    }
+    
+    class func getDoctorLastName () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "last_name")  as? String?)!
+        
+    }
+    
+    class func getDoctorDateOfBirth () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "date_of_birth")  as? String?)!
+        
+    }
+    
+    class func getDoctorEmail () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "email")  as? String?)!
+        
+    }
+    
+    class func getDoctorPhone () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "phone_number")  as? String?)!
+        
+    }
+    
+    class func getDoctorCity () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "city")  as? String?)!
+        
+    }
+    
+    class func getDoctorAccessToken () -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "access_token")  as? String?)!
+        
+    }
+    class func getDoctorId() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "id") as? String?)!
+    }
+    
+    class func getDoctorFees() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "fees") as? String?)!
+    }
+    
+    class func getDoctorHospitalName() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "hospital_name") as? String?)!
+    }
+    
+    class func getDoctorMobileNumber() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "mobile_number") as? String?)!
+    }
+    
+    class func getDoctorInfo() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "info") as? String?)!
+    }
+    
+    class func getDoctorSpecialities() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "specialities") as? String?)!
+    }
+    
+    class func getDoctorImage() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "image") as? String?)!
+    }
+    
+    
 }
 

@@ -11,7 +11,7 @@ class SearchByArea_SpecialityVC: UIViewController , UITextFieldDelegate, UIPicke
     
     var PickerView = UIPickerView()
     var Cities = ["Ismailia"]
-    var Specialities = ["leverage 24/365 infomediaries","iterate seamless systems","syndicate front-end technologies","matrix granular schemas","productize mission-critical portals","expedite dot-com schemas","utilize distributed paradigms","architect global deliverables","reintermediate magnetic experiences","aggregate best-of-breed solutions","integrate global models","innovate synergistic markets","implement clicks-and-mortar webservices","leverage bricks-and-clicks systemsmatrix out-of-the-box mindshare"]
+    var Specialities = ["asnan","leverage 24/365 infomediaries","iterate seamless systems","syndicate front-end technologies","matrix granular schemas","productize mission-critical portals","expedite dot-com schemas","utilize distributed paradigms","architect global deliverables","reintermediate magnetic experiences","aggregate best-of-breed solutions","integrate global models","innovate synergistic markets","implement clicks-and-mortar webservices","leverage bricks-and-clicks systemsmatrix out-of-the-box mindshare"]
     var selectedCity = String()
     var selectedSpeciality = String()
     

@@ -11,8 +11,6 @@ import NVActivityIndicatorView
 
 class LoginVC: UIViewController, NVActivityIndicatorViewable {
     
-    
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var TxtFieldPassword: UITextField!
     @IBOutlet weak var TxtfieldEmail: UITextField!
     
@@ -21,8 +19,6 @@ class LoginVC: UIViewController, NVActivityIndicatorViewable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        backgroundImage.alpha = 0.1
         gradBTNS()
         BackgroundTF()
         

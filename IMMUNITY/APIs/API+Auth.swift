@@ -51,7 +51,13 @@ class API_Auth: NSObject {
                     
                     if let FirstName = json["data"]["first_name"].string, let LastName = json["data"]["last_name"].string , let DateOfBirth = json["data"]["date_of_birth"].string , let Email = json["data"]["email"].string , let Phone = json["data"]["phone"].string , let City = json ["data"]["city"].string, let id = json["data"]["id"].string {
                         
-                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City, id : id )
+                        Helper.SavePatientData(firstName: FirstName ,
+                                               lastName: LastName,
+                                               dateOfBirth: DateOfBirth,
+                                               email: Email,
+                                               phone: Phone,
+                                               city : City,
+                                               id : id )
                         
                         completion( nil , true)
                         print("Patient Data firstName : \(FirstName) ")
@@ -128,6 +134,98 @@ class API_Auth: NSObject {
                 }
         }
     }
+    
+    
+    class func DoctorLogin ( email : String , password : String , completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
+        
+        let url = URLs.DocLogin
+        
+        let parameters = [
+            "email" :  email ,
+            "password" : password
+        ]
+        let headers = [
+            "APP_KEY" : "123456",
+            "Accept" : "application/json",
+            "Content-Type" : "application/json"
+            
+        ]
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+            .responseJSON() { response in
+                
+                switch response.result{
+                case .failure(let error):
+                    completion(error ,  false)
+                    print(" sorry login failed ")
+                    print(error)
+                case . success(let value):
+                    print(" login successed ")
+                    
+                    print(value)
+                    let json = JSON(value)
+                    if let api_token =  json["data"]["access_token"].string {
+                        Helper.SaveDoctorAccessToken(token: api_token)
+                        
+                        print ("api_token : \(api_token) ")
+                        
+                        completion(nil,  true)
+                    }
+                    
+                    if let FirstName = json["data"]["first_name"].string,
+                        let LastName = json["data"]["last_name"].string ,
+                        let DateOfBirth = json["data"]["date_of_birth"].string ,
+                        let Email = json["data"]["email"].string ,
+                        let PhoneNumber = json["data"]["phone_number"].string ,
+                        let MobileNumber = json["data"]["mobile_number"].string,
+                        let City = json ["data"]["city"].string,
+                        let id = json["data"]["id"].string ,
+                        let HospitalName = json["data"]["hospital_name"].string,
+                        let Specialities = json["data"]["specialities"].string,
+                        let Image = json["data"]["image"].string,
+                        let Fees = json["data"]["fees"].string,
+                        let Info = json["data"]["info"].string{
+                        
+                        Helper.SaveDoctorData (
+                            firstName: FirstName ,
+                            lastName: LastName,
+                            dateOfBirth: DateOfBirth,
+                            email: Email,
+                            fees : Fees,
+                            hospitalName : HospitalName,
+                            image : Image,
+                            phoneNumber: PhoneNumber,
+                            MobileNumber : MobileNumber,
+                            city : City,
+                            id : id,
+                            specialities: Specialities,
+                            info: Info )
+                        
+                        print("Doctor Data firstName : \(FirstName) ")
+                        print("Doctor Data lastName : \(LastName) ")
+                        print("Doctor Data dateOfBirth : \(DateOfBirth) ")
+                        print("Doctor Data email : \(Email) ")
+                        print("Doctor Data phone Number : \(PhoneNumber) ")
+                        print("Doctor Data city : \(City) ")
+                        print("Doctor Data Fees : \(Fees) ")
+                        print("Doctor Data Hospital Name : \(HospitalName) ")
+                        print("Doctor Data Image : \(Image) ")
+                        print("Doctor Data Mobile Number : \(MobileNumber) ")
+                        print("Doctor Data Image : \(Image) ")
+                        print("Doctor Data info : \(Info) ")
+                        
+                        completion( nil , true)
+                        
+                    }
+                    
+                }
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     
 }

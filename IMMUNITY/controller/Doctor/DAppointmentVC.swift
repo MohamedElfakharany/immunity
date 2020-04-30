@@ -30,7 +30,7 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
         appointmentView.layer.cornerRadius = 15
         appointmentView.dropShadow()
         
-        let appointmentImage = UIImage(named: "Details")
+        let appointmentImage = UIImage(named: "gray-downarrow")
         addRightImageTo(txtField: appointTxtFeild, andImage: appointmentImage!)
         
         let AddButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action:    #selector(HandleDetails))

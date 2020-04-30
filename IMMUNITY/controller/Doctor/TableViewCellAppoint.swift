@@ -30,9 +30,6 @@ class TableViewCellAppoint: UITableViewCell {
     
     @IBAction func BtnDetailsAction(_ sender : Any){
         
-        let seeProfileData = DetailViewController()
-        UIApplication.shared.keyWindow?.rootViewController?.present(seeProfileData, animated: true, completion: nil)
-        
     }
     
 }

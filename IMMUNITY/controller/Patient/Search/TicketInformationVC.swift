@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class TicketInformationVC: UIViewController {
+class TicketInformationVC: UIViewController,NVActivityIndicatorViewable {
     
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var DocImage: UIImageView!
@@ -26,10 +27,13 @@ class TicketInformationVC: UIViewController {
     
     var singItem: SingleDoctor?
     var singleTicket: SingleTicket?
+    var ticketArray = [SingleTicket]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if Helper.getAccessToken() == nil {
+            self.BtnConfirmOutlet.setTitle("Sign In", for: UIControl.State.normal)
+        }
         self.navigationController?.title = "Ticket Information"
         
         //cell back view
@@ -84,10 +88,44 @@ class TicketInformationVC: UIViewController {
     }
     
     @IBAction func BtnConfirmAction(_ sender: Any) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "BookingConfirmationVC") as? BookingConfirmationVC {
-            vc.name =  "DR. \(singItem?.firstName ?? "") \(singItem?.lastName ?? "")"
-            self.navigationController?.pushViewController(vc, animated: true)
+
+//        if Helper.getAccessToken() == nil {
+//            Helper.removeAccessToken()
+//        }else{
+        
+        guard let PatientId = Helper.getAccessToken() else{
+            Helper.removeAccessToken()
+            return
         }
+        TicketsApi.confirmBooking(ticketId: "\(singleTicket?.id ?? 0)", docId: "\(singItem?.id ?? 0)", Availability: "NO") { (error, networkSuccess, codeSuccess, message) in
+            if networkSuccess {
+                if codeSuccess {
+                    if let message = message{
+                        if message.data.statue == true {
+                            self.stopAnimating()
+                            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "BookingConfirmationVC") as? BookingConfirmationVC {
+                                vc.name =  "DR. \(self.singItem?.firstName ?? "") \(self.singItem?.lastName ?? "")"
+                                self.navigationController?.pushViewController(vc, animated: true)
+                            }
+                        }else {
+                            print("ay 7agaaaa")
+                        }
+                        
+
+                    }else{
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error doctors")
+                    }
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Doctor", message: "There is no doctors")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "NetWork", message: "Check your network Connection")
+            }
+        }
+
     }
     
     

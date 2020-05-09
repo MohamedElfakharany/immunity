@@ -14,7 +14,7 @@ import SwiftyJSON
 
 class API_Auth: NSObject {
     
-    class func login ( email : String , password : String , completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
+    class func  login ( email : String , password : String , completion: @escaping ( _ error : Error? , _ success : Bool)->Void) {
         
         let url = URLs.login
         
@@ -57,7 +57,7 @@ class API_Auth: NSObject {
                                                email: Email,
                                                phone: Phone,
                                                city : City,
-                                               id : id )
+                                               id : id, role: "patient" )
                         
                         completion( nil , true)
                         print("Patient Data firstName : \(FirstName) ")
@@ -119,7 +119,7 @@ class API_Auth: NSObject {
                         let City = json ["data"]["city"].string,
                         let id = json["data"]["id"].string {
                         
-                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City,id : id )
+                        Helper.SavePatientData(firstName: FirstName , lastName: LastName, dateOfBirth: DateOfBirth, email: Email, phone: Phone,city : City,id : id, role: "patient" )
                         print("Patient Data firstName : \(FirstName) ")
                         print("Patient Data lastName : \(LastName) ")
                         print("Patient Data dateOfBirth : \(DateOfBirth) ")
@@ -198,7 +198,8 @@ class API_Auth: NSObject {
                             city : City,
                             id : id,
                             specialities: Specialities,
-                            info: Info )
+                            info: Info,
+                            role: "doctor")
                         
                         print("Doctor Data firstName : \(FirstName) ")
                         print("Doctor Data lastName : \(LastName) ")

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 import UIKit
-import Alamofire
 import NVActivityIndicatorView
 
 class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout , NVActivityIndicatorViewable {
@@ -76,13 +75,12 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     func ticketsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id) { (erroe, networkSuccess, codeSuccess, ticketArray) in
+        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id) { (error, networkSuccess, codeSuccess, ticketArray) in
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{
                         self.ticketArray = tickets.data ?? []
                         print(tickets)
-                        print(Parameters.self)
                         self.CollectionView.reloadData()
                         self.stopAnimating()
                     }else{

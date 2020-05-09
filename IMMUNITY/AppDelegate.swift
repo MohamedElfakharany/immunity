@@ -19,32 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         
-        if let access_token = Helper.getAccessToken() {
-            print("Patient access_token is : \(access_token)")
+        if Helper.GetPatientRole() == "patient" {
+            
+            print("Patient access_token is : \(Helper.GetPatientRole() ?? "")")
             
             let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs") 
             
             window?.rootViewController = tab
-        }
-        
-        
-        if let DocAccessToken = Helper.getDoctorAccessToken() {
-            print("doctor access token is : \(DocAccessToken)")
-            
-            let tab = UIStoryboard(name: "Doctor", bundle: nil).instantiateViewController(withIdentifier: "DAppointmentVC") 
+        }else if Helper.getDocRole() == "doctor" {
+            let tab = UIStoryboard(name: "Doctor", bundle: nil).instantiateViewController(withIdentifier: "DAppointmentVC")
             
             window?.rootViewController = tab
+        }else {
+            self.window?.makeKeyAndVisible()
             
         }
-//        let storyboard = UIStoryboard(name: "Hospital", bundle: nil)
-//
-//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "HFirstVC")
-//
-//        let navigationController = UINavigationController.init(rootViewController: initialViewController)
-//
-//        self.window?.rootViewController = navigationController
-//
-        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

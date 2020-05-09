@@ -20,9 +20,7 @@ class BookingConfirmationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Helper.getAccessToken() == nil {
-            self.BtnMyAppointmentOutlet.setTitle("Sign In", for: UIControl.State.normal)
-        }
+
         
         self.LblDocName.text = name
         self.navigationController?.title = ""
@@ -52,13 +50,9 @@ class BookingConfirmationVC: UIViewController {
     
     @IBAction func BtnMyAppointmentAction (_ sender : Any) {
         
-        if Helper.getAccessToken() == nil {
-            Helper.removeAccessToken()
-        }else{
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVCs") as? TabBarVCs {
                 vc.selectedIndex = 2
                 self.present(vc, animated: true, completion: nil)
-            }
         }
     }
 }

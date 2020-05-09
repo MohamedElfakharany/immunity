@@ -87,8 +87,10 @@ class SelectLoginVC: UIViewController {
     }
     
     @IBAction func BtnActionDoctorSignIn(_ sender: UIButton) {
+        print("go to doctor login")
         if let vc = UIStoryboard(name: "Doctor", bundle: nil).instantiateViewController(withIdentifier: "DSignInVC")as? DSignInVC {
             self.navigationController?.pushViewController(vc, animated: true)
+            
         }
     }
 }

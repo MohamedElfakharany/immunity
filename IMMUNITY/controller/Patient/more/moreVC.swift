@@ -94,6 +94,7 @@ class moreVC: UIViewController {
         
         Helper.removePatientData()
         Helper.removeAccessToken()
+        Helper.removeDocAccessToken()
     }
     @IBAction func BtnApprovalListAction(_ sender: Any) {
     

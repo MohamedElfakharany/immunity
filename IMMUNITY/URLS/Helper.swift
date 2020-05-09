@@ -29,8 +29,9 @@ class Helper: NSObject {
         guard let window = UIApplication.shared.keyWindow else {return}
         let sb = UIStoryboard ( name : "Doctor" , bundle : nil)
         var vc : UIViewController
-        if getAccessToken() == nil {
-            vc = sb.instantiateInitialViewController()!
+        if getDoctorAccessToken() == nil {
+            let StoryB = UIStoryboard ( name: "Patient", bundle: nil)
+            vc = StoryB.instantiateViewController(withIdentifier: "FirstVC")
         }else {
             vc = sb.instantiateViewController(withIdentifier: "DAppointmentVC")
         }
@@ -61,7 +62,8 @@ class Helper: NSObject {
         email:String ,
         phone : String ,
         city : String,
-        id : String
+        id : String,
+        role : String
         ){
         
         let defFirstName = UserDefaults.standard
@@ -91,6 +93,10 @@ class Helper: NSObject {
         let defId = UserDefaults.standard
         defId.setValue(id, forKey: "id")
         defId.synchronize()
+        
+        let defRole = UserDefaults.standard
+        defRole.setValue(role, forKey: "role")
+        defRole.synchronize()
         
         RestartApp()
         
@@ -142,6 +148,11 @@ class Helper: NSObject {
         return (def.object(forKey: "id") as? String?)!
     }
     
+    class func GetPatientRole() -> String? {
+        let def = UserDefaults.standard
+        return (def.object(forKey: "role") as? String?)!
+    }
+    
     class func removeAccessToken (){
         let removeSuccessful = UserDefaults.standard
         removeSuccessful.removeObject(forKey: "access_token")
@@ -175,6 +186,10 @@ class Helper: NSObject {
         removeCity.removeObject(forKey: "city")
         removeCity.synchronize()
         
+        let removeRole = UserDefaults.standard
+        removeRole.removeObject(forKey: "role")
+        removeRole.synchronize()
+        
         RestartApp()
     }
     
@@ -199,7 +214,8 @@ class Helper: NSObject {
         city : String ,
         id : String ,
         specialities : String ,
-        info : String
+        info : String,
+        role : String
         ){
         
         let defFirstName = UserDefaults.standard
@@ -253,6 +269,10 @@ class Helper: NSObject {
         let defImage = UserDefaults.standard
         defImage.setValue(image, forKey: "image")
         defImage.synchronize()
+        
+        let defRole = UserDefaults.standard
+        defRole.setValue(role, forKey: "role")
+        defRole.synchronize()
         
         RestartDocApp()
         
@@ -332,6 +352,20 @@ class Helper: NSObject {
     class func getDoctorImage() -> String?{
         let def = UserDefaults.standard
         return (def.object(forKey: "image") as? String?)!
+    }
+    
+    class func getDocRole() -> String?{
+        let def = UserDefaults.standard
+        return (def.object(forKey: "role")as? String?)!
+    }
+    
+    class func removeDocAccessToken (){
+        let removeSuccessful = UserDefaults.standard
+        removeSuccessful.removeObject(forKey: "access_token")
+        removeSuccessful.synchronize()
+        
+        RestartDocApp()
+        
     }
     
     

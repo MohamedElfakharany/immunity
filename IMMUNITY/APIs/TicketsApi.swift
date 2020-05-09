@@ -44,4 +44,47 @@ class TicketsApi: NSObject {
         
     }
     
+    class func confirmBooking(ticketId:String,docId : String , Availability : String, completion : @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllTickets :Message?)-> Void){
+        
+        guard let PatientId = Helper.getPatientId() else {
+            completion(nil, false,false, nil)
+            return
+        }
+        let headers = [
+            "APP_KEY" : "123456"
+        ]
+        let parameters = [
+            "doc_id" : docId,
+            "patient_id" : PatientId,
+            "availability" : Availability
+        ]
+        
+        let url = URLs.ticketAll + ticketId
+        print(url)
+        print(parameters)
+        
+        Alamofire.request(url, method: .patch, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+            .responseJSON{ ( response ) in
+                switch response.result {
+                case .failure(let error):
+                    print(error)
+                    completion(error,false,false,nil)
+                    
+                case .success:
+                    do{
+                        print(response)
+                        let showTickets = try JSONDecoder().decode(Message.self, from: response.data!)
+                        completion(nil,true,true,showTickets)
+                        
+                        
+                    }catch{
+                        print("error")
+                    }
+                }
+        }
+        
+
+    }
+    
+    
 }

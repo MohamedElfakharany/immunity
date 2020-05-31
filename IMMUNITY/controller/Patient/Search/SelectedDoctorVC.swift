@@ -75,7 +75,7 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     func ticketsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id) { (error, networkSuccess, codeSuccess, ticketArray) in
+        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id , availability: "YES") { (error, networkSuccess, codeSuccess, ticketArray) in
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{

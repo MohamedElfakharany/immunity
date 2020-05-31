@@ -46,7 +46,7 @@ class TicketInformationVC: UIViewController,NVActivityIndicatorViewable {
         BackView.dropShadow(scale: true)
         self.navigationController?.title = ""
         gradBTNS()
-        
+        print(singleTicket?.id ?? 0)
         LblDocName.text = "DR. \(singItem?.firstName ?? "") \(singItem?.lastName ?? "")"
         LblDocPrice.text = "Book Price: \(singItem?.fees ?? "") LE"
         LblDocAddress.text = singItem?.city ?? ""
@@ -93,7 +93,7 @@ class TicketInformationVC: UIViewController,NVActivityIndicatorViewable {
 //            Helper.removeAccessToken()
 //        }else{
         
-        guard let PatientId = Helper.getAccessToken() else{
+        guard Helper.getAccessToken() != nil else{
             Helper.removeAccessToken()
             return
         }

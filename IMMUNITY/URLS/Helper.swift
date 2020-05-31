@@ -31,7 +31,7 @@ class Helper: NSObject {
         var vc : UIViewController
         if getDoctorAccessToken() == nil {
             let StoryB = UIStoryboard ( name: "Patient", bundle: nil)
-            vc = StoryB.instantiateViewController(withIdentifier: "FirstVC")
+            vc = StoryB.instantiateViewController(withIdentifier: "NavigationFirstVC")
         }else {
             vc = sb.instantiateViewController(withIdentifier: "DAppointmentVC")
         }

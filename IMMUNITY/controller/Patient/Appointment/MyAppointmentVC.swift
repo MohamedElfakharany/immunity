@@ -7,16 +7,16 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
+class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSource , NVActivityIndicatorViewable {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var image:UIImageView!
     @IBOutlet weak var BtnSignInOutlet:UIButton!
     
-    var ticketDone = [SingleTicket]()
-    var ticketCanCanceled = [SingleTicket]()
-    var ticketCanceled = [SingleTicket]()
+    var ticketArray = [SingleTicket]()
+    var selectedTicket : SingleTicket?
     
     let patient_id = Helper.getPatientId()
     let AvailabilityYes = ""
@@ -43,8 +43,36 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        ticketsHandleRefresh()
         gradBTNS()
+        
+    }
+    
+    func ticketsHandleRefresh() {
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        
+        TicketsApi.allTicketsByPatientId(Patient_Id: "\(patient_id ?? "")", availability: "NO") { (error, networkSuccess, codeSuccess, ticketArray) in
+            if networkSuccess {
+                if codeSuccess {
+                    if let tickets = ticketArray{
+                        self.ticketArray = tickets.data ?? []
+                        print(tickets)
+                        print("patient_id : \(self.patient_id ?? " ")")
+                        self.tableView.reloadData()
+                        self.stopAnimating()
+                    }else{
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error doctors")
+                    }
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Doctor", message: "There is no doctors")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "NetWork", message: "Check your network Connection")
+            }
+        }
         
     }
     
@@ -68,31 +96,43 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
         BtnSignInOutlet.clipsToBounds = true
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return ticketArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell: UITableViewCell =  tableView.dequeueReusableCell(withIdentifier: "MyAppointmentVCTableViewCell") as! MyAppointmentVCTableViewCell
-            //set the data here
+        
+        
+        //        if indexPath.row == 0 {
+        //            let cell: UITableViewCell =  tableView.dequeueReusableCell(withIdentifier: "MyAppointmentVCTableViewCell") as! MyAppointmentVCTableViewCell
+        //            //set the data here
+        //            return cell
+        //        }
+        //        else if indexPath.row == 1 {
+        //            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyAppointmentWantCancledVCTableViewCell")as! MyAppointmentWantCancledVCTableViewCell
+        //            //set the data here
+        //            return cell
+        //        }
+        //        else {
+        //            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyAppointmentDidCanceledVCTableViewCell")as! MyAppointmentDidCanceledVCTableViewCell
+        //            //set the data here
+        //            return cell
+        //        }
+        
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MyAppointmentVCTableViewCell", for: indexPath) as? MyAppointmentVCTableViewCell {
+            cell.configureCell(item: ticketArray[indexPath.row])
             return cell
-        }
-        else if indexPath.row == 1 {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyAppointmentWantCancledVCTableViewCell")as! MyAppointmentWantCancledVCTableViewCell
-            //set the data here
-            return cell
-        }
-        else {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MyAppointmentDidCanceledVCTableViewCell")as! MyAppointmentDidCanceledVCTableViewCell
-            //set the data here
-            return cell
+        }else{
+            return  MyAppointmentVCTableViewCell()
+            
         }
     }
+        
+        
+        
+    
     
     // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -108,6 +148,15 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "AppointmentDetailsVC")as? AppointmentDetailsVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+            selectedTicket = ticketArray[indexPath.row]
+            vc.singleItem = selectedTicket
+        }
+    }
+    
     
     @IBAction func BtnSignInAction (_ sender:Any){
         Helper.removeAccessToken()

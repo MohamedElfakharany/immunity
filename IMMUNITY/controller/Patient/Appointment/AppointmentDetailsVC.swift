@@ -14,8 +14,29 @@ class AppointmentDetailsVC: UIViewController ,UITableViewDelegate, UITableViewDa
     @IBOutlet weak var BtnConfirmOutlet: UIButton!
     @IBOutlet weak var BtnRejectOutlet: UIButton!
     
+    @IBOutlet weak var LblDetectionNumber : UILabel!
+    @IBOutlet weak var LblDoctorCode : UILabel!
+    @IBOutlet weak var LblPatientCode : UILabel!
+    @IBOutlet weak var LblTicketDay : UILabel!
+    @IBOutlet weak var LblTicketTime : UILabel!
+    @IBOutlet weak var LblDoctorName : UILabel!
+    
+    @IBOutlet weak var MedicalReportTxtView: UITextView!
+
+    var singleItem : SingleTicket?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(singleItem ?? SingleTicket())
+        
+        LblDetectionNumber.text = "\(singleItem?.id ?? 0)"
+        LblDoctorCode.text = "\(singleItem?.docID ?? "")"
+        LblPatientCode.text = "\(singleItem?.patientID ?? "")"
+        LblTicketDay.text = "\(singleItem?.day ?? "")"
+        LblTicketTime.text = "\(singleItem?.time ?? "") , \(singleItem?.duration ?? "")"
+        LblDoctorName.text = "\(singleItem?.docName ?? "")"
+        MedicalReportTxtView.text = "\(singleItem?.medicalReport ?? "")"
         
         tableView.tableFooterView = UIView()
         tableView.separatorInset = .zero

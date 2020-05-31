@@ -129,11 +129,7 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
             
         }
     }
-        
-        
-        
-    
-    
+    // write any thing 
     // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return cellSpacingHeight

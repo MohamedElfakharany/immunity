@@ -14,10 +14,13 @@ class SelectLoginVC: UIViewController {
     
     @IBOutlet weak var DoctorSignIn: UIButton!
     
+    @IBOutlet weak var HospitalSignIn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.PatientSignin.center.y += 20
         self.DoctorSignIn.center.y += 30
+        self.HospitalSignIn.center.y += 40
         
         gradBTNS()
         
@@ -27,8 +30,10 @@ class SelectLoginVC: UIViewController {
         super.viewWillAppear(animated)
         PatientSignin.alpha = 0.0
         DoctorSignIn.alpha = 0.0
+        HospitalSignIn.alpha = 0.0
         self.PatientSignin.center.y += 20
         self.DoctorSignIn.center.y += 30
+        self.HospitalSignIn.center.y += 40
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,6 +48,8 @@ class SelectLoginVC: UIViewController {
             self.PatientSignin.center.y -= 20
             self.DoctorSignIn.alpha = 1.0
             self.DoctorSignIn.center.y -= 30
+            self.HospitalSignIn.alpha = 1.0
+            self.HospitalSignIn.center.y -= 40
             
         } ,completion : nil)
     }
@@ -83,6 +90,22 @@ class SelectLoginVC: UIViewController {
         
         DoctorSignIn.layer.cornerRadius = 10
         DoctorSignIn.clipsToBounds = true
+        
+        // Hospital Sign In BTN
+        
+        let gradientLayer3 = CAGradientLayer()
+        
+        gradientLayer3.frame = HospitalSignIn.bounds
+        
+        gradientLayer3.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
+        
+        gradientLayer3.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer3.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
+        HospitalSignIn.layer.insertSublayer(gradientLayer3, at: 0)
+        
+        HospitalSignIn.layer.cornerRadius = 10
+        HospitalSignIn.clipsToBounds = true
 
     }
     
@@ -93,4 +116,13 @@ class SelectLoginVC: UIViewController {
             
         }
     }
+    
+    @IBAction func BtnActionHospitalSignIn(_ sender: UIButton) {
+        print("go to hospital login")
+        if let vc = UIStoryboard(name: "Hospital", bundle: nil).instantiateViewController(withIdentifier: "HFirstVC")as? HFirstVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+    }
+    
 }

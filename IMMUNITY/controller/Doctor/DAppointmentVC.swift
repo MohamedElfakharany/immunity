@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegate{
+class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegate,NVActivityIndicatorViewable{
     
     @IBOutlet weak var TableViewAppoint: UITableView!
     @IBOutlet weak var chooseDatebtn: UIButton!
     @IBOutlet weak var appointmentView: UIView!
     @IBOutlet weak var appointTxtFeild: UITextField!
+    
+    var ticketArray = [SingleTicket]()
+    var doctor_id = Int(Helper.getDoctorId()!)
+    
+    
     
     let ViewCell:TableViewCellAppoint = TableViewCellAppoint()
     
@@ -39,10 +45,48 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
         
         gradBTNS()
         
+        ticketsHandleRefresh()
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.TableViewAppoint.reloadData()
+        ticketsHandleRefresh()
+    }
+    
     @objc private func HandleDetails () {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DocMoreVC"){
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
+    
+    func ticketsHandleRefresh() {
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        
+        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id! , availability: "YES") { (error, networkSuccess, codeSuccess, ticketArray) in
+            if networkSuccess {
+                if codeSuccess {
+                    if let tickets = ticketArray{
+                        print("tickets come here")
+                        print(self.doctor_id as Any)
+                        self.ticketArray = tickets.data ?? []
+                        print(tickets)
+                        self.TableViewAppoint.reloadData()
+                        self.stopAnimating()
+                        
+                    }else{
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error tickets")
+                    }
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Doctor", message: "There is no tickets")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "NetWork", message: "Check your network Connection")
+            }
         }
         
     }
@@ -84,23 +128,37 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableViewCellAppoint = tableView.dequeueReusableCell(withIdentifier:"AppointCell", for: indexPath) as! TableViewCellAppoint
-        cell.AppointmentCellView.layer.cornerRadius = 15
-        cell.AppointmentCellView.dropShadow()
-        cell.ConfirmBtn.layer.cornerRadius = 10
-        cell.CancelBtn.layer.cornerRadius = 10
-        cell.DetailsBtn.layer.cornerRadius = 10
-        let bounds: CGRect = cell.DateLbl.bounds
-        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: ([.topLeft, .topRight]), cornerRadii: CGSize(width: 15.0, height: 15.0))
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = bounds
-        maskLayer.path = maskPath.cgPath
-        cell.DateLbl.layer.mask = maskLayer
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier:"AppointCell", for: indexPath) as? TableViewCellAppoint{
+            
+            cell.configureCell(item: ticketArray[indexPath.row])
+            cell.AppointmentCellView.layer.cornerRadius = 15
+            cell.AppointmentCellView.dropShadow()
+            cell.ConfirmBtn.layer.cornerRadius = 10
+            cell.CancelBtn.layer.cornerRadius = 10
+            cell.DetailsBtn.layer.cornerRadius = 10
+            let bounds: CGRect = cell.DateLbl.bounds
+            let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: ([.topLeft, .topRight]), cornerRadii: CGSize(width: 15.0, height: 15.0))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = bounds
+            maskLayer.path = maskPath.cgPath
+            cell.DateLbl.layer.mask = maskLayer
+            return cell
+        }else  {
+            return TableViewCellAppoint()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            
+            vc.singleTicket = ticketArray[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return ticketArray.count
     }
+    
     
 }

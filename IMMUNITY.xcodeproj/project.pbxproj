@@ -60,6 +60,10 @@
 		96A8D19223F3B202003C3EAB /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A8D19123F3B202003C3EAB /* SearchVC.swift */; };
 		96A9701F246752820061B04A /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9701E246752820061B04A /* message.swift */; };
 		96AD201623E32A600053657F /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD201523E32A600053657F /* moreVC.swift */; };
+		96AED7E02498FBEC009F1498 /* HEditDoctorSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AED7DF2498FBEC009F1498 /* HEditDoctorSearchVC.swift */; };
+		96AED7E224990412009F1498 /* HEditDoctorSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AED7E124990412009F1498 /* HEditDoctorSearchTableViewCell.swift */; };
+		96AED7E424991585009F1498 /* HEditSelectedDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AED7E324991585009F1498 /* HEditSelectedDoctorVC.swift */; };
+		96AED7E6249954CA009F1498 /* HEditSelectedDoctorActionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AED7E5249954CA009F1498 /* HEditSelectedDoctorActionVC.swift */; };
 		96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C3F23F2DA3F0069AEC5 /* settingVC.swift */; };
 		96B55C4223F2DBC40069AEC5 /* UpdateDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C4123F2DBC40069AEC5 /* UpdateDataVC.swift */; };
 		96B55C4423F2E8A00069AEC5 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B55C4323F2E8A00069AEC5 /* ChangePasswordVC.swift */; };
@@ -140,6 +144,10 @@
 		96A8D19123F3B202003C3EAB /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		96A9701E246752820061B04A /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
 		96AD201523E32A600053657F /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
+		96AED7DF2498FBEC009F1498 /* HEditDoctorSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEditDoctorSearchVC.swift; sourceTree = "<group>"; };
+		96AED7E124990412009F1498 /* HEditDoctorSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEditDoctorSearchTableViewCell.swift; sourceTree = "<group>"; };
+		96AED7E324991585009F1498 /* HEditSelectedDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEditSelectedDoctorVC.swift; sourceTree = "<group>"; };
+		96AED7E5249954CA009F1498 /* HEditSelectedDoctorActionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEditSelectedDoctorActionVC.swift; sourceTree = "<group>"; };
 		96B55C3F23F2DA3F0069AEC5 /* settingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
 		96B55C4123F2DBC40069AEC5 /* UpdateDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDataVC.swift; sourceTree = "<group>"; };
 		96B55C4323F2E8A00069AEC5 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
@@ -387,6 +395,10 @@
 				96ECDC04240EC57700C29834 /* HFirstVC.swift */,
 				96ECDC06240ECE8000C29834 /* HClinicDefinitionVC.swift */,
 				96ECDC08240ED11200C29834 /* HCreateDoctorVC.swift */,
+				96AED7DF2498FBEC009F1498 /* HEditDoctorSearchVC.swift */,
+				96AED7E124990412009F1498 /* HEditDoctorSearchTableViewCell.swift */,
+				96AED7E324991585009F1498 /* HEditSelectedDoctorVC.swift */,
+				96AED7E5249954CA009F1498 /* HEditSelectedDoctorActionVC.swift */,
 			);
 			path = Hospital;
 			sourceTree = "<group>";
@@ -575,7 +587,9 @@
 				96B55C4023F2DA3F0069AEC5 /* settingVC.swift in Sources */,
 				96ECDC05240EC57700C29834 /* HFirstVC.swift in Sources */,
 				96867DEF23FDAB71005CF342 /* VisitorRatingTableViewCell.swift in Sources */,
+				96AED7E224990412009F1498 /* HEditDoctorSearchTableViewCell.swift in Sources */,
 				962FF6D52432A22200F0C86B /* TicketsApi.swift in Sources */,
+				96AED7E6249954CA009F1498 /* HEditSelectedDoctorActionVC.swift in Sources */,
 				96867DF323FDAC3E005CF342 /* SelectedDoctorCollectionViewCell.swift in Sources */,
 				966D380E2392BB02009E6A43 /* ShowAlert.swift in Sources */,
 				96D28B41243A58F80062877D /* DetailViewController.swift in Sources */,
@@ -598,12 +612,14 @@
 				96ED724423FF5988009EFA70 /* TabBarVCs.swift in Sources */,
 				9698B66E2403396200DD3B83 /* BookDoctorTableViewCell.swift in Sources */,
 				966D37EF23929B63009E6A43 /* AppDelegate.swift in Sources */,
+				96AED7E02498FBEC009F1498 /* HEditDoctorSearchVC.swift in Sources */,
 				96ED72472400080F009EFA70 /* MyAppointmentVCTableViewCell.swift in Sources */,
 				96867DE923FD9D48005CF342 /* SearchByArea&SpecialityVC.swift in Sources */,
 				966D382A23999DB4009E6A43 /* ResetPasswordVC.swift in Sources */,
 				96960146240AF42300621117 /* MyAppointmentWantCancledVCTableViewCell.swift in Sources */,
 				96867DE523FD9CCE005CF342 /* SelectedDoctorVC.swift in Sources */,
 				96B55C4223F2DBC40069AEC5 /* UpdateDataVC.swift in Sources */,
+				96AED7E424991585009F1498 /* HEditSelectedDoctorVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

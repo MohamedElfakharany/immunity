@@ -28,6 +28,10 @@ class TableViewCellAppoint: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCell ( item : SingleTicket){
+        DateLbl.text = "\(item.date ?? "") & \(item.day ?? "")"
+    }
+    
     @IBAction func BtnDetailsAction(_ sender : Any){
         
     }

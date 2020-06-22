@@ -166,6 +166,7 @@ class API_Auth: NSObject {
                     if let api_token =  json["data"]["access_token"].string {
                         Helper.SaveDoctorAccessToken(token: api_token)
                         
+                        
                         print ("api_token : \(api_token) ")
                         
                         completion(nil,  true)

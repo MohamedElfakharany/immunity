@@ -43,5 +43,19 @@ extension CGRect{
     
 }
 
+extension UIImageView {
+    
+    func roundedImage() {
+        self.layer.cornerRadius = self.frame.size.width / 2
+        //        imageView.layer.masksToBounds = true
+        //        imageView.layer.borderWidth = 1.5
+        //        imageView.layer.borderColor = UIColor.white.cgColor
+        self.layer.masksToBounds = true
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = UIColor.white.cgColor
+        self.clipsToBounds = true
+    }
+    
+}
 
 

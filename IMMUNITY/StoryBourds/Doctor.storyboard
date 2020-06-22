@@ -936,7 +936,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="77.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfm-X5-aHP">
-                                                <rect key="frame" x="30" y="19.999999999999996" width="92" height="37.666666666666657"/>
+                                                <rect key="frame" x="30" y="19.999999999999996" width="284" height="37.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -951,13 +951,16 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viw-o1-Int">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="77.666666666666671"/>
+                                                <connections>
+                                                    <segue destination="Q2t-uq-djl" kind="show" id="DQ8-ZE-Kvr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="viw-o1-Int" firstAttribute="top" secondItem="N8L-8J-BxV" secondAttribute="top" id="Asp-bq-0TQ"/>
                                             <constraint firstItem="ABs-lO-S4g" firstAttribute="centerY" secondItem="N8L-8J-BxV" secondAttribute="centerY" id="NbI-I9-4qA"/>
-                                            <constraint firstItem="ABs-lO-S4g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gfm-X5-aHP" secondAttribute="trailing" constant="8" symbolic="YES" id="jNM-gf-IE8"/>
+                                            <constraint firstItem="ABs-lO-S4g" firstAttribute="leading" secondItem="Gfm-X5-aHP" secondAttribute="trailing" constant="8" symbolic="YES" id="jNM-gf-IE8"/>
                                             <constraint firstItem="Gfm-X5-aHP" firstAttribute="leading" secondItem="N8L-8J-BxV" secondAttribute="leading" constant="30" id="jO7-xo-aKk"/>
                                             <constraint firstItem="Gfm-X5-aHP" firstAttribute="centerY" secondItem="N8L-8J-BxV" secondAttribute="centerY" id="nb4-lm-Zb5"/>
                                             <constraint firstAttribute="trailing" secondItem="ABs-lO-S4g" secondAttribute="trailing" constant="10" id="oKI-X3-Ql8"/>
@@ -985,6 +988,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDN-OC-JM9">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="77.333333333333329"/>
+                                                <connections>
+                                                    <segue destination="tJh-Eg-MXp" kind="show" id="9sT-9G-laZ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1043,13 +1049,308 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRy-PE-mL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2041" y="933"/>
+            <point key="canvasLocation" x="2019" y="1115"/>
+        </scene>
+        <!--Contact UsVC-->
+        <scene sceneID="nPX-QV-KlV">
+            <objects>
+                <viewController id="Q2t-uq-djl" customClass="ContactUsVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JOG-eY-M4t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="B2w-N0-tTz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wd4-pw-UdY">
+                                <rect key="frame" x="15" y="74" width="384" height="537.66666666666663"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLu-26-dQk">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="172.66666666666666"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hiclipart.com" translatesAutoresizingMaskIntoConstraints="NO" id="cke-qO-dOJ">
+                                                <rect key="frame" x="7.9999999999999964" y="8" width="57.666666666666657" height="69"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UlY-0t-zPe">
+                                                <rect key="frame" x="80.666666666666657" y="0.0" width="303.33333333333337" height="171.66666666666666"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="60X-Rg-Nja">
+                                                        <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="80.666666666666671"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   +643031169" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Szv-qV-Tja">
+                                                                <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="42.666666666666664"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="19"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Foundation phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2j-79-K3f">
+                                                                <rect key="frame" x="0.0" y="42.666666666666671" width="303.33333333333331" height="38"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sHh-Gw-1jp">
+                                                        <rect key="frame" x="0.0" y="90.666666666666657" width="303.33333333333331" height="81"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   +201001263049" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cma-UY-eyx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="42.666666666666664"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="19"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   CEO Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyg-CN-8QV">
+                                                                <rect key="frame" x="0.0" y="42.666666666666686" width="303.33333333333331" height="38.333333333333343"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWb-v3-6S7">
+                                                <rect key="frame" x="80.666666666666657" y="173.66666666666666" width="303.33333333333337" height="0.0"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="UlY-0t-zPe" firstAttribute="top" secondItem="nLu-26-dQk" secondAttribute="top" id="2Ta-VM-ceB"/>
+                                            <constraint firstItem="fWb-v3-6S7" firstAttribute="leading" secondItem="UlY-0t-zPe" secondAttribute="leading" id="7De-VN-QUG"/>
+                                            <constraint firstItem="UlY-0t-zPe" firstAttribute="leading" secondItem="cke-qO-dOJ" secondAttribute="trailing" constant="15" id="9VI-xh-faD"/>
+                                            <constraint firstAttribute="bottom" secondItem="UlY-0t-zPe" secondAttribute="bottom" constant="1" id="E2k-p3-3Bo"/>
+                                            <constraint firstAttribute="trailing" secondItem="UlY-0t-zPe" secondAttribute="trailing" id="RV3-bc-ThE"/>
+                                            <constraint firstItem="cke-qO-dOJ" firstAttribute="leading" secondItem="nLu-26-dQk" secondAttribute="leading" constant="8" id="UnW-8o-iVk"/>
+                                            <constraint firstItem="fWb-v3-6S7" firstAttribute="top" secondItem="UlY-0t-zPe" secondAttribute="bottom" constant="2" id="Y61-x3-BGf"/>
+                                            <constraint firstItem="fWb-v3-6S7" firstAttribute="trailing" secondItem="UlY-0t-zPe" secondAttribute="trailing" id="h5j-wc-Ey9"/>
+                                            <constraint firstItem="UlY-0t-zPe" firstAttribute="top" secondItem="nLu-26-dQk" secondAttribute="top" id="k3Q-zF-hBK"/>
+                                            <constraint firstAttribute="bottom" secondItem="fWb-v3-6S7" secondAttribute="bottom" constant="-1" id="mWm-Li-d85"/>
+                                            <constraint firstItem="cke-qO-dOJ" firstAttribute="width" secondItem="nLu-26-dQk" secondAttribute="width" multiplier="0.15" id="r40-bm-cCl"/>
+                                            <constraint firstItem="cke-qO-dOJ" firstAttribute="top" secondItem="nLu-26-dQk" secondAttribute="top" constant="8" id="uAu-IM-QPX"/>
+                                            <constraint firstItem="cke-qO-dOJ" firstAttribute="height" secondItem="nLu-26-dQk" secondAttribute="height" multiplier="0.4" id="uMQ-Sy-M8q"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWp-np-0pM">
+                                        <rect key="frame" x="0.0" y="182.66666666666669" width="384" height="172.33333333333331"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hiclipart.com (1)" translatesAutoresizingMaskIntoConstraints="NO" id="LbK-pk-Zcc">
+                                                <rect key="frame" x="7.9999999999999964" y="8" width="57.666666666666657" height="69"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="30Z-GE-3jx">
+                                                <rect key="frame" x="80.666666666666657" y="0.0" width="303.33333333333337" height="171.33333333333334"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9JF-tJ-yph">
+                                                        <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="80.666666666666671"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   ImmunityHealthCare@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vRi-2M-iLE">
+                                                                <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="42.333333333333336"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="19"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Foundation Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgu-eC-sPv">
+                                                                <rect key="frame" x="0.0" y="42.333333333333314" width="303.33333333333331" height="38.333333333333343"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="e7U-Kw-uDd">
+                                                        <rect key="frame" x="0.0" y="90.666666666666629" width="303.33333333333331" height="80.666666666666686"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   m.abdallah@ci.suez.edu.eg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uSk-9G-NpP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="42.666666666666664"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="19"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   CEO Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBy-d4-c7t">
+                                                                <rect key="frame" x="0.0" y="42.666666666666686" width="303.33333333333331" height="38"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kw9-fZ-cGf">
+                                                <rect key="frame" x="80.666666666666657" y="172.33333333333331" width="303.33333333333337" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="kRw-hM-QbO"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Kw9-fZ-cGf" firstAttribute="bottom" secondItem="30Z-GE-3jx" secondAttribute="bottom" constant="2" id="84v-n0-bVp"/>
+                                            <constraint firstItem="Kw9-fZ-cGf" firstAttribute="trailing" secondItem="30Z-GE-3jx" secondAttribute="trailing" id="DbO-Pn-05p"/>
+                                            <constraint firstAttribute="trailing" secondItem="30Z-GE-3jx" secondAttribute="trailing" id="T7t-X8-Vwm"/>
+                                            <constraint firstItem="LbK-pk-Zcc" firstAttribute="leading" secondItem="eWp-np-0pM" secondAttribute="leading" constant="8" id="Uk1-qJ-ZG0"/>
+                                            <constraint firstItem="LbK-pk-Zcc" firstAttribute="width" secondItem="eWp-np-0pM" secondAttribute="width" multiplier="0.15" id="WSC-5n-HT3"/>
+                                            <constraint firstItem="30Z-GE-3jx" firstAttribute="top" secondItem="eWp-np-0pM" secondAttribute="top" id="fRo-vl-DoQ"/>
+                                            <constraint firstItem="30Z-GE-3jx" firstAttribute="leading" secondItem="LbK-pk-Zcc" secondAttribute="trailing" constant="15" id="gb0-DY-TxQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="30Z-GE-3jx" secondAttribute="bottom" constant="1" id="hXv-tV-x5K"/>
+                                            <constraint firstItem="Kw9-fZ-cGf" firstAttribute="leading" secondItem="30Z-GE-3jx" secondAttribute="leading" id="nGH-Wx-3aj"/>
+                                            <constraint firstItem="LbK-pk-Zcc" firstAttribute="top" secondItem="eWp-np-0pM" secondAttribute="top" constant="8" id="nWt-Oa-qnt"/>
+                                            <constraint firstItem="LbK-pk-Zcc" firstAttribute="height" secondItem="eWp-np-0pM" secondAttribute="height" multiplier="0.4" id="pEo-Sy-Oab"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLi-hn-ecI">
+                                        <rect key="frame" x="0.0" y="365" width="384" height="172.66666666666663"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hiclipart.com (2)" translatesAutoresizingMaskIntoConstraints="NO" id="R4O-vY-jMF">
+                                                <rect key="frame" x="7.9999999999999964" y="8" width="57.666666666666657" height="69"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XBI-Zg-ZRi">
+                                                <rect key="frame" x="80.666666666666657" y="0.0" width="303.33333333333337" height="171.66666666666666"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OEZ-pS-D78">
+                                                        <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="83.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Ismai'lia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b3D-JG-fTe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="44"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="19"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Other Branch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxV-oi-FVw">
+                                                                <rect key="frame" x="0.0" y="44" width="303.33333333333331" height="39.333333333333343"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="k3A-DZ-pKf">
+                                                        <rect key="frame" x="0.0" y="88.333333333333371" width="303.33333333333331" height="83.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Smart Vilage " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qur-DS-WYN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="303.33333333333331" height="44"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="19"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Head Quarter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxv-ng-4dJ">
+                                                                <rect key="frame" x="0.0" y="44" width="303.33333333333331" height="39.333333333333343"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOx-gr-Aqn">
+                                                <rect key="frame" x="80.666666666666657" y="172.66666666666663" width="303.33333333333337" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Rqo-Ol-kRn"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="XBI-Zg-ZRi" secondAttribute="bottom" constant="1" id="0SZ-xL-IIA"/>
+                                            <constraint firstAttribute="trailing" secondItem="XBI-Zg-ZRi" secondAttribute="trailing" id="6Ck-QO-g3n"/>
+                                            <constraint firstItem="R4O-vY-jMF" firstAttribute="top" secondItem="lLi-hn-ecI" secondAttribute="top" constant="8" id="J2V-RW-eIQ"/>
+                                            <constraint firstItem="R4O-vY-jMF" firstAttribute="leading" secondItem="lLi-hn-ecI" secondAttribute="leading" constant="8" id="LJv-OU-6ft"/>
+                                            <constraint firstItem="XBI-Zg-ZRi" firstAttribute="leading" secondItem="R4O-vY-jMF" secondAttribute="trailing" constant="15" id="azC-S2-GSH"/>
+                                            <constraint firstItem="EOx-gr-Aqn" firstAttribute="leading" secondItem="XBI-Zg-ZRi" secondAttribute="leading" id="ely-8F-l1x"/>
+                                            <constraint firstItem="R4O-vY-jMF" firstAttribute="height" secondItem="lLi-hn-ecI" secondAttribute="height" multiplier="0.4" id="emN-Th-Fl0"/>
+                                            <constraint firstItem="R4O-vY-jMF" firstAttribute="width" secondItem="lLi-hn-ecI" secondAttribute="width" multiplier="0.15" id="raJ-9a-6Re"/>
+                                            <constraint firstItem="EOx-gr-Aqn" firstAttribute="trailing" secondItem="XBI-Zg-ZRi" secondAttribute="trailing" id="unw-AY-q7M"/>
+                                            <constraint firstItem="XBI-Zg-ZRi" firstAttribute="top" secondItem="lLi-hn-ecI" secondAttribute="top" id="wOZ-DQ-duP"/>
+                                            <constraint firstItem="EOx-gr-Aqn" firstAttribute="bottom" secondItem="XBI-Zg-ZRi" secondAttribute="bottom" constant="2" id="yrg-k7-vbE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="B2w-N0-tTz" secondAttribute="bottom" id="525-k5-iFC"/>
+                            <constraint firstItem="B2w-N0-tTz" firstAttribute="leading" secondItem="JOG-eY-M4t" secondAttribute="leading" id="52Y-iw-8OG"/>
+                            <constraint firstItem="kU0-yY-Qoy" firstAttribute="trailing" secondItem="Wd4-pw-UdY" secondAttribute="trailing" constant="15" id="CI3-OF-LGN"/>
+                            <constraint firstItem="Wd4-pw-UdY" firstAttribute="leading" secondItem="kU0-yY-Qoy" secondAttribute="leading" constant="15" id="Mc5-jO-a4q"/>
+                            <constraint firstItem="B2w-N0-tTz" firstAttribute="top" secondItem="JOG-eY-M4t" secondAttribute="top" id="S1s-Vh-BAj"/>
+                            <constraint firstItem="Wd4-pw-UdY" firstAttribute="top" secondItem="kU0-yY-Qoy" secondAttribute="top" constant="30" id="SUz-BD-aAR"/>
+                            <constraint firstItem="Wd4-pw-UdY" firstAttribute="height" secondItem="JOG-eY-M4t" secondAttribute="height" multiplier="0.6" id="lJf-Fx-MwR"/>
+                            <constraint firstItem="kU0-yY-Qoy" firstAttribute="trailing" secondItem="B2w-N0-tTz" secondAttribute="trailing" id="nVj-TR-4vL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kU0-yY-Qoy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4pX-td-YcF"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5po-Gf-SrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="2024"/>
+        </scene>
+        <!--About ImmunityVC-->
+        <scene sceneID="HfK-VH-ymc">
+            <objects>
+                <viewController id="tJh-Eg-MXp" customClass="AboutImmunityVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5h0-0I-1Bd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000149011612" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="Q7j-tB-FdL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZM-Tn-ztj">
+                                <rect key="frame" x="15" y="318" width="384" height="528"/>
+                                <string key="text">•    Software Mobile Application related to the medical field which organizes the relation-ship between all the sectors.
+•    It facilitates the process of searching, booking appointments for doctors by the patients.
+•    It provides that the diagnosis will be in the home of the patient .
+•    It also can provide a lot of features like giving a discount or promotion if the booking done via the application.
+•    It organizes the cycle between the patient &amp; the pharmacies &amp; the Scan Centers/Labs.
+•    Each pharmacy can deliver medicine to patient.
+•    We use Data Mining to show us the names of serious and widespread diseases in the Middle East and fast and prevalent treatments to combat diseases.
+•    there will be a reminder for medical treatments.
+•    Awareness videos will be available on how to deal with emergencies and how first aid works
+                                </string>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo SemiBold" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_1" translatesAutoresizingMaskIntoConstraints="NO" id="Vcc-rq-nnJ">
+                                <rect key="frame" x="-39.666666666666657" y="74" width="493.33333333333326" height="224"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PZM-Tn-ztj" secondAttribute="bottom" constant="50" id="7Jo-IS-nO7"/>
+                            <constraint firstItem="Vcc-rq-nnJ" firstAttribute="top" secondItem="K9Y-GP-Gha" secondAttribute="top" constant="30" id="8dw-A1-jf1"/>
+                            <constraint firstItem="K9Y-GP-Gha" firstAttribute="trailing" secondItem="PZM-Tn-ztj" secondAttribute="trailing" constant="15" id="Nwz-Zm-8Xf"/>
+                            <constraint firstItem="PZM-Tn-ztj" firstAttribute="leading" secondItem="K9Y-GP-Gha" secondAttribute="leading" constant="15" id="SwI-oU-oJl"/>
+                            <constraint firstItem="PZM-Tn-ztj" firstAttribute="top" secondItem="Vcc-rq-nnJ" secondAttribute="bottom" constant="20" id="UhR-9Q-M3m"/>
+                            <constraint firstItem="K9Y-GP-Gha" firstAttribute="trailing" secondItem="Q7j-tB-FdL" secondAttribute="trailing" id="Vvw-Ad-N4u"/>
+                            <constraint firstItem="Q7j-tB-FdL" firstAttribute="top" secondItem="5h0-0I-1Bd" secondAttribute="top" id="ZUa-Eh-M2P"/>
+                            <constraint firstItem="Vcc-rq-nnJ" firstAttribute="height" secondItem="Q7j-tB-FdL" secondAttribute="height" multiplier="0.25" id="aMz-l6-oyH"/>
+                            <constraint firstItem="Q7j-tB-FdL" firstAttribute="leading" secondItem="5h0-0I-1Bd" secondAttribute="leading" id="cO8-Ax-P5B"/>
+                            <constraint firstAttribute="bottom" secondItem="Q7j-tB-FdL" secondAttribute="bottom" id="zax-1U-UyI"/>
+                            <constraint firstItem="Vcc-rq-nnJ" firstAttribute="centerX" secondItem="5h0-0I-1Bd" secondAttribute="centerX" id="zsl-Vj-2CL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K9Y-GP-Gha"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="axj-jh-p28"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8A-ev-GUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2807" y="2024"/>
         </scene>
     </scenes>
     <resources>
         <image name="BG" width="800" height="800"/>
         <image name="Details" width="512" height="455"/>
         <image name="back" width="30" height="20"/>
+        <image name="hiclipart.com" width="512" height="512"/>
+        <image name="hiclipart.com (1)" width="1200" height="1200"/>
+        <image name="hiclipart.com (2)" width="686" height="980"/>
         <image name="images" width="701" height="437"/>
         <image name="logo_1" width="493" height="480"/>
         <image name="plus" width="14" height="14"/>

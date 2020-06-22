@@ -29,8 +29,6 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.title = "Doctor Information"
-        
         self.doctor_id = singelItem?.id ?? 0
         
         LblDocName.text = "DR. \(singelItem?.firstName ?? "") \(singelItem?.lastName ?? "")"

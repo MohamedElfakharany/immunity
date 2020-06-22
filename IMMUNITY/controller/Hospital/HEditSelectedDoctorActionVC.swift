@@ -1,22 +1,21 @@
 //
-//  CreateDoctorVC.swift
+//  HEditSelectedDoctorActionVC.swift
 //  IMMUNITY
 //
-//  Created by elfakharany on 3/3/20.
+//  Created by elfakharany on 6/16/20.
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
 
-class HCreateDoctorVC: UIViewController {
+class HEditSelectedDoctorActionVC: UIViewController {
     
     @IBOutlet weak var imageuser: UIImageView!
     @IBOutlet weak var specialityTextField: UITextField!
     @IBOutlet weak var doctorNameTextField: UITextField!
     @IBOutlet weak var mobileNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
-    @IBOutlet weak var PasswordConfirmationTextField: UITextField!
+    @IBOutlet weak var FeesTextField: UITextField!
     
     @IBOutlet weak var BtnOutletSave: UIButton!
     
@@ -78,17 +77,15 @@ class HCreateDoctorVC: UIViewController {
         emailTextField.MakeRoundeEdges(emailTextField)
         emailTextField.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
         
-        PasswordTextField.MakeRoundeEdges(PasswordTextField)
-        PasswordTextField.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
+        FeesTextField.MakeRoundeEdges(FeesTextField)
+        FeesTextField.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
         
-        PasswordConfirmationTextField.MakeRoundeEdges(PasswordConfirmationTextField)
-        PasswordConfirmationTextField.addShadowToTextField(color: UIColor.black, cornerRadius: 5)
         
     }
     
 }
 
-extension HCreateDoctorVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension HEditSelectedDoctorActionVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

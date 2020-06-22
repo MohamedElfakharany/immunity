@@ -38,8 +38,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var RayView: UIView!
     @IBOutlet weak var AnalysisView: UIView!
     
+    var singleTicket : SingleTicket?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.LblDoctorName.text = singleTicket?.docName
+        
         
         
        
@@ -48,10 +54,10 @@ class DetailViewController: UIViewController {
     }
     
     func setupView() {
-        reportTextView.isHidden = true
-        drugsTextView.isHidden = true
-        rayTextView.isHidden = true
-        analysesTextView.isHidden = true
+//        reportTextView.isHidden = true
+//        drugsTextView.isHidden = true
+//        rayTextView.isHidden = true
+//        analysesTextView.isHidden = true
         
         ReportView.layer.cornerRadius = 15
         ReportView.clipsToBounds = true
@@ -90,12 +96,12 @@ class DetailViewController: UIViewController {
 //            print(2)
 //            self.reloadInputViews()
 //        }
-        
-        reportTextView.isHidden = false
-        drugsTextView.isHidden = true
-        rayTextView.isHidden = true
-        analysesTextView.isHidden = true
-        self.reloadInputViews()
+//
+//        reportTextView.isHidden = false
+//        drugsTextView.isHidden = true
+//        rayTextView.isHidden = true
+//        analysesTextView.isHidden = true
+//        self.reloadInputViews()
         
     }
     @IBAction func drugsButtonAction(_ sender: Any) {
@@ -110,35 +116,35 @@ class DetailViewController: UIViewController {
 //            print(4)
 //
 //        }
-        reportTextView.isHidden = true
-        drugsTextView.isHidden = false
-        rayTextView.isHidden = true
-        analysesTextView.isHidden = true
-        self.reloadInputViews()
+//        reportTextView.isHidden = true
+//        drugsTextView.isHidden = false
+//        rayTextView.isHidden = true
+//        analysesTextView.isHidden = true
+//        self.reloadInputViews()
     }
     
     @IBAction func rayButtonAction(_ sender: Any) {
-        if rayTextView.isHidden ==  true {
-            rayTextView.isHidden = false
-            print(5)
-            self.reloadInputViews()
-        }else {
-            rayTextView.isHidden = true
-            print(6)
-            self.reloadInputViews()
-        }
-        
+//        if rayTextView.isHidden ==  true {
+//            rayTextView.isHidden = false
+//            print(5)
+//            self.reloadInputViews()
+//        }else {
+//            rayTextView.isHidden = true
+//            print(6)
+//            self.reloadInputViews()
+//        }
+//
     }
     @IBAction func analysesButtonAction(_ sender: Any) {
-        if analysesTextView.isHidden ==  true {
-            analysesTextView.isHidden = false
-            print(7)
-            self.reloadInputViews()
-        }else {
-            analysesTextView.isHidden = true
-            print(8)
-            self.reloadInputViews()
-        }
+//        if analysesTextView.isHidden ==  true {
+//            analysesTextView.isHidden = false
+//            print(7)
+//            self.reloadInputViews()
+//        }else {
+//            analysesTextView.isHidden = true
+//            print(8)
+//            self.reloadInputViews()
+//        }
     }
     
     @IBAction func BackBtn(_ sender: Any) {

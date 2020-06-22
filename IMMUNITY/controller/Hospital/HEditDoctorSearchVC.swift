@@ -1,9 +1,9 @@
 //
-//  ViewController.swift
-//  immunity22
+//  HEditDoctorSearchVC.swift
+//  IMMUNITY
 //
-//  Created by mayada on 2/20/20.
-//  Copyright © 2020 mayada. All rights reserved.
+//  Created by elfakharany on 6/16/20.
+//  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import Alamofire
 import Kingfisher
 import NVActivityIndicatorView
 
-class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSource, NVActivityIndicatorViewable{
+class HEditDoctorSearchVC: UIViewController ,UITableViewDelegate,UITableViewDataSource, NVActivityIndicatorViewable{
     
     @IBOutlet weak var DocNameSearch: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +28,7 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
         Refresher.addTarget(self, action: #selector(getDoctors), for: .valueChanged)
         return Refresher
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +65,7 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
                         self.docArray = docs.data ?? []
                         self.curentPage = docs.meta?.currentPage ?? 1
                         print("curent page: \(docs.meta?.currentPage ?? 0)")
-//                        print("zzzz\(docs)")
+                        //                        print("zzzz\(docs)")
                         self.tableView.reloadData()
                         self.tableView.endUpdates()
                         self.stopAnimating()
@@ -115,13 +116,13 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 193
+        return 95
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 20
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell  = tableView.dequeueReusableCell(withIdentifier: "BookDoctorTableViewCell", for: indexPath) as? BookDoctorTableViewCell {
+        if let cell  = tableView.dequeueReusableCell(withIdentifier: "HEditDoctorSearchTableViewCell", for: indexPath) as? HEditDoctorSearchTableViewCell {
             if searching {
                 cell.configureCell(user: selectedDoc[indexPath.row])
             }else {
@@ -135,15 +136,14 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectedDoctorVC") as? SelectedDoctorVC{
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HEditSelectedDoctorVC") as? HEditSelectedDoctorVC{
             
-
-                    if searching {
-                        vc.singelItem = selectedDoc[indexPath.row]
-                    }else {
-                        vc.singelItem = docArray[indexPath.row]
+            if searching {
+                vc.singelItem = selectedDoc[indexPath.row]
+            }else {
+                vc.singelItem = docArray[indexPath.row]
             }
-               
+            
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -162,7 +162,7 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
 }
 
 
-extension searchByDocNameVC: UISearchBarDelegate {
+extension HEditDoctorSearchVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchBar.text == "" {

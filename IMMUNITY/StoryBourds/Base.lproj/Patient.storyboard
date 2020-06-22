@@ -3497,8 +3497,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_1" translatesAutoresizingMaskIntoConstraints="NO" id="sbO-cM-dzs">
                                 <rect key="frame" x="122" y="169" width="131" height="138"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="j9o-j4-cTH">
-                                <rect key="frame" x="30" y="407" width="315" height="119"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="j9o-j4-cTH">
+                                <rect key="frame" x="30" y="407" width="315" height="192"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNL-3j-fRx">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
@@ -3510,7 +3510,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnR-iC-kaj">
-                                        <rect key="frame" x="0.0" y="75" width="315" height="44"/>
+                                        <rect key="frame" x="0.0" y="74" width="315" height="44"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Doctor Sign In "/>
@@ -3518,8 +3518,17 @@
                                             <action selector="BtnActionDoctorSignIn:" destination="VaB-jJ-0Ut" eventType="touchUpInside" id="H3y-ED-1ZD"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2N1-hv-jw4">
+                                        <rect key="frame" x="0.0" y="148" width="315" height="44"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Hospital Sign In "/>
+                                        <connections>
+                                            <action selector="BtnActionHospitalSignIn:" destination="VaB-jJ-0Ut" eventType="touchUpInside" id="jeb-MD-H22"/>
+                                        </connections>
+                                    </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGo-m6-aCi">
-                                        <rect key="frame" x="0.0" y="119" width="315" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="192" width="315" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Not now"/>
@@ -3546,6 +3555,7 @@
                     <navigationItem key="navigationItem" title="IMMUNITY" id="sIG-Yn-tgb"/>
                     <connections>
                         <outlet property="DoctorSignIn" destination="RnR-iC-kaj" id="Dj1-Kw-zMg"/>
+                        <outlet property="HospitalSignIn" destination="2N1-hv-jw4" id="Eja-7J-ng2"/>
                         <outlet property="PatientSignin" destination="WNL-3j-fRx" id="Jwh-oN-dpd"/>
                     </connections>
                 </viewController>

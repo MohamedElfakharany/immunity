@@ -48,6 +48,11 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+        ticketsHandleRefresh()
+    }
+    
     func ticketsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         

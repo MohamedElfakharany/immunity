@@ -31,7 +31,7 @@ class moreVC: UIViewController {
         views()
 
         
-        if Helper.getAccessToken() == nil{
+        if Helper.getAccessToken().userToken == nil {
             self.SettingView.isHidden = true
             self.ApprovalListView.isHidden = true
             self.BtnSignOutOutlet.setTitle("Sign In", for: UIControl.State.normal)

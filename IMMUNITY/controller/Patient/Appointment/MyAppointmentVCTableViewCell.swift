@@ -13,7 +13,6 @@ class MyAppointmentVCTableViewCell: UITableViewCell {
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var lblTicketDate: UILabel!
     @IBOutlet weak var DocImage: UIImageView!
-    @IBOutlet weak var LblDocName: UILabel!
     @IBOutlet weak var BtnDetailsOutlet: UIButton!
     
     override func awakeFromNib() {
@@ -26,9 +25,8 @@ class MyAppointmentVCTableViewCell: UITableViewCell {
         
     }
     
-    func configureCell (item : SingleTicket){
-        LblDocName.text = item.docName ?? ""
-        lblTicketDate.text = "\(item.day ?? "") , \(item.date ?? "")"
+    func configureCell (item : SingleTicket2){
+        lblTicketDate.text = "\(item.day ?? "")"
     }
     
     

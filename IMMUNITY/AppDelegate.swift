@@ -19,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         
-        if Helper.GetPatientRole() == "patient" {
+        if Helper.getAccessToken().role == "patient" {
             
             print("Patient access_token is : \(Helper.GetPatientRole() ?? "")")
             
             let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs") 
             
             window?.rootViewController = tab
-        }else if Helper.getDocRole() == "doctor" {
-            let tab = UIStoryboard(name: "Doctor", bundle: nil).instantiateViewController(withIdentifier: "DAppointmentVC")
+        }else if Helper.getAccessToken().role == "doctor" {
+            let tab = UIStoryboard(name: "Doctor", bundle: nil).instantiateViewController(withIdentifier: "DTabBarVC")
             
             window?.rootViewController = tab
         }else {

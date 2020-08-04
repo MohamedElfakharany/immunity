@@ -38,13 +38,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var RayView: UIView!
     @IBOutlet weak var AnalysisView: UIView!
     
-    var singleTicket : SingleTicket?
+    var singleTicket : SingleTicket2?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.LblDoctorName.text = singleTicket?.docName
+//        self.LblDoctorName.text = singleTicket?.docName
         
         
         

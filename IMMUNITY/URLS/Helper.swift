@@ -12,15 +12,18 @@ class Helper: NSObject {
     
     class func RestartApp(){
         guard let window = UIApplication.shared.keyWindow else {return}
-        let sb = UIStoryboard ( name : "Patient" , bundle : nil)
-        var vc : UIViewController
-        if getAccessToken() == nil {
-            vc = sb.instantiateInitialViewController()!
-        }else {
-            vc = sb.instantiateViewController(withIdentifier: "TabBarVCs")
+        if Helper.getAccessToken().role == "patient" {
+            
+            print("Patient access_token is : \(Helper.GetPatientRole() ?? "")")
+            
+            let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs")
+            
+            window.rootViewController = tab
+        }else if Helper.getAccessToken().role == "doctor" {
+            let tab = UIStoryboard(name: "Doctor", bundle: nil).instantiateViewController(withIdentifier: "DTabBarVC")
+            
+            window.rootViewController = tab
         }
-        window.rootViewController = vc
-        
         UIView.transition(with: window, duration: 0.5, options: .transitionCurlDown, animations: nil, completion: nil)
         
     }
@@ -47,9 +50,10 @@ class Helper: NSObject {
         
     }
     
-    class func saveAccessToken ( token : String ){
+    class func saveAccessToken ( token : String ,role: String){
         let def = UserDefaults.standard
         def.setValue(token, forKey: "access_token")
+        def.setValue(role, forKey: "role")
         def.synchronize()
         
         RestartApp()
@@ -138,9 +142,9 @@ class Helper: NSObject {
         
     }
     
-    class func getAccessToken () -> String?{
+    class func getAccessToken () -> (userToken: String? ,role: String?){
         let def = UserDefaults.standard
-        return (def.object(forKey: "access_token")  as? String?)!
+        return (def.object(forKey: "access_token")  as? String? ?? "",def.object(forKey: "role")  as? String? ?? "")
         
     }
     class func getPatientId() -> String?{

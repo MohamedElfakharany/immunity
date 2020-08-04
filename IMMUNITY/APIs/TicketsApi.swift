@@ -11,19 +11,19 @@ import Alamofire
 
 class TicketsApi: NSObject {
     
-    class func allTicketsByDoctorId(doc_Id: Int ,availability: String, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSuccess: Bool, _ AllTicket: MainTicket?)-> Void){
+    class func allTicketsByDoctorId(doc_Id: Int ,availability: String, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSuccess: Bool, _ AllTicket: HeadTicket?)-> Void){
         
-        let headers = [
-            "APP_KEY" : "123456"
-        ]
+        let headers = HEADERS.headers
+        
         let parameters = [
-            "doc_id" : doc_Id ,
+            "day_no" : "1" ,
+            "doctor_id" : doc_Id ,
             "availability" : availability
             ] as [String : Any]
-        let url = URLs.ticketAll
+        let url = URLs.getTicket
         print(url)
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers )
             .responseJSON{ ( response ) in
                 switch response.result {
                 case .failure(let error):
@@ -33,7 +33,7 @@ class TicketsApi: NSObject {
                 case .success:
                     do{
                         print(response)
-                        let showTickets = try JSONDecoder().decode(MainTicket.self, from: response.data!)
+                        let showTickets = try JSONDecoder().decode(HeadTicket.self, from: response.data!)
                         completion(nil,true,true,showTickets)
                         
                         
@@ -45,16 +45,14 @@ class TicketsApi: NSObject {
         
     }
     
-    class func allTicketsByPatientId(Patient_Id: String ,availability: String, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSuccess: Bool, _ AllTicket: MainTicket?)-> Void){
+    class func allTicketsByPatientId(Patient_Id: String ,availability: String, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSuccess: Bool, _ AllTicket: HeadTicket?)-> Void){
         
-        let headers = [
-            "APP_KEY" : "123456"
-        ]
+        let headers = HEADERS.headers
         let parameters = [
             "patient_id" : Patient_Id ,
             "availability" : availability
             ] as [String : Any]
-        let url = URLs.ticketAll
+        let url = URLs.getTicket
         print(url)
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
@@ -67,7 +65,7 @@ class TicketsApi: NSObject {
                 case .success:
                     do{
                         print(response)
-                        let showTickets = try JSONDecoder().decode(MainTicket.self, from: response.data!)
+                        let showTickets = try JSONDecoder().decode(HeadTicket.self, from: response.data!)
                         completion(nil,true,true,showTickets)
                         
                         
@@ -79,26 +77,21 @@ class TicketsApi: NSObject {
         
     }
     
-    class func confirmBooking(ticketId:String,docId : String , Availability : String, completion : @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllTickets :Message?)-> Void){
+    class func confirmBooking(ticketId:String,docId : String , completion : @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllTickets :HeadMessage?)-> Void){
         
-        guard let PatientId = Helper.getPatientId() else {
-            completion(nil, false,false, nil)
-            return
-        }
-        let headers = [
-            "APP_KEY" : "123456"
-        ]
+
+        let headers = HEADERS.headers
         let parameters = [
-            "doc_id" : docId,
-            "patient_id" : PatientId,
-            "availability" : Availability
+            "doctor_id" : docId,
+            "payment" : "CASH",
+            "ticket_id" : ticketId
         ]
         
-        let url = URLs.ticketAll + ticketId
+        let url = URLs.patientBook
         print(url)
         print(parameters)
         
-        Alamofire.request(url, method: .patch, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
             .responseJSON{ ( response ) in
                 switch response.result {
                 case .failure(let error):
@@ -108,7 +101,7 @@ class TicketsApi: NSObject {
                 case .success:
                     do{
                         print(response)
-                        let showTickets = try JSONDecoder().decode(Message.self, from: response.data!)
+                        let showTickets = try JSONDecoder().decode(HeadMessage.self, from: response.data!)
                         completion(nil,true,true,showTickets)
                         
                         

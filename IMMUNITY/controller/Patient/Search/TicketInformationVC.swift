@@ -17,24 +17,19 @@ class TicketInformationVC: UIViewController,NVActivityIndicatorViewable {
     @IBOutlet weak var LblDocSpeciality: UILabel!
     @IBOutlet weak var LblDocAddress: UILabel!
     @IBOutlet weak var LblDocPrice: UILabel!
-    @IBOutlet weak var LblDocMobile: UILabel!
-    @IBOutlet weak var LblDocPhone: UILabel!
-    @IBOutlet weak var LblDocEmail: UILabel!
     @IBOutlet weak var LblDocAppintmentDay: UILabel!
     @IBOutlet weak var LblDocAppintment: UILabel!
-    @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnConfirmOutlet: UIButton!
     
-    var singItem: SingleDoctor?
-    var singleTicket: SingleTicket?
-    var ticketArray = [SingleTicket]()
+    var singItem: SingleDoctor2?
+    var singleTicket: SingleTicket2?
+    var ticketArray = [SingleTicket2]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Helper.getAccessToken() == nil {
+        if Helper.getAccessToken().userToken == nil {
             self.BtnConfirmOutlet.setTitle("Sign In", for: UIControl.State.normal)
         }
-        self.navigationController?.title = "Ticket Information"
         
         //cell back view
         BackView.layer.cornerRadius = 20
@@ -49,15 +44,10 @@ class TicketInformationVC: UIViewController,NVActivityIndicatorViewable {
         print(singleTicket?.id ?? 0)
         LblDocName.text = "DR. \(singItem?.firstName ?? "") \(singItem?.lastName ?? "")"
         LblDocPrice.text = "Book Price: \(singItem?.fees ?? "") LE"
-        LblDocAddress.text = singItem?.city ?? ""
-        LblDocMobile.text = singItem?.mobileNumber ?? ""
-        LblDocPhone.text = singItem?.phoneNumber ?? ""
-        LblDocEmail.text = singItem?.email ?? ""
-        LblDocAppintmentDay.text = "\(singleTicket?.day ?? "" ) At: \(singleTicket?.date ?? "")"
-        LblDocAppintment.text = "Starts at: \(singleTicket?.time ?? "") & End after: \(singleTicket?.duration ?? "")"
+        LblDocAppintmentDay.text = "Next \(singleTicket?.day ?? "")"
+        LblDocAppintment.text = "From: \(singleTicket?.from ?? "") To: \(singleTicket?.to ?? "")"
         LblDocSpeciality.text = singItem?.specialities ?? ""
-        TxtviewDocInfo.text = singItem?.info ?? ""
-        let urlWithoutEncoding = "\(singItem?.image! ?? "")"
+        let urlWithoutEncoding = "\(singItem?.image ?? "")"
         let encodedLink = urlWithoutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         let encodedURL = NSURL(string: encodedLink!)! as URL
         DocImage.kf.indicatorType = .activity
@@ -88,30 +78,26 @@ class TicketInformationVC: UIViewController,NVActivityIndicatorViewable {
     }
     
     @IBAction func BtnConfirmAction(_ sender: Any) {
-
-//        if Helper.getAccessToken() == nil {
-//            Helper.removeAccessToken()
-//        }else{
         
-        guard Helper.getAccessToken() != nil else{
+        guard Helper.getAccessToken().role != nil else{
             Helper.removeAccessToken()
             return
         }
-        TicketsApi.confirmBooking(ticketId: "\(singleTicket?.id ?? 0)", docId: "\(singItem?.id ?? 0)", Availability: "NO") { (error, networkSuccess, codeSuccess, message) in
+        TicketsApi.confirmBooking(ticketId: "\(singleTicket?.id ?? 0)", docId: "\(singItem?.id ?? 0)") { (error, networkSuccess, codeSuccess, message) in
             if networkSuccess {
                 if codeSuccess {
                     if let message = message{
-                        if message.data.statue == true {
+                        if message.errorFlag == 0  {
                             self.stopAnimating()
                             if let vc = self.storyboard?.instantiateViewController(withIdentifier: "BookingConfirmationVC") as? BookingConfirmationVC {
                                 vc.name =  "DR. \(self.singItem?.firstName ?? "") \(self.singItem?.lastName ?? "")"
                                 self.navigationController?.pushViewController(vc, animated: true)
                             }
                         }else {
-                            print("ay 7agaaaa")
+                            self.showAlert(title: "Book Failed", message: message.message ?? "")
                         }
                         
-
+                        
                     }else{
                         self.stopAnimating()
                         self.showAlert(title: "Error", message: "Error doctors")
@@ -125,7 +111,7 @@ class TicketInformationVC: UIViewController,NVActivityIndicatorViewable {
                 self.showAlert(title: "NetWork", message: "Check your network Connection")
             }
         }
-
+        
     }
     
     

@@ -273,10 +273,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z5v-NQ-h6T">
                                 <rect key="frame" x="20" y="108" width="335" height="570"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vAl-Zy-bui">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="center" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="vAl-Zy-bui">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="54.333333333333336"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                     </textField>
@@ -952,7 +952,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="375-SE-841"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Appointments" id="2Ca-7R-Krn"/>
+                    <navigationItem key="navigationItem" id="2Ca-7R-Krn">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Opd-RQ-w0r"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="BtnSignInOutlet" destination="awz-Lx-uH9" id="JWp-8j-oCt"/>
                         <outlet property="image" destination="Ik0-rH-E9w" id="U7z-mO-TUZ"/>
@@ -1309,7 +1311,7 @@
             </objects>
             <point key="canvasLocation" x="742" y="3552"/>
         </scene>
-        <!--Choose your Search-->
+        <!--SearchVC-->
         <scene sceneID="XL0-rs-Wv3">
             <objects>
                 <viewController storyboardIdentifier="Search" id="xat-G8-Vgs" customClass="SearchVC" customModule="IMMUNITY" customModuleProvider="target" sceneMemberID="viewController">
@@ -1340,7 +1342,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Search by Doctor Name"/>
                                         <connections>
-                                            <segue destination="EOG-mp-Vli" kind="show" id="74p-Dj-XI3"/>
+                                            <segue destination="EOG-mp-Vli" kind="show" id="gxQ-ew-eyq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1362,7 +1364,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dIA-xh-gR8"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Choose your Search" id="iVr-gv-cfp">
+                    <navigationItem key="navigationItem" id="iVr-gv-cfp">
                         <barButtonItem key="backBarButtonItem" title=" " id="THV-GB-W16"/>
                     </navigationItem>
                     <connections>
@@ -2046,7 +2048,9 @@
                         <viewLayoutGuide key="safeArea" id="eUu-5N-mON"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Appointments" image="nav-myappointments" id="Upv-Gy-hGs"/>
-                    <navigationItem key="navigationItem" title="Fill Fields" id="Q8s-Ur-Tfz"/>
+                    <navigationItem key="navigationItem" id="Q8s-Ur-Tfz">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pXj-3w-aMr"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="BtnOutletSearch" destination="0W9-IK-JQX" id="LjS-7n-PfJ"/>
                         <outlet property="TxtfieldSelectCity" destination="kLc-g7-5WF" id="eFA-95-rVQ"/>
@@ -2134,7 +2138,7 @@
         <scene sceneID="j20-Gp-UJO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Za0-6o-Cu4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="more" image="more" selectedImage="Group 272" id="Nes-hh-epO"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="more" image="more" id="Nes-hh-epO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oyr-Gc-7Ta">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -2377,7 +2381,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IAa-hr-IfW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Doctors" id="DVf-Tq-4WZ"/>
+                    <navigationItem key="navigationItem" id="DVf-Tq-4WZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ZUj-gP-c9b"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="BackView" destination="6Vw-Y0-Yqa" id="B2X-wv-Bkw"/>
                         <outlet property="TxtViewCity" destination="3YX-kC-7At" id="bSh-nq-oqw"/>
@@ -2568,7 +2574,6 @@
                                 <state key="normal" title="Visitors Opinions"/>
                                 <connections>
                                     <action selector="BtnVisOpinionAction:" destination="UU9-Kj-J5Q" eventType="touchUpInside" id="J4c-kI-LOP"/>
-                                    <segue destination="FNd-OQ-vhE" kind="show" id="hIT-j3-JEM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOCTOR INFORMATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmt-di-ys8">
@@ -2608,8 +2613,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Asf-O2-0n3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Appointments" id="28l-OP-38B">
-                        <barButtonItem key="backBarButtonItem" title="Appointments" id="mvB-Sq-eDi"/>
+                    <navigationItem key="navigationItem" id="28l-OP-38B">
+                        <barButtonItem key="backBarButtonItem" title=" " id="DQx-Qc-OST"/>
                     </navigationItem>
                     <connections>
                         <outlet property="BackView" destination="9o0-Vi-sDa" id="XxW-Nm-ni7"/>
@@ -3075,7 +3080,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wj-Bd-TYP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Appointment Details" id="ZzZ-Fp-TVA"/>
+                    <navigationItem key="navigationItem" id="ZzZ-Fp-TVA">
+                        <barButtonItem key="backBarButtonItem" title=" " id="XXI-Ym-GUl"/>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="812"/>
                     <connections>
                         <outlet property="BackView" destination="O84-gc-18e" id="cql-Ux-Xim"/>
@@ -3084,13 +3091,9 @@
                         <outlet property="LblDocAddress" destination="Wwg-EA-Mrj" id="q56-Gw-Ovh"/>
                         <outlet property="LblDocAppintment" destination="Iz3-Kd-Aoy" id="nW2-Xy-GfF"/>
                         <outlet property="LblDocAppintmentDay" destination="9gR-VI-cvP" id="gdz-iT-zWH"/>
-                        <outlet property="LblDocEmail" destination="v38-I8-v4m" id="S8g-IN-gcC"/>
-                        <outlet property="LblDocMobile" destination="3Ry-vQ-M5j" id="i2V-C4-dH4"/>
                         <outlet property="LblDocName" destination="HP4-JE-gpY" id="RxD-rj-I6W"/>
-                        <outlet property="LblDocPhone" destination="avN-HD-6JB" id="1Fj-gR-r5V"/>
                         <outlet property="LblDocPrice" destination="JJf-1j-0Em" id="fDc-Wq-VbC"/>
                         <outlet property="LblDocSpeciality" destination="M3P-dH-rP2" id="gWk-RV-GlU"/>
-                        <outlet property="TxtviewDocInfo" destination="84U-H1-F5q" id="TC3-1C-Ss5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9a-Vt-Ayu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3441,7 +3444,7 @@
                                             <outlet property="BackView" destination="Azl-bI-PtX" id="KfB-9p-Nu8"/>
                                             <outlet property="BtnOutletBookNow" destination="K3p-7M-OyL" id="q5d-DX-KTy"/>
                                             <outlet property="DocImage" destination="Ow9-mG-lV1" id="Ta3-Wq-Gr5"/>
-                                            <outlet property="LblDocAddress" destination="utX-Ll-32N" id="uYW-7f-HQH"/>
+                                            <outlet property="LblDocAddress" destination="utX-Ll-32N" id="YLB-Yd-N8h"/>
                                             <outlet property="LblDocName" destination="dq8-tU-fVx" id="cWc-uW-HIb"/>
                                             <outlet property="LblDocPrice" destination="Rye-8M-1tU" id="ZrK-qW-lVf"/>
                                             <outlet property="LblDocRate" destination="LzF-Ml-tBj" id="5JG-t7-u4u"/>
@@ -3916,7 +3919,6 @@
     <resources>
         <image name="BG" width="800" height="800"/>
         <image name="Doctor" width="425" height="425"/>
-        <image name="Group 272" width="54" height="54"/>
         <image name="appointments" width="15" height="15"/>
         <image name="btn-cancel" width="8" height="8"/>
         <image name="eye-show-password" width="18" height="11"/>

@@ -16,7 +16,7 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
     @IBOutlet weak var appointmentView: UIView!
     @IBOutlet weak var appointTxtFeild: UITextField!
     
-    var ticketArray = [SingleTicket]()
+    var ticketArray = [SingleTicket2]()
     var doctor_id = Int(Helper.getDoctorId()!)
     
     
@@ -39,9 +39,6 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
         let appointmentImage = UIImage(named: "gray-downarrow")
         addRightImageTo(txtField: appointTxtFeild, andImage: appointmentImage!)
         
-        let AddButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action:    #selector(HandleDetails))
-        
-        navigationItem.rightBarButtonItem = AddButton
         
         gradBTNS()
         
@@ -54,13 +51,6 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
         ticketsHandleRefresh()
     }
     
-    @objc private func HandleDetails () {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DocMoreVC"){
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-    }
-    
     func ticketsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
@@ -70,7 +60,7 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
                     if let tickets = ticketArray{
                         print("tickets come here")
                         print(self.doctor_id as Any)
-                        self.ticketArray = tickets.data ?? []
+                        self.ticketArray = tickets.result?.tickets ?? []
                         print(tickets)
                         self.TableViewAppoint.reloadData()
                         self.stopAnimating()

@@ -34,14 +34,13 @@ class SearchCritriaTableViewCell: UITableViewCell {
         
     }
     
-    func configureCell (user : SingleDoctor){
+    func configureCell (user : SingleDoctor2){
         LblDocName.text = "DR. \(user.firstName ?? "") \(user.lastName ?? "")"
         LblDocSpeciality.text = user.specialities
-        LblDocAddress.text = user.city
-        LblDocRate.text = "Hospital: \(user.hospitalName ?? "")"
+        LblDocRate.text = "Doctor Rating: \(user.rating ?? 0)"
         LblDocPrice.text = "Book price : \(user.fees ?? "") LE"
         
-        let urlWithoutEncoding = "\(user.image!)"
+        let urlWithoutEncoding = "\(user.image ?? "")"
         let encodedLink = urlWithoutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         let encodedURL = NSURL(string: encodedLink!)! as URL
         DocImage.kf.indicatorType = .activity
@@ -50,6 +49,7 @@ class SearchCritriaTableViewCell: UITableViewCell {
             self.DocImage.kf.setImage(with: url)
         }
     }
+    
     func gradBTNS() {
         
         let RightGradientColor = #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)

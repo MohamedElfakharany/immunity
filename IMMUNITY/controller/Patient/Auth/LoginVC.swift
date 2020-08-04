@@ -76,18 +76,23 @@ class LoginVC: UIViewController, NVActivityIndicatorViewable {
         
         startAnimating(CGSize(width: 45, height: 45),message: "Loading",type: .ballSpinFadeLoader,color: .orange,textColor: .white)
         
-        API_Auth.login(email: email, password: password) { (error: Error?, success: Bool) in
+        authAPI.login(url: URLs.login, email: email, password: password) { (error, success,authData) in
             if success {
-                self.stopAnimating()
-                print("login done")
+                if authData?.errorFlag == 1{
+                    self.stopAnimating()
+                    self.showAlert(title: "Login Failed", message: authData?.message ?? "Check your Email or Password")
+                }else {
+                    self.stopAnimating()
+                    print("login done")
+                }
             }
             else{
                 self.stopAnimating()
                 print("login failed")
                 self.showAlert(title: "Network", message: "Check your network comnnection")
             }
+            self.stopAnimating()
         }
-        
     }
     
     @IBAction func BtnBack(_ sender : Any){

@@ -29,14 +29,13 @@ class BookDoctorTableViewCell: UITableViewCell {
         
     }
     
-    func configureCell (user : SingleDoctor){
+    func configureCell (user : SingleDoctor2){
         LblDocName.text = "DR. \(user.firstName ?? "") \(user.lastName ?? "")"
         LblDocSpeciality.text = user.specialities
-        LblDocAddress.text = user.city
-        LblDocRate.text = "Hospital: \(user.hospitalName ?? "")"
+        LblDocRate.text = "Doctor Rate: \(user.rating ?? 1)"
         LblDocPrice.text = "Book price : \(user.fees ?? "") LE"
         
-        let urlWithoutEncoding = "\(user.image!)"
+        let urlWithoutEncoding = "\(user.image ?? "")"
         let encodedLink = urlWithoutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
         let encodedURL = NSURL(string: encodedLink!)! as URL
         DocImage.kf.indicatorType = .activity

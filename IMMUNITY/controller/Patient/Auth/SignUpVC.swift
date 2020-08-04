@@ -238,17 +238,23 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource,N
  
         if password == passwordConfirmation {
         
-            API_Auth.register(first_name: FirstName, last_name: LastName, email: Email, password: password, phone: Phone, city: City, gander: Gender, date_of_birth: DateOfBirth ) { (error :Error?, success :Bool) in
+            authAPI.register(first_name: FirstName, last_name: LastName, email: Email, password: password, phone: Phone, city: City, gander: Gender, date_of_birth: DateOfBirth) {  (error : Error?, success , authData) in
+                
                 if success {
+                    if authData?.errorFlag == 1 {
+                        self.stopAnimating()
+                        self.showAlert(title: "Register Failed", message: authData?.message ?? "Check Your Data")
+                    }else {
+                        self.stopAnimating()
+                        print("regiter done")
+                    }
+                }else {
                     self.stopAnimating()
-                    print("Register Done")
+                    print ("register failed")
+                    self.showAlert(title:"Network", message: "Check your network comnnection")
                 }
-                else{
-                    self.stopAnimating()
-                    self.showAlert(title: "Network", message: "Check your network connection")
-                    print("register failed")
-                    print(error ?? "there is no errors")
-                }
+                self.stopAnimating()
+                
             }
         }
     }

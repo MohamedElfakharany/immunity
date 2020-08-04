@@ -46,7 +46,7 @@ extension CGRect{
 extension UIImageView {
     
     func roundedImage() {
-        self.layer.cornerRadius = self.frame.size.width / 2
+        self.layer.cornerRadius = self.frame.size.height / 2
         //        imageView.layer.masksToBounds = true
         //        imageView.layer.borderWidth = 1.5
         //        imageView.layer.borderColor = UIColor.white.cgColor
@@ -54,6 +54,18 @@ extension UIImageView {
         self.layer.borderWidth = 1.5
         self.layer.borderColor = UIColor.white.cgColor
         self.clipsToBounds = true
+    }
+    
+}
+
+extension UIView {
+    
+    func roundedView() {
+        self.layer.cornerRadius = self.frame.size.height / 2
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.5, height: 0.4) //Here your control your spread
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 5.0
     }
     
 }

@@ -15,8 +15,8 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     @IBOutlet weak var image:UIImageView!
     @IBOutlet weak var BtnSignInOutlet:UIButton!
     
-    var ticketArray = [SingleTicket]()
-    var selectedTicket : SingleTicket?
+    var ticketArray = [SingleTicket2]()
+    var selectedTicket : SingleTicket2?
     
     let patient_id = Helper.getPatientId()
     let AvailabilityYes = ""
@@ -26,7 +26,7 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Helper.getAccessToken() == nil {
+        if Helper.getAccessToken().userToken == nil {
             self.tableView.isHidden = true
             self.image.isHidden = false
             self.BtnSignInOutlet.isHidden = false
@@ -60,7 +60,7 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{
-                        self.ticketArray = tickets.data ?? []
+                        self.ticketArray = tickets.result?.tickets ?? []
                         print(tickets)
                         print("patient_id : \(self.patient_id ?? " ")")
                         self.tableView.reloadData()

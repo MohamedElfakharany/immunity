@@ -24,7 +24,7 @@ class HEditDoctorSearchTableViewCell: UITableViewCell {
         
     }
     
-    func configureCell (user : SingleDoctor){
+    func configureCell (user : SingleDoctor2){
         LblDocName.text = "DR. \(user.firstName ?? "") \(user.lastName ?? "")"
         LblDocSpeciality.text = user.specialities
         

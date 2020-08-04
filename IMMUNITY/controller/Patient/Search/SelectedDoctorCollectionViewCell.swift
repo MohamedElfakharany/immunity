@@ -28,10 +28,10 @@ class SelectedDoctorCollectionViewCell: UICollectionViewCell {
         BackView.layer.shadowOpacity = 0.8
     }
     
-    func configureCell ( item : SingleTicket){
+    func configureCell ( item : SingleTicket2){
         LblDay.text = item.day ?? ""
-        LblDate.text = item.date ?? ""
-        LblTime.text = "Start at: \(item.time ?? "")"
+//        LblDate.text = item.date ?? ""
+        LblTime.text = "From: \(item.from ?? "") To: \(item.to ?? "")"
         LblDuration.text = "Duration: \(item.duration ?? "")"
     }
     

@@ -24,9 +24,7 @@ class API_UpdatePatientData: NSObject {
             "city":city,
             "date_of_birth": date_of_birth
         ]
-        let headers = [
-            "APP_KEY" : "123456"
-        ]
+        let headers = HEADERS.headers
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
             .validate (statusCode: 200..<300)
             .responseJSON { response in
@@ -51,9 +49,8 @@ class API_UpdatePatientData: NSObject {
         let parameters = [
             "password" : password
         ]
-        let headers = [
-            "APP_KEY" : "123456"
-        ]
+        let headers = HEADERS.headers
+        
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
             .responseJSON { response in
                 

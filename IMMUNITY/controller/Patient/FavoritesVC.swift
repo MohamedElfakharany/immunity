@@ -25,7 +25,7 @@ class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
         tableView.contentInset = .zero
         tableView.separatorStyle = .none
         
-        if Helper.getAccessToken() == nil {
+        if Helper.getAccessToken().role == nil {
             self.tableView.isHidden = true
             self.image.isHidden = false
             self.BtnSignInOutlet.isHidden = false

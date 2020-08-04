@@ -21,8 +21,8 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     @IBOutlet weak var TxtviewDocInfo: UITextView!
     @IBOutlet weak var BtnVisOpinionOutlet: UIButton!
     
-    var singelItem: SingleDoctor?
-    var ticketArray = [SingleTicket]()
+    var singelItem: SingleDoctor2?
+    var ticketArray = [SingleTicket2]()
     var doctor_id = 54
     
     
@@ -33,10 +33,8 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
         
         LblDocName.text = "DR. \(singelItem?.firstName ?? "") \(singelItem?.lastName ?? "")"
         LblDocSpeciality.text = "\(singelItem?.specialities ?? "")"
-        LblDocAddress.text = "Address: \(singelItem?.city ?? "")"
         LblDocPrice.text = "Price: \(singelItem?.fees ?? "") LE"
-        LblDocUniversty.text = "Hospital: \(singelItem?.hospitalName ?? "")"
-        TxtviewDocInfo.text = singelItem?.info
+        LblDocUniversty.text = "Doctor Rating: \(singelItem?.rating ?? 0)"
         print("singelItem  \(singelItem!)")
         print("doctor_id  \(doctor_id)")
         let urlWithOutEncoding = "\(singelItem?.image ?? "")"
@@ -77,10 +75,11 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{
-                        self.ticketArray = tickets.data ?? []
+                        self.stopAnimating()
+                        self.ticketArray = tickets.result?.tickets ?? []
                         print(tickets)
                         self.CollectionView.reloadData()
-                        self.stopAnimating()
+                        
                     }else{
                         self.stopAnimating()
                         self.showAlert(title: "Error", message: "Error doctors")

@@ -11,20 +11,20 @@ import Alamofire
 
 class DoctorAPI: NSObject {
     
-    class func allDoctors(page: Int, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :MainDoctors?)-> Void){
+    class func allDoctors(page: Int, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :HeadDoctor?)-> Void){
         
-        let headers  = [
-            "APP_KEY" : "123456"
-        ]
+        let headers  = HEADERS.headers
         
         let parameters = [
+            "city" : "",
+            "specialities" : "",
             "page":  page
-        ]
+            ] as [String : Any]
         
-        let url = URLs.doctorsAll
+        let url = URLs.getDoctor
         print (url)
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers).responseJSON{ ( response ) in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON{ ( response ) in
             switch response.result
             {
             case .failure(let error):
@@ -32,10 +32,10 @@ class DoctorAPI: NSObject {
                 print(error)
             case .success:
                 do{
-                    print(response)   
-                    let showDoctors = try JSONDecoder().decode(MainDoctors.self, from: response.data!)
+                    //print("DoctorAPI Response \(response)")
+                    let showDoctors = try JSONDecoder().decode(HeadDoctor.self, from: response.data!)
                     completion(nil,true,true,showDoctors)
-                    
+                    //print ("DoctorAPI showDoctors \(showDoctors) ")
                 }catch{
                     print("error")
                 }
@@ -46,19 +46,18 @@ class DoctorAPI: NSObject {
     }
     
     
-    class func allDoctorsByAreaAndSpeciality(city: String,speciality: String,page: Int, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :MainDoctors?)-> Void){
+    class func allDoctorsByAreaAndSpeciality(city: String,speciality: String,page: Int, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :HeadDoctor?)-> Void){
         
-        let headers  = [
-            "APP_KEY" : "123456"
-        ]
+        let headers  = HEADERS.headers
         
         let parameters = [
+            
             "specialities": speciality,
             "city":city,
             "page":  page
             ] as [String : Any]
         
-        let url = URLs.doctorsAll
+        let url = URLs.getDoctor
         print (url)
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers).responseJSON{ ( response ) in
@@ -71,7 +70,7 @@ class DoctorAPI: NSObject {
                 do{
                     print(response)
                     print(parameters)
-                    let showDoctors = try JSONDecoder().decode(MainDoctors.self, from: response.data!)
+                    let showDoctors = try JSONDecoder().decode(HeadDoctor.self, from: response.data!)
                     completion(nil,true,true,showDoctors)
                     
                 }catch{
@@ -84,5 +83,5 @@ class DoctorAPI: NSObject {
     }
     
     
-
+    
 }

@@ -18,7 +18,7 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
     @IBOutlet weak var TxtViewSpeciality: UITextView!
     @IBOutlet weak var BackView:UIView!
     
-    private var doc = [SingleDoctor]()
+    private var doc = [SingleDoctor2]()
     var SelectedSpeciality = ""
     var SelectedCity = ""
     let cellSpacingHeight: CGFloat = 20
@@ -26,7 +26,6 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.title = "Select doctor"
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -40,23 +39,18 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
         
         BackView.dropShadow(scale: true)
         doctorsHandleRefresh()
-        getDoctors()
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        
-        tableView.reloadData()
+//        getDoctors()
         
     }
     
     func doctorsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        DoctorAPI.allDoctorsByAreaAndSpeciality(city: SelectedCity, speciality: SelectedSpeciality, page: 0) { (error, networkSuccess, codeSucess, doc ) in
+        DoctorAPI.allDoctorsByAreaAndSpeciality(city: SelectedCity, speciality: SelectedSpeciality, page: 1) { (error, networkSuccess, codeSucess, doc ) in
             if networkSuccess {
                 if codeSucess {
                     if let docs = doc{
-                        self.doc = docs.data ?? []
+                        self.doc = docs.result?.doctors ?? []
                         print("zzzz\(docs)")
                         print(Parameters.self)
                         self.tableView.reloadData()
@@ -79,29 +73,31 @@ class SearchCritriaVC: UIViewController ,UITableViewDelegate,UITableViewDataSour
         
     }
     
-    func getDoctors() {
-        
-        let parameters = [
-            
-            "city": SelectedCity,
-            "specialities" : SelectedSpeciality
-        ]
-        
-        let headers: HTTPHeaders = [
-            "APP_KEY": "123456"
-        ]
-        
-        Alamofire.request(URLs.mainDoctors, method: .get, parameters: parameters as Parameters, encoding: URLEncoding.queryString , headers: headers).responseJSON {(response) in
-            do {
-                print (response)
-                let allDoctors = try JSONDecoder().decode(MainDoctors.self, from: response.data!)
-                print(allDoctors)
-            } catch {
-                
-            }
-            
-        }
-    }
+//    func getDoctors() {
+//        
+//        let parameters = [
+//     
+//            "city" : SelectedCity,
+//            "specialities" : SelectedSpeciality,
+//            "page" :  1
+//            ] as [String : Any]
+//        
+//        let headers : HTTPHeaders = [
+//            "Accept" : "application/json",
+//            "APP_KEY" : "123456"
+//        ]
+//        
+//        Alamofire.request(URLs.getDoctor, method: .get, parameters: parameters as Parameters, encoding: URLEncoding.queryString , headers: headers).responseJSON {(response) in
+//            do {
+//                print (response)
+//                let allDoctors = try JSONDecoder().decode(MainDoctors2.self, from: response.data!)
+//                print(allDoctors)
+//            } catch {
+//                
+//            }
+//            
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return doc.count

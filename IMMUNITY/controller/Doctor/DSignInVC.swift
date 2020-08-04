@@ -58,8 +58,8 @@ class DSignInVC: UIViewController ,NVActivityIndicatorViewable{
         //        SignInBtnOutlet.layer.cornerRadius = SignInBtnOutlet.frame.height/2
         SignInBtnOutlet.clipsToBounds = true
     }//EndGrad
-        
-        
+    
+    
     @IBAction func loginPressed(_ sender: Any) {
         
         guard let email = TxtfieldEmail.text , !email.isEmpty else {
@@ -80,17 +80,23 @@ class DSignInVC: UIViewController ,NVActivityIndicatorViewable{
         
         startAnimating(CGSize(width: 45, height: 45), message: "Loading", type: .ballSpinFadeLoader , color: .orange,textColor: .white)
         
-        API_Auth.DoctorLogin(email: email, password: password) { (error:Error?, success: Bool) in
+        authAPI.login(url: URLs.DocLogin, email: email, password: password) { (error, success,authData) in
             if success {
-                self.stopAnimating()
-                print("login Done")
-            }else {
-                self.stopAnimating()
-                print("Login Failed")
-                self.showAlert(title: "Network", message: "Check your network comnnection")
+                if authData?.errorFlag == 1{
+                    self.stopAnimating()
+                    self.showAlert(title: "Login Failed", message: authData?.message ?? "Check your Email or Password")
+                }else {
+                    self.stopAnimating()
+                    print("login done")
+                }
             }
+            else{
+                self.stopAnimating()
+                print("login failed")
+                self.showAlert(title: "Network Failure", message: "Check your network comnnection")
+            }
+            self.stopAnimating()
         }
-        
     }
     
 }

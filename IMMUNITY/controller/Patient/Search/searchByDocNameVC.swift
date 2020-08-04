@@ -16,22 +16,21 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var DocNameSearch: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var docArray = [SingleDoctor]()
+    var docArray = [SingleDoctor2]()
     var searching = false
-    var selectedDoc = [SingleDoctor]()
-    var choosedDoctor = [SingleDoctor]()
+    var selectedDoc = [SingleDoctor2]()
+    var choosedDoctor = [SingleDoctor2]()
     var curentPage = 1
     var lastPage = 1
     var isLoading:Bool = false
     lazy var Refresher : UIRefreshControl = {
         let Refresher = UIRefreshControl()
-        Refresher.addTarget(self, action: #selector(getDoctors), for: .valueChanged)
+        Refresher.addTarget(self, action: #selector(doctorsHandleRefresh), for: .valueChanged)
         return Refresher
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.title = "Doctor"
         self.DocNameSearch.showsCancelButton = false
         
         self.tableView.delegate = self
@@ -45,26 +44,25 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
         tableView.addSubview(Refresher)
         
         doctorsHandleRefresh()
-        getDoctors()
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        
-        doctorsHandleRefresh()
+        //getDoctors()
         
     }
     
-    func doctorsHandleRefresh() {
+    @objc func doctorsHandleRefresh() {
+        self.Refresher.endRefreshing()
+        guard !isLoading else { return }
+        isLoading = true
         
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",type: .ballSpinFadeLoader, color: .orange, textColor: .white)
-        DoctorAPI.allDoctors(page: curentPage) { (error, networkSuccess, codeSucess, docArray) in
+        DoctorAPI.allDoctors(page: 1) { (error, networkSuccess, codeSucess, docArray) in
+            self.isLoading = false
             if networkSuccess {
                 if codeSucess {
-                    if let docs = docArray{
-                        self.docArray = docs.data ?? []
-                        self.curentPage = docs.meta?.currentPage ?? 1
-                        print("curent page: \(docs.meta?.currentPage ?? 0)")
-//                        print("zzzz\(docs)")
+                    if let docArray = docArray{
+                        self.docArray = docArray.result?.doctors ?? []
+                        print(self.docArray)
+                        self.curentPage = 1
+                        self.lastPage = docArray.result?.total ?? 0
                         self.tableView.reloadData()
                         self.tableView.endUpdates()
                         self.stopAnimating()
@@ -86,24 +84,68 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    @objc func getDoctors() {
-        self.Refresher.endRefreshing()
-        
-        let headers: HTTPHeaders = [
-            "APP_KEY": "123456"
-        ]
-        
-        Alamofire.request(URLs.mainDoctors, method: .get, parameters: nil, encoding: URLEncoding.queryString , headers: headers).responseJSON {(response) in
-            do {
-                print (response)
-                let allDoctors = try JSONDecoder().decode(MainDoctors.self, from: response.data!)
-                print(allDoctors)
-            } catch {
+    func loadMore() {
+        guard !isLoading else {return}
+        guard curentPage < lastPage else {return}
+        isLoading = true
+        DoctorAPI.allDoctors(page: curentPage + 1) { (error, networkSuccess, codeSucess, docArray) in
+            self.isLoading = false
+            if networkSuccess {
+                if codeSucess {
+                    if let docArray = docArray{
+                        self.docArray.append(contentsOf: docArray.result?.doctors ?? [])
+                        print(self.docArray)
+                        self.curentPage += 1
+                        self.lastPage = docArray.result?.total ?? 0
+                        //                        print("zzzz\(docs)")
+                        self.tableView.reloadData()
+                        self.tableView.endUpdates()
+                        self.stopAnimating()
+                    }else {
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error favorite")
+                    }
+                    
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Favorite", message: "Favorite is empty")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "Network", message: "Check your network connection")
                 
             }
         }
     }
     
+    
+    //    @objc func getDoctors() {
+    //        self.Refresher.endRefreshing()
+    //
+    //        let headers  = [
+    //            "Accept" : "application/json",
+    //            "APP_KEY" : "123456"
+    //        ]
+    //
+    //        let parameters = [
+    //            "city" : "",
+    //            "specialities" : "",
+    //            "page":  1
+    //            ] as [String : Any]
+    //
+    //        Alamofire.request(URLs.getDoctor, method: .get, parameters: parameters, encoding: URLEncoding.queryString , headers: headers).responseJSON {(response) in
+    //            do {
+    //                print ("Search By Doc Name response \(response)")
+    //                print ("response from VC before decode")
+    //                let allDoctors = try JSONDecoder().decode(MainDoctors2.self, from: response.data!)
+    //                print(allDoctors)
+    //                print ("response from VC after decode")
+    //            } catch {
+    //
+    //            }
+    //        }
+    //    }
+    //
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
@@ -137,15 +179,22 @@ class searchByDocNameVC: UIViewController ,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectedDoctorVC") as? SelectedDoctorVC{
             
-
-                    if searching {
-                        vc.singelItem = selectedDoc[indexPath.row]
-                    }else {
-                        vc.singelItem = docArray[indexPath.row]
+            
+            if searching {
+                vc.singelItem = selectedDoc[indexPath.row]
+            }else {
+                vc.singelItem = docArray[indexPath.row]
             }
-               
+            
             
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let count = self.docArray.count
+        if indexPath.row ==  count-1 {
+            self.loadMore()
         }
     }
     

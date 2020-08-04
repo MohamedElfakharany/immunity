@@ -42,7 +42,7 @@ class API_Auth: NSObject {
                     print(value)
                     let json = JSON(value)
                     if let api_token =  json["data"]["access_token"].string {
-                        Helper.saveAccessToken(token: api_token)
+                        Helper.saveAccessToken(token: api_token, role: "")
                         
                         print ("api_token : \(api_token) ")
                         
@@ -86,12 +86,14 @@ class API_Auth: NSObject {
             "city":city,
             "gender": gander,
             "date_of_birth": date_of_birth
-            ] 
+            ]
+        
         let headers = [
             "APP_KEY" : "123456",
             "Accept" : "application/json",
             "Content-Type" : "application/json"
         ]
+        
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
             .responseJSON() { response in
                 
@@ -107,7 +109,7 @@ class API_Auth: NSObject {
                     print(value)
                     let json = JSON(value)
                     if let api_token = json["data"]["access_token"].string {
-                        Helper.saveAccessToken(token: api_token)
+                        Helper.saveAccessToken(token: api_token, role: "")
                         completion(nil,  true)
                         print ("api_token : \(api_token) ")
                     }

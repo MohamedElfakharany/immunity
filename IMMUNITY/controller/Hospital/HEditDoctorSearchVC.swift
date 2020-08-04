@@ -16,10 +16,10 @@ class HEditDoctorSearchVC: UIViewController ,UITableViewDelegate,UITableViewData
     @IBOutlet weak var DocNameSearch: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var docArray = [SingleDoctor]()
+    var docArray = [SingleDoctor2]()
     var searching = false
-    var selectedDoc = [SingleDoctor]()
-    var choosedDoctor = [SingleDoctor]()
+    var selectedDoc = [SingleDoctor2]()
+    var choosedDoctor = [SingleDoctor2]()
     var curentPage = 1
     var lastPage = 1
     var isLoading:Bool = false
@@ -62,9 +62,9 @@ class HEditDoctorSearchVC: UIViewController ,UITableViewDelegate,UITableViewData
             if networkSuccess {
                 if codeSucess {
                     if let docs = docArray{
-                        self.docArray = docs.data ?? []
-                        self.curentPage = docs.meta?.currentPage ?? 1
-                        print("curent page: \(docs.meta?.currentPage ?? 0)")
+                        self.docArray = docs.result?.doctors ?? []
+//                        self.curentPage = docs.meta?.currentPage ?? 1
+//                        print("curent page: \(docs.meta?.currentPage ?? 0)")
                         //                        print("zzzz\(docs)")
                         self.tableView.reloadData()
                         self.tableView.endUpdates()

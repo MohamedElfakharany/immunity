@@ -23,7 +23,6 @@ class BookingConfirmationVC: UIViewController {
 
         
         self.LblDocName.text = name
-        self.navigationController?.title = ""
         gradBTNS()
         self.reloadInputViews()
     }

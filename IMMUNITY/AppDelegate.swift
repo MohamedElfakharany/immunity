@@ -21,9 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Helper.getAccessToken().role == "patient" {
             
-            print("Patient access_token is : \(Helper.GetPatientRole() ?? "")")
-            
-            let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs") 
+            print("User access_token is : \(Helper.GetPatientRole() ?? "") And his Email as doctor is :  \(Helper.getDocEmail() ?? "") or email as a patient is  \(Helper.getPatientEmail() ?? "") ")
+            let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs")
             
             window?.rootViewController = tab
         }else if Helper.getAccessToken().role == "doctor" {

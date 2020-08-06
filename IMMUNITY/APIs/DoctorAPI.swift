@@ -13,7 +13,7 @@ class DoctorAPI: NSObject {
     
     class func allDoctors(page: Int, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :HeadDoctor?)-> Void){
         
-        let headers  = HEADERS.headers
+        let headers  = HEADERS.headersPatient
         
         let parameters = [
             "city" : "",
@@ -48,7 +48,7 @@ class DoctorAPI: NSObject {
     
     class func allDoctorsByAreaAndSpeciality(city: String,speciality: String,page: Int, completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllDoctor :HeadDoctor?)-> Void){
         
-        let headers  = HEADERS.headers
+        let headers  = HEADERS.headersPatient
         
         let parameters = [
             
@@ -82,6 +82,36 @@ class DoctorAPI: NSObject {
         
     }
     
+    
+    class func getDocProfile( completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool,_ TheDoctor: GetDocProfile?)-> Void){
+        
+        let headers = HEADERS.headersDoctor
+        
+        let url = URLs.getDocProfile
+        
+        print(url)
+        print(headers)
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.queryString, headers: headers).responseJSON { (response) in
+            switch response.result
+            {
+            case .failure(let error):
+                completion(error, false,false,nil)
+                print(error)
+            case .success:
+                do{
+                    print(response)
+                    let showDoctor = try JSONDecoder().decode(GetDocProfile.self, from: response.data!)
+                    completion(nil,true,true,showDoctor)
+                    
+                }catch{
+                    print("error")
+                }
+            }
+            
+        }
+        
+        }
     
     
 }

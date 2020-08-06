@@ -23,7 +23,7 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
     
     var singelItem: SingleDoctor2?
     var ticketArray = [SingleTicket2]()
-    var doctor_id = 54
+    var doctor_id = 51
     
     
     override func viewDidLoad() {
@@ -62,16 +62,12 @@ class SelectedDoctorVC: UIViewController , UICollectionViewDelegate , UICollecti
         BackView.dropShadow(scale: true)
         ticketsHandleRefresh()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        self.CollectionView.reloadData()
-        ticketsHandleRefresh()
-    }
     
     
     func ticketsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id , availability: "YES") { (error, networkSuccess, codeSuccess, ticketArray) in
+        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id) { (error, networkSuccess, codeSuccess, ticketArray) in
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{

@@ -10,12 +10,19 @@ import Foundation
 
 struct HEADERS {
     
-    
-    
-    
-    static let headers = [
+    static let headersPatient = [
+        "Accept" : "application/json",
         "APP_KEY" : "123456",
-        "email" : "demo@demo.com",
-        "access-token" : "uOoeKoHgTcVx3qPOdxmmgfdbyNdHI7AGGJHVJ37GrBJI7zeNtrUQj1GC9RzZF26P"
+        "email" : "\(Helper.getPatientEmail() ?? "")",
+        "access-token" : "\(Helper.getDoctorAccessToken() ?? "")"
     ]
+    
+    static let headersDoctor = [
+        "Accept" : "application/json",
+        "APP_KEY" : "123456",
+        "email" : "\(Helper.getDocEmail() ?? "")",
+        "access-token" : "XjZXj6JUWqSCsTagUlvNfG7Qq4dHhUwiwubkGc3J4ZPVC0tmZvbKxmm3bsWrD6ku"
+    ]
+
+    
 }

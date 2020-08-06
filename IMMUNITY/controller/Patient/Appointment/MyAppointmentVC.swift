@@ -15,11 +15,14 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     @IBOutlet weak var image:UIImageView!
     @IBOutlet weak var BtnSignInOutlet:UIButton!
     
-    var ticketArray = [SingleTicket2]()
-    var selectedTicket : SingleTicket2?
+    lazy var Refresher : UIRefreshControl = {
+        let Refresher = UIRefreshControl()
+        Refresher.addTarget(self, action: #selector(ticketsHandleRefresh), for: .valueChanged)
+        return Refresher
+    }()
     
-    let patient_id = Helper.getPatientId()
-    let AvailabilityYes = ""
+    var ticketArray = [SingleBook]()
+    var selectedTicket : SingleBook?
     
     let cellSpacingHeight: CGFloat = 20
     
@@ -48,34 +51,31 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.tableView.reloadData()
-        ticketsHandleRefresh()
-    }
     
-    func ticketsHandleRefresh() {
+    @objc func ticketsHandleRefresh() {
+        
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        TicketsApi.allTicketsByPatientId(Patient_Id: "\(patient_id ?? "")", availability: "NO") { (error, networkSuccess, codeSuccess, ticketArray) in
+        TicketsApi.allTicketsUPCOMING() { (error, networkSuccess, codeSuccess, ticketArray) in
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{
-                        self.ticketArray = tickets.result?.tickets ?? []
-                        print(tickets)
-                        print("patient_id : \(self.patient_id ?? " ")")
-                        self.tableView.reloadData()
                         self.stopAnimating()
+                        self.ticketArray = tickets.result?.data?.data ?? []
+                        print(tickets)
+                        self.tableView.reloadData()
+                        
                     }else{
                         self.stopAnimating()
-                        self.showAlert(title: "Error", message: "Error doctors")
+                        self.showAlert(title: "Error", message:  ticketArray?.message ?? "Error tickets")
                     }
                 }else {
                     self.stopAnimating()
-                    self.showAlert(title: "Doctor", message: "There is no doctors")
+                    self.showAlert(title: "No Data", message: ticketArray?.message ?? "There are no records")
                 }
             }else {
                 self.stopAnimating()
-                self.showAlert(title: "NetWork", message: "Check your network Connection")
+                self.showAlert(title: "NetWork", message:  ticketArray?.message ?? "Check your network Connection")
             }
         }
         
@@ -103,7 +103,7 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ticketArray.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,7 +127,7 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
         
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyAppointmentVCTableViewCell", for: indexPath) as? MyAppointmentVCTableViewCell {
-            cell.configureCell(item: ticketArray[indexPath.row])
+//            cell.configureCell(item: ticketArray[indexPath.row])
             return cell
         }else{
             return  MyAppointmentVCTableViewCell()
@@ -151,10 +151,10 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "AppointmentDetailsVC")as? AppointmentDetailsVC {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TicketInformationVC2")as? TicketInformationVC2 {
             self.navigationController?.pushViewController(vc, animated: true)
             selectedTicket = ticketArray[indexPath.row]
-            vc.singleItem = selectedTicket
+            vc.singleTicket = selectedTicket
         }
     }
     

@@ -28,6 +28,6 @@ struct MainTickets2: Codable {
 // MARK: - Ticket
 struct SingleTicket2: Codable {
     let id: Int?
-    let day, from, to, duration: String?
+    let day,date, from, to, duration: String?
     let availability: String?
 }

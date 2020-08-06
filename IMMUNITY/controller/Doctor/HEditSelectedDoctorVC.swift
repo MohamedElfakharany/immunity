@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Kingfisher
 
 class HEditSelectedDoctorVC: UIViewController , NVActivityIndicatorViewable {
     
@@ -20,27 +21,12 @@ class HEditSelectedDoctorVC: UIViewController , NVActivityIndicatorViewable {
     @IBOutlet weak var LblDocMobile: UILabel!
     @IBOutlet weak var BtnSaveOutlet: UIButton!
     
-    var singelItem: SingleDoctor2?
+    var singelItem: DocProfile?
     var doctor_id = 54
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.doctor_id = singelItem?.id ?? 0
-        
-//        LblDocName.text = "DR. \(singelItem?.firstName ?? "") \(singelItem?.lastName ?? "")"
-//        LblDocSpeciality.text = "\(singelItem?.specialities ?? "")"
-//        LblDocFees.text = "Price :\(singelItem?.fees ?? "") LE"
-//        LblDocEmail.text = "Email: \(singelItem?.email ?? "")"
-//        LblDocMobile.text = "Mobile: \(singelItem?.mobileNumber ?? "")"
-//        print("singelItem  \(singelItem!)")
-//        print("doctor_id  \(doctor_id)")
-//        let urlWithOutEncoding = "\(singelItem?.image ?? "")"
-//        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-//        let encodedURL = NSURL(string: encodedLink!)! as URL
-//        DocImage.kf.indicatorType = .activity
-//        DocImage.kf.setImage(with: encodedURL)
-//        
         gradBTNS()
         
         LblDocName.roundedView()
@@ -51,8 +37,51 @@ class HEditSelectedDoctorVC: UIViewController , NVActivityIndicatorViewable {
         
         imageuser.roundedImage()
         imageContainer.roundedView()
+        profileHandleRefresh()
+    }
+    
+    func profileHandleRefresh() {
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        
+        DoctorAPI.getDocProfile() { (error, networkSuccess, codeSuccess, docProfile) in
+            if networkSuccess {
+                if codeSuccess {
+                    if let profile = docProfile{
+                        print("profile comes here \(profile)")
+                        self.singelItem = profile.result?.profile!
+                        
+                        self.LblDocName.text = "DR. \(self.singelItem?.firstName ?? "") \(self.singelItem?.lastName ?? "")"
+                        self.LblDocSpeciality.text = "\(self.singelItem?.specialities ?? "")"
+                        self.LblDocFees.text = "Price :\(self.singelItem?.fees ?? "") LE"
+                        self.LblDocEmail.text = "Email: \(self.singelItem?.email ?? "")"
+                        self.LblDocMobile.text = "Mobile: \(self.singelItem?.mobileNumber ?? "")"
+//                        print("singelItem  \(self.singelItem!)")
+                        let urlWithOutEncoding = "\(self.singelItem?.image ?? "")"
+                        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+                        let encodedURL = NSURL(string: encodedLink!)! as URL
+                        self.imageuser.kf.indicatorType = .activity
+                        self.imageuser.kf.setImage(with: encodedURL)
+                        
+                        
+                        
+                        self.stopAnimating()
+                        
+                    }else{
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error tickets")
+                    }
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Doctor", message: "There is no tickets")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "NetWork", message: "Check your network Connection")
+            }
+        }
         
     }
+    
     
     func gradBTNS() {
         let RightGradientColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)

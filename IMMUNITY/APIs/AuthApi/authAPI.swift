@@ -39,8 +39,10 @@ class authAPI: NSObject {
                     }else {
                         if url == URLs.login {
                             Helper.saveAccessToken(token: login.result?.token ?? "", role: "patient")
+                            Helper.savePatientEmail(email: email)
                         }else {
                             Helper.saveAccessToken(token: login.result?.token ?? "", role: "doctor")
+                            Helper.saveDocEmail(email: email)
                         }
                         
                         completion(nil,true,login)
@@ -92,6 +94,8 @@ class authAPI: NSObject {
                         completion(nil,true,register)
                     }else {
                         Helper.saveAccessToken(token: register.result?.token ?? "" , role: "patient")
+                        Helper.savePatientEmail(email: email)
+                        
                         completion(nil,true,register)
                     }
                 }catch{

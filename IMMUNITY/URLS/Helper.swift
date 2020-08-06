@@ -14,7 +14,7 @@ class Helper: NSObject {
         guard let window = UIApplication.shared.keyWindow else {return}
         if Helper.getAccessToken().role == "patient" {
             
-            print("Patient access_token is : \(Helper.GetPatientRole() ?? "")")
+            print("User access_token is : \(Helper.GetPatientRole() ?? "") And his Email as doctor is :  \(Helper.getDocEmail() ?? "") or email as a patient is  \(Helper.getPatientEmail() ?? "") ")
             
             let tab = UIStoryboard(name: "Patient", bundle: nil).instantiateViewController(withIdentifier: "TabBarVCs")
             
@@ -50,13 +50,25 @@ class Helper: NSObject {
         
     }
     
-    class func saveAccessToken ( token : String ,role: String){
+    class func saveAccessToken ( token : String  ,role: String){
         let def = UserDefaults.standard
         def.setValue(token, forKey: "access_token")
         def.setValue(role, forKey: "role")
         def.synchronize()
         
         RestartApp()
+    }
+    
+    class func saveDocEmail (email :String){
+        let def = UserDefaults.standard
+        def.setValue(email, forKey: "DocEmail")
+        def.synchronize()
+    }
+    
+    class func savePatientEmail (email :String){
+        let def = UserDefaults.standard
+        def.setValue(email, forKey: "PatientEmail")
+        def.synchronize()
     }
     
     class func SavePatientData (
@@ -126,7 +138,7 @@ class Helper: NSObject {
     
     class func getPatientEmail () -> String?{
         let def = UserDefaults.standard
-        return (def.object(forKey: "email")  as? String?)!
+        return (def.object(forKey: "PatientEmail")  as? String?)!
         
     }
     
@@ -300,9 +312,9 @@ class Helper: NSObject {
         
     }
     
-    class func getDoctorEmail () -> String?{
+    class func getDocEmail () -> String?{
         let def = UserDefaults.standard
-        return (def.object(forKey: "email")  as? String?)!
+        return (def.object(forKey: "DocEmail")  as? String?)!
         
     }
     
@@ -366,6 +378,8 @@ class Helper: NSObject {
     class func removeDocAccessToken (){
         let removeSuccessful = UserDefaults.standard
         removeSuccessful.removeObject(forKey: "access_token")
+        removeSuccessful.removeObject(forKey: "PatientEmail")
+        removeSuccessful.removeObject(forKey: "DocEmail")
         removeSuccessful.synchronize()
         
         RestartDocApp()

@@ -247,6 +247,8 @@ class SignUpVC: UIViewController ,UIPickerViewDelegate ,UIPickerViewDataSource,N
                     }else {
                         self.stopAnimating()
                         print("regiter done")
+                        
+                        
                     }
                 }else {
                     self.stopAnimating()

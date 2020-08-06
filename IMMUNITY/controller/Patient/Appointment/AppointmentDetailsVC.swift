@@ -23,14 +23,14 @@ class AppointmentDetailsVC: UIViewController ,UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var MedicalReportTxtView: UITextView!
 
-    var singleItem : SingleTicket2?
+    var singleItem : SingleBook?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(singleItem ?? [SingleTicket2]())
         
-        LblDetectionNumber.text = "\(singleItem?.id ?? 0)"
+//        LblDetectionNumber.text = "\(singleItem?.id ?? 0)"
 //        LblDoctorCode.text = "\(singleItem?.docID ?? "")"
 //        LblPatientCode.text = "\(singleItem?.patientID ?? "")"
         LblTicketDay.text = "\(singleItem?.day ?? "")"

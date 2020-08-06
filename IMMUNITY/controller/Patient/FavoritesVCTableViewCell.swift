@@ -15,7 +15,9 @@ class FavoritesVCTableViewCell: UITableViewCell {
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var DocImage: UIImageView!
     @IBOutlet weak var LblDocName: UILabel!
-    @IBOutlet weak var LblDocSpeciality: UILabel!
+    @IBOutlet weak var lblTicketDate: UILabel!
+    @IBOutlet weak var lblTicketFromTo: UILabel!
+    @IBOutlet weak var lblPayment: UILabel!
     @IBOutlet weak var BtnDetectedOutlet: UIButton!
     @IBOutlet weak var BtnDetailsOutlet: UIButton!
     
@@ -28,7 +30,16 @@ class FavoritesVCTableViewCell: UITableViewCell {
         BtnDetailsOutlet.clipsToBounds = true
         BackView.dropShadow(scale: true)
         gradBTNS()
+        
     }
+    
+    func configureCell (item : SingleBook){
+        lblTicketDate.text = "\(item.day ?? ""), \(item.date ?? "")"
+        LblDocName.text = "DR. \(item.firstName ?? "") \(item.lastName ?? "")"
+        lblTicketFromTo.text = "From: \(item.from ?? "") To: \(item.to ?? "")"
+        lblPayment.text = "Payment Way: \(item.payment ?? "")"
+    }
+    
     
     func gradBTNS() {
         
@@ -51,10 +62,4 @@ class FavoritesVCTableViewCell: UITableViewCell {
         
     }
     
-//    @IBAction func BtnDetailsAction (_ sender : Any) {
-//        if let vc = UIStoryboard.init().instantiateViewController(withIdentifier: "AppointmentDetailsVC") as? AppointmentDetailsVC {
-//            self.inputViewController?.navigationController?.pushViewController(vc, animated: true)
-//        }
-//    }
-
 }

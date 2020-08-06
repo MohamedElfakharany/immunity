@@ -12,21 +12,24 @@ class MyAppointmentVCTableViewCell: UITableViewCell {
 
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var lblTicketDate: UILabel!
-    @IBOutlet weak var DocImage: UIImageView!
-    @IBOutlet weak var BtnDetailsOutlet: UIButton!
+    @IBOutlet weak var lblTicketFromTo: UILabel!
+    @IBOutlet weak var lblDocName: UILabel!
+    @IBOutlet weak var lblPayment: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
         
-        BtnDetailsOutlet.layer.cornerRadius = 10
-        BtnDetailsOutlet.clipsToBounds = true
         BackView.dropShadow(scale: true)
-        
+        lblTicketDate.roundCorners(corners: .topLeft, radius: 15.0)
+        lblTicketDate.roundCorners(corners: .topRight, radius: 15.0)
     }
     
-    func configureCell (item : SingleTicket2){
-        lblTicketDate.text = "\(item.day ?? "")"
+    func configureCell (item : SingleBook){
+        lblTicketDate.text = "\(item.day ?? ""), \(item.date ?? "")"
+        lblDocName.text = "DR. \(item.firstName ?? "") \(item.lastName ?? "")"
+        lblTicketFromTo.text = "From: \(item.from ?? "") To: \(item.to ?? "")"
+        lblPayment.text = "Payment Way: \(item.payment ?? "")"
     }
     
     

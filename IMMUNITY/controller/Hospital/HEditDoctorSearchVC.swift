@@ -139,9 +139,9 @@ class HEditDoctorSearchVC: UIViewController ,UITableViewDelegate,UITableViewData
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HEditSelectedDoctorVC") as? HEditSelectedDoctorVC{
             
             if searching {
-                vc.singelItem = selectedDoc[indexPath.row]
+//                vc.singelItem = selectedDoc[indexPath.row]
             }else {
-                vc.singelItem = docArray[indexPath.row]
+//                vc.singelItem = docArray[indexPath.row]
             }
             
             

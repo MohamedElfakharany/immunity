@@ -11,10 +11,16 @@ import Foundation
 struct URLs {
     
     static let mainPatient = "https://medicalsupport.website/api/patient/"
-    static let mainDoctors = "https://medicalsupport.website/api/doctors"
+    static let mainDoctors = "https://medicalsupport.website/api/doctors/"
     static let mainTickets = "https://medicalsupport.website/api/tickets/"
     
     static let getDoctor = mainPatient + "get_doctors"
+    
+    static let getCurrentBooking = mainDoctors + "get_current_booking"
+    
+    static let getBookings = mainPatient + "get_bookings"
+    
+    static let getDocProfile = mainDoctors + "get_profile"
     
     static let getTicket = mainPatient + "get_tickets"
     
@@ -28,7 +34,7 @@ struct URLs {
     
     static let doctorsAll = mainDoctors + ""
     
-    static let DocLogin = mainDoctors + "/login"
+    static let DocLogin = mainDoctors + "login"
     
     static let patientBook = mainPatient + "book"
     

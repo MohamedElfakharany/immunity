@@ -7,13 +7,16 @@
 //
 
 import UIKit
-
-class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
+import NVActivityIndicatorView
+class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource , NVActivityIndicatorViewable{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var BtnSignInOutlet: UIButton!
+    
     let cellSpacingHeight: CGFloat = 20
+    var ticketArray = [SingleBook]()
+    var selectedTicket : SingleBook?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +37,40 @@ class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
             self.image.isHidden = true
             self.BtnSignInOutlet.isHidden = true
         }
-    gradBTNS()
+        gradBTNS()
+        ticketsHandleRefresh()
         
     }
+    
+    
+    func ticketsHandleRefresh() {
+        
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        
+        TicketsApi.allTicketsByLAST() { (error, networkSuccess, codeSuccess, ticketArray) in
+            if networkSuccess {
+                if codeSuccess {
+                    if let tickets = ticketArray{
+                        self.ticketArray = tickets.result?.data?.data ?? []
+                        print(tickets)
+                        self.tableView.reloadData()
+                        self.stopAnimating()
+                    }else{
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message:  ticketArray?.message ?? "Error tickets")
+                    }
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "No Data", message: ticketArray?.message ?? "There are no records")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "NetWork", message:  ticketArray?.message ?? "Check your network Connection")
+            }
+        }
+        
+    }
+    
     
     func gradBTNS() {
         
@@ -59,13 +93,18 @@ class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return ticketArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell =  tableView.dequeueReusableCell(withIdentifier: "FavoritesVCTableViewCell")!
-        //set the data here
-        return cell
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesVCTableViewCell", for: indexPath) as? FavoritesVCTableViewCell {
+            cell.configureCell(item: ticketArray[indexPath.row])
+            return cell
+        }else{
+            return  MyAppointmentVCTableViewCell()
+            
+        }
     }
     // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -83,7 +122,7 @@ class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "AppointmentDetailsVC") as? AppointmentDetailsVC {
-           self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

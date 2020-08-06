@@ -12,36 +12,17 @@ import NVActivityIndicatorView
 class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegate,NVActivityIndicatorViewable{
     
     @IBOutlet weak var TableViewAppoint: UITableView!
-    @IBOutlet weak var chooseDatebtn: UIButton!
-    @IBOutlet weak var appointmentView: UIView!
-    @IBOutlet weak var appointTxtFeild: UITextField!
     
     var ticketArray = [SingleTicket2]()
-    var doctor_id = Int(Helper.getDoctorId()!)
+    var doctor_id = 51
     
     
     
     let ViewCell:TableViewCellAppoint = TableViewCellAppoint()
     
-    private var datePicker:UIDatePicker?
-    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(DAppointmentVC.dateChanged(datePicker:)), for: .valueChanged)
-        appointTxtFeild.inputView = datePicker
-        
-        appointmentView.layer.cornerRadius = 15
-        appointmentView.dropShadow()
-        
-        let appointmentImage = UIImage(named: "gray-downarrow")
-        addRightImageTo(txtField: appointTxtFeild, andImage: appointmentImage!)
-        
-        
-        gradBTNS()
-        
         ticketsHandleRefresh()
         
     }
@@ -54,7 +35,7 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
     func ticketsHandleRefresh() {
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id! , availability: "YES") { (error, networkSuccess, codeSuccess, ticketArray) in
+        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id) { (error, networkSuccess, codeSuccess, ticketArray) in
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{
@@ -81,40 +62,6 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
         
     }
     
-    func addRightImageTo(txtField: UITextField , andImage img:UIImage){
-        let RightImageView = UIImageView(frame: CGRect(x: 12.0, y: 10.0, width: 10.0, height: 5.0))
-        RightImageView.image = img
-        txtField.rightView = RightImageView
-        txtField.rightViewMode = .always
-        
-    }
-    
-    @objc func dateChanged(datePicker : UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        appointTxtFeild.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
-    }
-    
-    func gradBTNS() {
-        
-        let RightGradientColor = #colorLiteral(red: 0.9333333333, green: 0.5294117647, blue: 0.537254902, alpha: 1)
-        let LiftGradientColor = #colorLiteral(red: 0.9647058824, green: 0.7960784314, blue: 0.7921568627, alpha: 1)
-        // Sign in BTN
-        let gradientLayer = CAGradientLayer()
-        
-        gradientLayer.frame = chooseDatebtn.bounds
-        
-        gradientLayer.colors = [RightGradientColor.cgColor, LiftGradientColor.cgColor]
-        
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        
-        chooseDatebtn.layer.insertSublayer(gradientLayer, at: 0)
-        
-        chooseDatebtn.layer.cornerRadius = 10
-        chooseDatebtn.clipsToBounds = true
-    }//EndGrad
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -125,7 +72,6 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
             cell.AppointmentCellView.dropShadow()
             cell.ConfirmBtn.layer.cornerRadius = 10
             cell.CancelBtn.layer.cornerRadius = 10
-            cell.DetailsBtn.layer.cornerRadius = 10
             let bounds: CGRect = cell.DateLbl.bounds
             let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: ([.topLeft, .topRight]), cornerRadii: CGSize(width: 15.0, height: 15.0))
             let maskLayer = CAShapeLayer()
@@ -138,13 +84,6 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            
-            vc.singleTicket = ticketArray[indexPath.row]
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ticketArray.count

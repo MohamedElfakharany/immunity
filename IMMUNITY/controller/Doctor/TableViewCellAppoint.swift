@@ -13,7 +13,7 @@ class TableViewCellAppoint: UITableViewCell {
     @IBOutlet weak var AppointmentCellView: UIView!
     
     @IBOutlet weak var DateLbl: UILabel!
-    @IBOutlet weak var DetailsBtn: UIButton!
+    @IBOutlet weak var TimeLbl: UILabel!
     @IBOutlet weak var CancelBtn: UIButton!
     @IBOutlet weak var ConfirmBtn: UIButton!
     override func awakeFromNib() {
@@ -29,11 +29,9 @@ class TableViewCellAppoint: UITableViewCell {
     }
     
     func configureCell ( item : SingleTicket2){
-        DateLbl.text = "\(item.day ?? "")"
+        DateLbl.text = "\(item.day ?? "") , \(item.date ?? "")"
+        TimeLbl.text = "From: \(item.from ?? "") To: \(item.to ?? "")"
     }
     
-    @IBAction func BtnDetailsAction(_ sender : Any){
-        
-    }
     
 }

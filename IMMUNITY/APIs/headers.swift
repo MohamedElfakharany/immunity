@@ -13,8 +13,9 @@ struct HEADERS {
     static let headersPatient = [
         "Accept" : "application/json",
         "APP_KEY" : "123456",
-        "email" : "\(Helper.getPatientEmail() ?? "")",
-        "access-token" : "\(Helper.getDoctorAccessToken() ?? "")"
+//        "email" : "\(Helper.getPatientEmail() ?? "")",
+        "access-token" : "\(Helper.getDoctorAccessToken() ?? "")",
+        "email" : "demo@demo.com" 
     ]
     
     static let headersDoctor = [

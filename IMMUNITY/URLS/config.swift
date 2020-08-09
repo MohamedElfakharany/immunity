@@ -22,6 +22,14 @@ struct URLs {
     
     static let getDocProfile = mainDoctors + "get_profile"
     
+    static let updateProfile = mainDoctors + "update_profile"
+    
+    static let getDocBookings = mainDoctors + "get_bookings"
+    
+    static let getDocTickets = mainDoctors + "get_tickets"
+    
+    static let addTicket = mainDoctors + "add_ticket"
+    
     static let getTicket = mainPatient + "get_tickets"
     
     static let login = mainPatient + "login"

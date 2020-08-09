@@ -146,7 +146,7 @@ class TicketsApi: NSObject {
         let parameters = [
             "status" : "UPCOMING"
         ]
-        let url = URLs.getBookings
+        let url = URLs.getDocTickets
         print(url)
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
             .responseJSON{ ( response ) in
@@ -160,14 +160,72 @@ class TicketsApi: NSObject {
                         print(response)
                         let showTickets = try JSONDecoder().decode(HeadBookings.self, from: response.data!)
                         completion(nil,true,true,showTickets)
-                        
-                        
                     }catch{
                         print("error from catch in DocAllTicketsUPCOMING")
                     }
                 }
         }
         
+    }
+    
+    class func DocAllTicketsGrtBookings( completion: @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSuccess: Bool, _ AllTicket: HeadBookings?)-> Void){
+        let headers = HEADERS.headersDoctor
+        let parameters = [
+            "status" : "UPCOMING"
+        ]
+        let url = URLs.getDocBookings
+        print(url)
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+            .responseJSON{ ( response ) in
+                switch response.result {
+                case .failure(let error):
+                    print(error)
+                    completion(error,false,false,nil)
+                    
+                case .success:
+                    do{
+                        print(response)
+                        let showTickets = try JSONDecoder().decode(HeadBookings.self, from: response.data!)
+                        completion(nil,true,true,showTickets)
+                    }catch{
+                        print("error from catch in DocAllTicketsGrtBookings")
+                    }
+                }
+        }
+        
+    }
+    
+    
+    class func AddTickets(dayID: Int , from : String , to : String , completion : @escaping(_ error: Error?,_ networkSuccess: Bool,_ codeSucess: Bool ,_ AllTickets :HeadMessage?)-> Void){
+        
+        
+        let headers = HEADERS.headersDoctor
+        let parameters = [
+            "day": dayID,
+            "from": from,
+            "to": to
+            ] as [String : Any]
+        
+        let url = URLs.addTicket
+        print(url)
+        print(parameters)
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.queryString, headers: headers)
+            .responseJSON{ ( response ) in
+                switch response.result {
+                case .failure(let error):
+                    print(error)
+                    completion(error,false,false,nil)
+                case .success:
+                    do{
+                        print(response)
+                        let showTickets = try JSONDecoder().decode(HeadMessage.self, from: response.data!)
+                        completion(nil,true,true,showTickets)
+                    }catch{
+                        print("error from catch in confirmBooking")
+                    }
+                }
+        }
     }
     
 }

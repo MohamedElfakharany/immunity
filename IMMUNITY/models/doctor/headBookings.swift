@@ -6,6 +6,10 @@
 //  Copyright © 2020 Mohamed Elfakharany. All rights reserved.
 //
 
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let headBookings = try? newJSONDecoder().decode(HeadBookings.self, from: jsonData)
 
 import Foundation
 
@@ -13,7 +17,7 @@ import Foundation
 struct HeadBookings: Codable {
     let errorFlag: Int?
     let message: String?
-    let result: Result?
+    let result: ResultBooking?
     
     enum CodingKeys: String, CodingKey {
         case errorFlag = "error_flag"
@@ -22,7 +26,7 @@ struct HeadBookings: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct ResultBooking: Codable {
     let data: allBooks?
 }
 
@@ -32,9 +36,7 @@ struct allBooks: Codable {
     let data: [SingleBook]?
     let firstPageURL: String?
     let from, lastPage: Int?
-    let lastPageURL: String?
-    let nextPageURL: JSONNull?
-    let path: String?
+    let lastPageURL, nextPageURL, path: String?
     let perPage: Int?
     let prevPageURL: JSONNull?
     let to, total: Int?
@@ -56,7 +58,7 @@ struct allBooks: Codable {
 
 // MARK: - Datum
 struct SingleBook: Codable {
-    let doctorImage:  JSONNull?
+    let doctorImage: String?
     let firstName, lastName, from, to: String?
     let day, payment, date: String?
     
@@ -67,7 +69,6 @@ struct SingleBook: Codable {
         case from, to, day, payment, date
     }
 }
-
 
 // MARK: - Encode/decode helpers
 

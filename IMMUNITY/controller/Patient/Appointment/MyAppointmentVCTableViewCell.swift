@@ -32,5 +32,11 @@ class MyAppointmentVCTableViewCell: UITableViewCell {
         lblPayment.text = "Payment Way: \(item.payment ?? "")"
     }
     
+    @IBAction func BtnStartTicket(_ sender: Any) {
+        
+        
+        
+    }
+    
     
 }

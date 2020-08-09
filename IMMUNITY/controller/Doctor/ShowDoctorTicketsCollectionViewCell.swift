@@ -21,7 +21,7 @@ class ShowDoctorTicketsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         BackView.dropShadow(scale: true)
-        
+        BackView.dropShadow()
         BackView.layer.cornerRadius = 10
         BackView.clipsToBounds = true
         BackView.layer.shadowRadius = 2
@@ -30,8 +30,10 @@ class ShowDoctorTicketsCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell ( item : SingleBook){
+        LblDate.text = item.date ?? ""
         LblDay.text = item.day ?? ""
-        LblTime.text = "From: \(item.from ?? "") To: \(item.to ?? "")"
+        LblTime.text = "From: \(item.from ?? "")"
+        LblDuration.text = " To: \(item.to ?? "")"
     }
     
     

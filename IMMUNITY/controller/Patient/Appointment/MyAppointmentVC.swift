@@ -103,7 +103,7 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return ticketArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,7 +127,8 @@ class MyAppointmentVC: UIViewController, UITableViewDelegate , UITableViewDataSo
         
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MyAppointmentVCTableViewCell", for: indexPath) as? MyAppointmentVCTableViewCell {
-//            cell.configureCell(item: ticketArray[indexPath.row])
+            cell.configureCell(item: ticketArray[indexPath.row])
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
         }else{
             return  MyAppointmentVCTableViewCell()

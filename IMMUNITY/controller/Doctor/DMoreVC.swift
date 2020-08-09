@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Kingfisher
 
 class DMoreVC: UIViewController ,NVActivityIndicatorViewable{
     
@@ -24,6 +25,8 @@ class DMoreVC: UIViewController ,NVActivityIndicatorViewable{
     
     @IBOutlet weak var stackView: UIStackView!
     
+    var selectedProfileDoc: GetDocProfile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +41,41 @@ class DMoreVC: UIViewController ,NVActivityIndicatorViewable{
         }
         imageuser.roundedImage()
         imageContainer.roundedView()
+        profileHandleRefresh()
+    }
+    
+    func profileHandleRefresh() {
+        startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+        
+        DoctorAPI.getDocProfile() { (error, networkSuccess, codeSuccess, docProfile) in
+            if networkSuccess {
+                if codeSuccess {
+                    if let profile = docProfile{
+                        
+                        let urlWithOutEncoding = "\(profile.result?.profile?.image ?? "")"
+                        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+                        let encodedURL = NSURL(string: encodedLink!)! as URL
+                        self.imageuser.kf.indicatorType = .activity
+                        self.imageuser.kf.setImage(with: encodedURL)
+                            print(urlWithOutEncoding)
+                        
+                        self.selectedProfileDoc = profile
+                        
+                        self.stopAnimating()
+                        
+                    }else{
+                        self.stopAnimating()
+                        self.showAlert(title: "Error", message: "Error tickets")
+                    }
+                }else {
+                    self.stopAnimating()
+                    self.showAlert(title: "Doctor", message: "There is no tickets")
+                }
+            }else {
+                self.stopAnimating()
+                self.showAlert(title: "NetWork", message: "Check your network Connection")
+            }
+        }
         
     }
     
@@ -47,6 +85,15 @@ class DMoreVC: UIViewController ,NVActivityIndicatorViewable{
             imageuser.isHidden = false
             self.imageuser.image = image
         }
+    }
+    
+    @IBAction func GoProfileBTN(_ sender: Any){
+        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "HEditSelectedDoctorVC")as? HEditSelectedDoctorVC {
+            self.navigationController?.pushViewController(vc  , animated: true)
+            vc.singelItem = selectedProfileDoc
+        }
+        
     }
     
     @IBAction func selectImage(_ sender: Any) {
@@ -124,7 +171,7 @@ class DMoreVC: UIViewController ,NVActivityIndicatorViewable{
         Helper.removeAccessToken()
         Helper.removeDocAccessToken()
     }
-
+    
 }
 
 extension DMoreVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

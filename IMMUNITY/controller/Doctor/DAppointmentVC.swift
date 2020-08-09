@@ -13,35 +13,38 @@ class DAppointmentVC: UIViewController ,UITableViewDataSource,UITableViewDelegat
     
     @IBOutlet weak var TableViewAppoint: UITableView!
     
-    var ticketArray = [SingleTicket2]()
+    var ticketArray = [SingleBook]()
     var doctor_id = 51
-    
-    
     
     let ViewCell:TableViewCellAppoint = TableViewCellAppoint()
     
+    lazy var Refresher : UIRefreshControl = {
+        let Refresher = UIRefreshControl()
+        Refresher.addTarget(self, action: #selector(ticketsHandleRefresh), for: .valueChanged)
+        return Refresher
+    }()
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        ticketsHandleRefresh()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.TableViewAppoint.reloadData()
+        TableViewAppoint.tableFooterView = UIView()
+        TableViewAppoint.separatorInset = .zero
+        TableViewAppoint.contentInset = .zero
+        TableViewAppoint.addSubview(Refresher)
         ticketsHandleRefresh()
     }
     
-    func ticketsHandleRefresh() {
+    @objc func ticketsHandleRefresh() {
+        self.Refresher.endRefreshing()
         startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
         
-        TicketsApi.allTicketsByDoctorId(doc_Id: doctor_id) { (error, networkSuccess, codeSuccess, ticketArray) in
+        TicketsApi.DocAllTicketsGrtBookings() { (error, networkSuccess, codeSuccess, ticketArray) in
             if networkSuccess {
                 if codeSuccess {
                     if let tickets = ticketArray{
                         print("tickets come here")
                         print(self.doctor_id as Any)
-                        self.ticketArray = tickets.result?.tickets ?? []
+                        self.ticketArray = tickets.result?.data?.data ?? []
                         print(tickets)
                         self.TableViewAppoint.reloadData()
                         self.stopAnimating()

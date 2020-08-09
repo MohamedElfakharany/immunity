@@ -28,7 +28,7 @@ class TableViewCellAppoint: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell ( item : SingleTicket2){
+    func configureCell ( item : SingleBook){
         DateLbl.text = "\(item.day ?? "") , \(item.date ?? "")"
         TimeLbl.text = "From: \(item.from ?? "") To: \(item.to ?? "")"
     }

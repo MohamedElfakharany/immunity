@@ -10,8 +10,8 @@ import UIKit
 class SearchByArea_SpecialityVC: UIViewController , UITextFieldDelegate, UIPickerViewDelegate ,UIPickerViewDataSource  {
     
     var PickerView = UIPickerView()
-    var Cities = ["cairo"]
-    var Specialities = ["sight","bones"]
+    var Cities = ["cairo","ismailia","port said"]
+    var Specialities = ["sight","bones","kids","heart","surgery"]
     var selectedCity = String()
     var selectedSpeciality = String()
     

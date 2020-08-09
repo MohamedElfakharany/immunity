@@ -21,7 +21,7 @@ class HEditSelectedDoctorVC: UIViewController , NVActivityIndicatorViewable {
     @IBOutlet weak var LblDocMobile: UILabel!
     @IBOutlet weak var BtnSaveOutlet: UIButton!
     
-    var singelItem: DocProfile?
+    var singelItem: GetDocProfile?
     var doctor_id = 54
     
     override func viewDidLoad() {
@@ -37,51 +37,24 @@ class HEditSelectedDoctorVC: UIViewController , NVActivityIndicatorViewable {
         
         imageuser.roundedImage()
         imageContainer.roundedView()
-        profileHandleRefresh()
+        data()
     }
     
-    func profileHandleRefresh() {
-        startAnimating(CGSize(width: 45, height: 45), message: "Loading",  type: .ballSpinFadeLoader, color: .orange, textColor: .white)
+    func data() {
         
-        DoctorAPI.getDocProfile() { (error, networkSuccess, codeSuccess, docProfile) in
-            if networkSuccess {
-                if codeSuccess {
-                    if let profile = docProfile{
-                        print("profile comes here \(profile)")
-                        self.singelItem = profile.result?.profile!
-                        
-                        self.LblDocName.text = "DR. \(self.singelItem?.firstName ?? "") \(self.singelItem?.lastName ?? "")"
-                        self.LblDocSpeciality.text = "\(self.singelItem?.specialities ?? "")"
-                        self.LblDocFees.text = "Price :\(self.singelItem?.fees ?? "") LE"
-                        self.LblDocEmail.text = "Email: \(self.singelItem?.email ?? "")"
-                        self.LblDocMobile.text = "Mobile: \(self.singelItem?.mobileNumber ?? "")"
-//                        print("singelItem  \(self.singelItem!)")
-                        let urlWithOutEncoding = "\(self.singelItem?.image ?? "")"
-                        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
-                        let encodedURL = NSURL(string: encodedLink!)! as URL
-                        self.imageuser.kf.indicatorType = .activity
-                        self.imageuser.kf.setImage(with: encodedURL)
-                        
-                        
-                        
-                        self.stopAnimating()
-                        
-                    }else{
-                        self.stopAnimating()
-                        self.showAlert(title: "Error", message: "Error tickets")
-                    }
-                }else {
-                    self.stopAnimating()
-                    self.showAlert(title: "Doctor", message: "There is no tickets")
-                }
-            }else {
-                self.stopAnimating()
-                self.showAlert(title: "NetWork", message: "Check your network Connection")
-            }
-        }
+        self.LblDocName.text = "DR. \(self.singelItem?.result?.profile?.firstName ?? "") \(self.singelItem?.result?.profile?.lastName ?? "")"
+        self.LblDocSpeciality.text = "Speciality\(self.singelItem?.result?.profile?.specialities ?? "")"
+        self.LblDocFees.text = "Price :\(self.singelItem?.result?.profile?.fees ?? "") LE"
+        self.LblDocEmail.text = "Email: \(self.singelItem?.result?.profile?.email ?? "")"
+        self.LblDocMobile.text = "Mobile: \(self.singelItem?.result?.profile?.mobileNumber ?? "")"
+        //                        print("singelItem  \(self.singelItem!)")
+        let urlWithOutEncoding = "\(self.singelItem?.result?.profile?.image ?? "")"
+        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let encodedURL = NSURL(string: encodedLink!)! as URL
+        self.imageuser.kf.indicatorType = .activity
+        self.imageuser.kf.setImage(with: encodedURL)
         
     }
-    
     
     func gradBTNS() {
         let RightGradientColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)

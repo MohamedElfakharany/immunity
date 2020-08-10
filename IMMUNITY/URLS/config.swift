@@ -18,6 +18,8 @@ struct URLs {
     
     static let getCurrentBooking = mainDoctors + "get_current_booking"
     
+    static let updateBooking = mainDoctors + "update_booking"
+    
     static let getBookings = mainPatient + "get_bookings"
     
     static let getDocProfile = mainDoctors + "get_profile"

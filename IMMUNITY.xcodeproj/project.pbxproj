@@ -17,6 +17,8 @@
 		96197849243F91E400AB8A9A /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96197848243F91E400AB8A9A /* Doctor.storyboard */; };
 		9619784B243F92ED00AB8A9A /* DAppointmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619784A243F92ED00AB8A9A /* DAppointmentVC.swift */; };
 		9619784D243F932700AB8A9A /* TableViewCellAppoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9619784C243F932700AB8A9A /* TableViewCellAppoint.swift */; };
+		9622572D24E0538F00035A11 /* HeadBookingByLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622572C24E0538F00035A11 /* HeadBookingByLast.swift */; };
+		9622572F24E09F0800035A11 /* EHRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9622572E24E09F0800035A11 /* EHRVC.swift */; };
 		962803292400338000B3ABFD /* ApprovalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962803282400338000B3ABFD /* ApprovalListVC.swift */; };
 		9628032B240034EA00B3ABFD /* ApprovalListConfirmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9628032A240034EA00B3ABFD /* ApprovalListConfirmTableViewCell.swift */; };
 		962C46D124DA125200035A11 /* headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C46D024DA125200035A11 /* headers.swift */; };
@@ -119,6 +121,8 @@
 		96197848243F91E400AB8A9A /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
 		9619784A243F92ED00AB8A9A /* DAppointmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAppointmentVC.swift; sourceTree = "<group>"; };
 		9619784C243F932700AB8A9A /* TableViewCellAppoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellAppoint.swift; sourceTree = "<group>"; };
+		9622572C24E0538F00035A11 /* HeadBookingByLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadBookingByLast.swift; sourceTree = "<group>"; };
+		9622572E24E09F0800035A11 /* EHRVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EHRVC.swift; sourceTree = "<group>"; };
 		962803282400338000B3ABFD /* ApprovalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListVC.swift; sourceTree = "<group>"; };
 		9628032A240034EA00B3ABFD /* ApprovalListConfirmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalListConfirmTableViewCell.swift; sourceTree = "<group>"; };
 		962C46D024DA125200035A11 /* headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headers.swift; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 				963EB52324D7979B00035A11 /* MainDoctors.swift */,
 				9696F9AE24DB447C00035A11 /* headCurrentBooking.swift */,
 				9603CC6024D86C2700035A11 /* headTicket.swift */,
+				9622572C24E0538F00035A11 /* HeadBookingByLast.swift */,
 				962C46D224DA242A00035A11 /* headBookings.swift */,
 				966D713824DC38A300035A11 /* GetDocProfile.swift */,
 			);
@@ -365,6 +370,7 @@
 				96ED7245240007E0009EFA70 /* Appointment */,
 				96ED723D23FF5362009EFA70 /* FavoritesVC.swift */,
 				9605768C2430EFE800660EA6 /* FavoritesVCTableViewCell.swift */,
+				9622572E24E09F0800035A11 /* EHRVC.swift */,
 				96ED724323FF5988009EFA70 /* TabBarVCs.swift */,
 				96B88C62243F7BCD00D4F05E /* MStabBar.swift */,
 			);
@@ -721,8 +727,10 @@
 				96ED724423FF5988009EFA70 /* TabBarVCs.swift in Sources */,
 				9698B66E2403396200DD3B83 /* BookDoctorTableViewCell.swift in Sources */,
 				966D37EF23929B63009E6A43 /* AppDelegate.swift in Sources */,
+				9622572D24E0538F00035A11 /* HeadBookingByLast.swift in Sources */,
 				963EB52224D7883A00035A11 /* ShowDoctorTicketsCollectionViewCell.swift in Sources */,
 				96AED7E02498FBEC009F1498 /* HEditDoctorSearchVC.swift in Sources */,
+				9622572F24E09F0800035A11 /* EHRVC.swift in Sources */,
 				96ED72472400080F009EFA70 /* MyAppointmentVCTableViewCell.swift in Sources */,
 				96867DE923FD9D48005CF342 /* SearchByArea&SpecialityVC.swift in Sources */,
 				966D382A23999DB4009E6A43 /* ResetPasswordVC.swift in Sources */,

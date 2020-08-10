@@ -14,6 +14,7 @@ class FavoritesVCTableViewCell: UITableViewCell {
 
     @IBOutlet weak var BackView: UIView!
     @IBOutlet weak var DocImage: UIImageView!
+    @IBOutlet weak var prescrption_image: UIImageView!
     @IBOutlet weak var LblDocName: UILabel!
     @IBOutlet weak var lblTicketDate: UILabel!
     @IBOutlet weak var lblTicketFromTo: UILabel!
@@ -33,11 +34,15 @@ class FavoritesVCTableViewCell: UITableViewCell {
         
     }
     
-    func configureCell (item : SingleBook){
+    func configureCell (item : singleBookingByLast){
         lblTicketDate.text = "\(item.day ?? ""), \(item.date ?? "")"
         LblDocName.text = "DR. \(item.firstName ?? "") \(item.lastName ?? "")"
-        lblTicketFromTo.text = "From: \(item.from ?? "") To: \(item.to ?? "")"
-        lblPayment.text = "Payment Way: \(item.payment ?? "")"
+        
+        let urlWithOutEncoding = "\(item.doctorImage ?? "")"
+        let encodedLink = urlWithOutEncoding.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+        let encodedURL = NSURL(string: encodedLink!)! as URL
+        self.DocImage.kf.indicatorType = .activity
+        self.DocImage.kf.setImage(with: encodedURL)
     }
     
     

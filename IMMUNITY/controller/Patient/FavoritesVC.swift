@@ -15,8 +15,8 @@ class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource ,
     @IBOutlet weak var BtnSignInOutlet: UIButton!
     
     let cellSpacingHeight: CGFloat = 20
-    var ticketArray = [SingleBook]()
-    var selectedTicket : SingleBook?
+    var ticketArray = [singleBookingByLast]()
+    var selectedTicket : singleBookingByLast?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +121,8 @@ class FavoritesVC: UIViewController,UITableViewDelegate, UITableViewDataSource ,
         return 190
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "AppointmentDetailsVC") as? AppointmentDetailsVC {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "EHRVC") as? EHRVC {
+            vc.singleTicket = ticketArray[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
